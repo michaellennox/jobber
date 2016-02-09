@@ -1,2 +1,1 @@
-var jobber = angular.module("Jobber", ["ngresource"]);
-console.log('app file')
+var jobber = angular.module("Jobber", []);

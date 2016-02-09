@@ -1,6 +1,5 @@
 jobber.controller("appController", function(){
   var self = this;
-  console.log('in controller')
 
   self.companiesList = [];
 
@@ -8,5 +7,3 @@ jobber.controller("appController", function(){
     self.companiesList.push(self.company);
   };
 });
-
-console.log('controller file')
