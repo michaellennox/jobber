@@ -2,3 +2,5 @@ node_modules
 public/libs
 *.pyc
 venv
+*.DS_Store
+*.swp
