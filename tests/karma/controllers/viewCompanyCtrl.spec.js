@@ -1,4 +1,4 @@
-describe('CompaniesCtrl', function() {
+describe('ViewCompanyCtrl', function() {
   var response;
   var ctrl;
   var $rootScope;
@@ -6,8 +6,8 @@ describe('CompaniesCtrl', function() {
 
   beforeEach(function() {
     companiesResourceFactoryMock = jasmine.createSpyObj(
-      'CompaniesResourceFactoryMock',
-      ['getCompanies']
+      'companiesResourceFactory',
+      ['getCompanyByName']
     );
     module('Jobber', {
       companiesResourceFactory: companiesResourceFactoryMock
@@ -16,20 +16,23 @@ describe('CompaniesCtrl', function() {
 
   beforeEach(inject(function($controller, $q, _$rootScope_) {
     response = {
-      data: [{
+      data: {
         id: 0,
         name: 'company'
-      }]
+      }
     };
-    companiesResourceFactoryMock.getCompanies
+    companiesResourceFactoryMock.getCompanyByName
       .and.returnValue($q.when(response));
-    ctrl = $controller('CompaniesCtrl');
+    ctrl = $controller(
+      'ViewCompanyCtrl',
+      { $routeParams: {name: 'company'} }
+    );
     $rootScope = _$rootScope_;
   }));
 
-  it('initializes with companies from the resource factory', function() {
+  it('initializes with company info from the resource factory', function() {
     $rootScope.$digest();
-    expect(ctrl.companies)
+    expect(ctrl.company)
       .toEqual(response.data);
   });
 });
