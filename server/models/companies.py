@@ -1,5 +1,5 @@
 from .database import db
-from sqlalchemy.dialects.postgresql import JSON
+
 
 class Company(db.Model):
     __tablename__ = 'companies'

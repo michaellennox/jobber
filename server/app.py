@@ -12,7 +12,8 @@ db.init_app(app)
 
 @app.route('/')
 def serve_client():
-    angular_index = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "public", "views")
+    angular_index = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                 "..", "public", "views")
     return send_from_directory(angular_index, 'index.html')
 
 if __name__ == '__main__':
