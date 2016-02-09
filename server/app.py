@@ -1,12 +1,14 @@
 from flask import Flask, send_from_directory
-from flask.ext.sqlalchemy import SQLAlchemy
+from models.database import db
 import os
 
 app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
-db = SQLAlchemy(app)
 
 from models.companies import Company
+
+db.init_app(app)
+
 
 @app.route('/')
 def serve_client():

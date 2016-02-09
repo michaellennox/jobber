@@ -1,5 +1,4 @@
-from app import db
-from flask_sqlalchemy import SQLAlchemy
+from .database import db
 from sqlalchemy.dialects.postgresql import JSON
 
 class Company(db.Model):
@@ -11,5 +10,5 @@ class Company(db.Model):
     def __init__(self, name):
         self.name = name
 
-    def __repr(self):
+    def __repr__(self):
         return '<id {}>'.format(self.id)
