@@ -1,11 +1,18 @@
 <!DOCTYPE html>
-<html lnag="eng">
+<html lang="eng" ng-app="Jobber">
   <head>
     <meta charset="utf-8">
+    <script src="../libs/jquery/dist/jquery.js"></script>
+    <script src="../libs/angular/angular.js"></script>
+    <script src="../libs/angular-resource/angular-resource.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/controllers/appController.js"></script>
     <title>Recruitment</title>
   </head>
-  <body>
-    <h1 class="title">Hello world</h1>
+  <body ng-controller="appController as appCtrl">
+    <ul ng-repeat="company in appCtrl.companiesList">
+      <li>{{company}}</li>
+    </ul>
   </body>
 
 </html>

@@ -1,9 +1,12 @@
-app.controller("appController", [function(){
-
+jobber.controller("appController", function(){
   var self = this;
+  console.log('in controller')
+
   self.companiesList = [];
 
+  self.addCompany = function() {
+    self.companiesList.push(self.company);
+  };
+});
 
-  self.addCompany
-
-}]);
+console.log('controller file')
