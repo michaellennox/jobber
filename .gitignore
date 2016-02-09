@@ -4,3 +4,5 @@ public/libs
 venv
 *.DS_Store
 *.swp
+phantomjsdriver.log
+npm-debug.log
