@@ -21,7 +21,10 @@ def serve_client():
 
 @app.route('/companies')
 def get_companies():
-    return "Test Message"
+    companies = Company.query.filter_by(name='Google').first()
+    return companies.name
+    # for company in companies:
+    #     print (company.name)
 
 @app.route('/companies/:name')
 def get_specific_company():
