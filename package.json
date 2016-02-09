@@ -1,0 +1,37 @@
+{
+  "name": "jobber",
+  "version": "0.0.0",
+  "description": "",
+  "main": " ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaellennox/jobber.git"
+  },
+  "author": "michaellennox, JBorrell, Adzz, genzade, Andrew47",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/michaellennox/jobber/issues"
+  },
+  "homepage": "https://github.com/michaellennox/jobber#readme",
+  "dependencies": {
+    "bower": "^1.7.7"
+  },
+  "devDependencies": {
+    "jasmine-core": "^2.4.1",
+    "jasmine-spec-reporter": "^2.4.0",
+    "karma": "^0.13.19",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-coverage": "^0.5.3",
+    "karma-jasmine": "^0.3.7",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-spec-reporter": "0.0.23",
+    "phantomjs": "^2.1.3",
+    "phantomjs-prebuilt": "^2.1.4",
+    "protractor": "^3.0.0",
+    "protractor-http-mock": "^0.2.1",
+    "webdriver-manager": "^8.0.0"
+  }
+}

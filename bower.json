@@ -1,0 +1,29 @@
+{
+  "name": "jobber",
+  "description": "",
+  "main": "",
+  "authors": [
+    "michaellennox",
+    "JBorrell",
+    "Adzz",
+    "genzade",
+    "Andrew47"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/michaellennox/jobber",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.0",
+    "angular": "^1.5.0",
+    "angular-resource": "^1.5.0",
+    "angular-route": "^1.5.0",
+    "angular-mocks": "^1.5.0"
+  }
+}
