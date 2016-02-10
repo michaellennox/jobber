@@ -25,10 +25,10 @@ describe('NewCompanyCtrl', function() {
 
   describe('#createNewCompany()', function() {
     it('redirects to /#/companies/:name', function() {
-      ctrl.name = 'makers'
+      ctrl.name = 'makers';
       ctrl.createNewCompany();
       $rootScope.$digest();
-      expect($windowMock.location.href).toEqual('/#/companies/makers')
-    })
-  })
+      expect($windowMock.location.href).toEqual('/#/companies/makers');
+    });
+  });
 });

@@ -1,16 +1,20 @@
 jobber.config(["$routeProvider","$locationProvider", function($routeProvider, $locationProvider){
+  var partialDirectory = "public/views/partials/";
   $routeProvider
     .when("/companies", {
-      templateUrl: "public/views/partials/companies/index.html"
+      templateUrl: partialDirectory + "companies/index.html"
     })
     .when("/companies/new", {
-      templateUrl: "public/views/partials/companies/new.html"
+      templateUrl: partialDirectory + "companies/new.html"
     })
     .when("/companies/:name", {
-      templateUrl: "public/views/partials/companies/view.html"
+      templateUrl: partialDirectory + "companies/view.html"
+    })
+    .when("/companies/:name/people/new", {
+      templateUrl: partialDirectory + "people/new.html"
     })
     .otherwise({
       redirectTo: "/companies"
-    })
+    });
   $locationProvider.html5Mode(true);
 }]);
