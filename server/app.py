@@ -1,4 +1,4 @@
-from flask import Flask, send_from_directory, jsonify
+from flask import Flask, send_from_directory, jsonify, request
 from models.database import db
 import os
 
@@ -29,11 +29,22 @@ def get_companies():
 
 @app.route('/api/companies/:name')
 def get_specific_company():
-    return "Test Message"
+    name = request.args.get('name')
+    company = Company.query.filter_by(name=name)
+    list = [
+    {'param': 'id', 'val': company.id},
+    {'param': 'name', 'val': company.name}
+    ]
+    return jsonify(company=list)
 
 @app.route('/api/companies', methods = ['POST'])
 def post_companies():
-    return "Test Message"
+    name = request.args.get('name')
+    company = Company(name)
+    if db.session.add(company):
+        return 'Company created'
+    else:
+        return 'No'
 
 if __name__ == '__main__':
     app.run(port=8080, debug=True)
