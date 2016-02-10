@@ -1,6 +1,6 @@
 exports.config = {
   seleniumAddress: 'http://localhost:4444/wd/hub',
-  specs: ['companiesIndexFeatures.js'],
+  specs: ['*Features.js'],
   capabilities: {
     browserName: 'chrome'
   },

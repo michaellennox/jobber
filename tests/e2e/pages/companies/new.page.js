@@ -1,5 +1,4 @@
 var NewPage = function() {
-  
   this.nameInput = element(by.model("ctrl.name"));
   this.submit = element(by.css("#submitCo"));
 };
