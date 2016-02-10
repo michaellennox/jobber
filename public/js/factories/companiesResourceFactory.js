@@ -1,4 +1,4 @@
-jobber.factory('companiesResourceFactory', ['$http', '$q', function($http, $q) {
+jobber.factory('companiesResourceFactory', ['$http', function($http) {
   var companiesResourceFactory = {};
 
   companiesResourceFactory.getCompanies = function() {
