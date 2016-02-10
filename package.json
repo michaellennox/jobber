@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "karma": "karma start tests/karma/karma.conf.js",
-    "e2e": "protractor tests/e2e/conf.js"
+    "e2e": "protractor tests/e2e/conf.js",
+    "setup": "npm install && bower install && pip3 install -r requirements.txt && export APP_SETTINGS='config.DevelopmentConfig' && export DATABASE_URL='postgresql://localhost/jobber_dev' && python3 server/manage.py db upgrade"
   },
   "repository": {
     "type": "git",
