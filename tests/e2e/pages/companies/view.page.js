@@ -1,4 +1,5 @@
 var ViewPage = function() {
+<<<<<<< HEAD
   this.companyName = element(by.binding("ctrl.company.name"));
   this.addPersonLink = element(by.css(".addPerson"));
   this.peopleList = element(by.repeater("person in pCtrl.people"));
@@ -12,6 +13,9 @@ ViewPage.prototype.viewCompany = function(company){
 
 ViewPage.prototype.clickAddPersonLink = function(){
   this.addPersonLink.click();
+=======
+  this.companyName = element(by.css("#companyName"));
+>>>>>>> a1a34368768345a0409f85763fca201443365299
 };
 
 module.exports = ViewPage;
