@@ -28,7 +28,7 @@ class CompaniesAPI(Resource):
 
     def post(self):
         company = Company(
-            name = request.json.get('name')
+            name=request.json.get('name')
         )
         db.session.add(company)
         db.session.commit()
@@ -38,7 +38,7 @@ class CompaniesAPI(Resource):
 class CompanyAPI(Resource):
     def get(self, id):
         company = Company.query.get(id)
-        return {'company': marshal(company, company_fields)}
+        return marshal(company, company_fields)
 
     def put(self, id):
         pass
@@ -47,4 +47,4 @@ class CompanyAPI(Resource):
         pass
 
 api.add_resource(CompaniesAPI, '/api/companies', endpoint='companies')
-api.add_resource(CompanyAPI, '/api/companies/<name>', endpoint='company')
+api.add_resource(CompanyAPI, '/api/companies/<int:id>', endpoint='company')
