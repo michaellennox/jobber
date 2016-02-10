@@ -4,6 +4,7 @@ jobber.controller('CompaniesCtrl', ['companiesResourceFactory', function(compani
   self.init = function() {
     companiesResourceFactory.getCompanies()
       .then(function(response) {
+        console.log(response.data);
         self.companies = response.data.companies;
       });
   };
