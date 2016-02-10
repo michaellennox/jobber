@@ -23,17 +23,17 @@ class FlaskrTestCase(unittest.TestCase):
         pass
 
     def test_get_companies(self):
-        r = self.client.get('/companies')
+        r = self.client.get('/api/companies')
         self.assertEqual(r.status_code, 200)
 
     def test_post_companies(self):
-        r = self.client.post('/companies')
+        r = self.client.post('/api/companies')
         self.assertEqual(r.status_code, 200)
 
     def test_get_company(self):
-        r = self.client.get('/companies/:name')
+        r = self.client.get('/api/companies/<name>')
         self.assertEqual(r.status_code, 200)
 
     def test_companies_has_example(self):
-        r = self.client.get('/companies')
+        r = self.client.get('/api/companies')
         self.assertEqual(r, 'Google')
