@@ -16,10 +16,12 @@ describe('CompaniesCtrl', function() {
 
   beforeEach(inject(function($controller, $q, _$rootScope_) {
     response = {
-      data: [{
-        id: 0,
-        name: 'company'
-      }]
+      data: {
+        companies: [{
+          id: 0,
+          name: 'company'
+        }]
+      }
     };
     companiesResourceFactoryMock.getCompanies
       .and.returnValue($q.when(response));
@@ -30,6 +32,6 @@ describe('CompaniesCtrl', function() {
   it('initializes with companies from the resource factory', function() {
     $rootScope.$digest();
     expect(ctrl.companies)
-      .toEqual(response.data);
+      .toEqual(response.data.companies);
   });
 });

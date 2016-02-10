@@ -20,22 +20,25 @@ app = Flask(__name__, static_folder='../public')
 app.config.from_object(os.environ['APP_SETTINGS'])
 db.init_app(app)
 
+
 def display_companies():
     companies = Company.query.all()
     list = []
     for company in companies:
         list.append(
-        {'id': company.id, 'name': company.name}
+            {'id': company.id, 'name': company.name}
         )
     return jsonify(companies=list)
+
 
 def display_specific_company(name):
     company = Company.query.filter_by(name=name).first()
     list = {'id': company.id, 'name': company.name}
     return jsonify(list)
 
+
 def create_company():
-    name = request.form.get('name')
+    name = request.json.get('name')
     if name:
         new_company = session()
         company = Company(name=name)

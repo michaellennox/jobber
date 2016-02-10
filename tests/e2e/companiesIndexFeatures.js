@@ -10,7 +10,7 @@ describe("Companies index page", function(){
     indexPage = require("./pages/companies/index.page.js");
     newPage = require("./pages/companies/new.page.js");
     viewPage = require("./pages/companies/view.page.js");
-    newP = new newPage;
+    newP = new newPages;
     view = new viewPage;
     index = new indexPage;
     index.get();
