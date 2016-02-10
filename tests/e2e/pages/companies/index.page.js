@@ -1,7 +1,7 @@
 var IndexPage = function(){
 
-  this.addBtn = element(by.className("addBtn"));
-  this.companiesList = element.all(by.repeater("company in ctrl.companiesList"));
+  this.addLink = element(by.className("addLink"));
+  this.companiesList = element.all(by.repeater("company in ctrl.companies"));
 };
 
 IndexPage.prototype.get = function(){
@@ -9,7 +9,7 @@ IndexPage.prototype.get = function(){
 };
 
 IndexPage.prototype.clickAdd = function(){
-  this.addBtn.click();
+  this.addLink.click();
 };
 
 module.exports = IndexPage;
