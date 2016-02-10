@@ -1,3 +1,5 @@
+
+
 import os
 import flask
 import unittest
@@ -6,8 +8,8 @@ import unittest
 # engine = create_engine('postgresql:///jobber_dev', echo=True)
 
 import sys
-sys.path.append("../server")
-import app
+sys.path.append("../../server/")
+from app import *
 
 from models.companies import Company
 

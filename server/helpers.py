@@ -24,9 +24,9 @@ def display_companies():
     companies = Company.query.all()
     list = []
     for company in companies:
-        list.append([
+        list.append(
         {'id': company.id, 'name': company.name}
-        ])
+        )
     return jsonify(companies=list)
 
 def display_specific_company(name):
