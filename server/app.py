@@ -1,12 +1,9 @@
-from flask import Flask, send_from_directory
+from flask import Flask, send_from_directory, jsonify
 from models.database import db
-# from blueprints.companies_blueprint import companies_page
 import os
 
 app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
-# app.register_blueprint(companies_page, url_prefix='/companies')
-
 
 from models.companies import Company
 
@@ -19,18 +16,22 @@ def serve_client():
                                  "..", "public", "views")
     return send_from_directory(angular_index, 'index.html')
 
-@app.route('/companies')
+@app.route('/api/companies')
 def get_companies():
-    companies = Company.query.filter_by(name='Google').first()
-    return companies.name
-    # for company in companies:
-    #     print (company.name)
+    companies = Company.query.all()
+    list = []
+    for company in companies:
+        list.append([
+        {'param': 'id', 'val': company.id},
+        {'param': 'name', 'val': company.name}
+        ])
+    return jsonify(companies=list)
 
-@app.route('/companies/:name')
+@app.route('/api/companies/:name')
 def get_specific_company():
     return "Test Message"
 
-@app.route('/companies', methods = ['POST'])
+@app.route('/api/companies', methods = ['POST'])
 def post_companies():
     return "Test Message"
 
