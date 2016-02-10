@@ -31,13 +31,11 @@ def display_companies():
 
 def display_specific_company(name):
     company = Company.query.filter_by(name=name).first()
-    list = [
-    {'id': company.id, 'name': company.name}
-    ]
-    return jsonify(company=list)
+    list = {'id': company.id, 'name': company.name}
+    return jsonify(list)
 
 def create_company():
-    name = request.args.get('name')
+    name = request.form.get('name')
     if name:
         new_company = session()
         company = Company(name=name)
