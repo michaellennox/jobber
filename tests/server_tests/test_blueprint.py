@@ -8,8 +8,8 @@ import unittest
 # engine = create_engine('postgresql:///jobber_dev', echo=True)
 
 import sys
-sys.path.append("../../server/")
-from app import *
+sys.path.append("../../")
+import server.app
 
 from models.companies import Company
 

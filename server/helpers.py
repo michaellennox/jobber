@@ -16,7 +16,7 @@ session = sessionmaker()
 session.configure(bind=engine)
 Base.metadata.create_all(engine)
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='../public')
 app.config.from_object(os.environ['APP_SETTINGS'])
 db.init_app(app)
 

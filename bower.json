@@ -17,13 +17,15 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "public/libs"
   ],
   "dependencies": {
     "jquery": "^2.2.0",
     "angular": "^1.5.0",
     "angular-resource": "^1.5.0",
     "angular-route": "^1.5.0",
-    "angular-mocks": "^1.5.0"
+    "angular-mocks": "^1.5.0",
+    "bootstrap": "^3.3.6"
   }
 }
