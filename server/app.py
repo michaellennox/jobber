@@ -1,13 +1,4 @@
-from flask import Flask, send_from_directory
-from models.database import db
-import os
-
-app = Flask(__name__, static_folder='../public')
-app.config.from_object(os.environ['APP_SETTINGS'])
-
-from models.companies import Company
-
-db.init_app(app)
+from helpers import *
 
 
 @app.route('/')
@@ -15,6 +6,22 @@ def serve_client():
     angular_index = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                                  '..', 'public', 'views')
     return send_from_directory(angular_index, 'layout.html')
+
+
+@app.route('/api/companies')
+def get_companies():
+    return display_companies()
+
+
+@app.route('/api/companies/<name>')
+def get_specific_company(name):
+    return display_specific_company(name)
+
+
+@app.route('/api/companies', methods = ['POST'])
+def post_companies():
+    return create_company()
+
 
 if __name__ == '__main__':
     app.run(port=8080, debug=True)
