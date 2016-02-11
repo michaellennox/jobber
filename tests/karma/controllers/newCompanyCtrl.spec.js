@@ -27,7 +27,7 @@ describe('NewCompanyCtrl', function() {
     it('redirects to /#/companies/', function() {
       ctrl.createNewCompany();
       $rootScope.$digest();
-      expect($windowMock.location.href).toEqual('/#/companies/');
+      expect($windowMock.location.href).toEqual('/companies');
     });
   });
 });
