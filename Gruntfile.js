@@ -33,5 +33,4 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-protractor-webdriver');
   grunt.registerTask('e2e', ['protractor_webdriver', 'protractor']);
   grunt.registerTask('test', ['karma', 'e2e']);
-
 };
