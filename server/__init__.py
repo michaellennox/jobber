@@ -23,6 +23,7 @@ api = Api(app)
 db = SQLAlchemy(app)
 
 import server.controllers.companies
+import server.controllers.people
 import server.controllers.jobs
 
 
