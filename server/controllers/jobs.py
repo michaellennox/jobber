@@ -2,7 +2,7 @@
 #### imports ####
 #################
 
-from flask import url_for, request
+from flask import request
 from flask.ext.restful import Resource, fields, marshal
 from server import api, db
 from server.models.job import Job
@@ -11,10 +11,15 @@ from server.models.job import Job
 #### config ####
 ################
 
+company_fields = {
+    'id': fields.Integer,
+    'name': fields.String,
+}
+
 job_fields = {
     'id': fields.Integer,
     'title': fields.String,
-    'company_id': fields.Integer
+    'company': fields.Nested(company_fields)
 }
 
 ################
@@ -35,6 +40,7 @@ class JobsAPI(Resource):
         db.session.commit()
         return 'Job created!', 201
 
+
 class JobAPI(Resource):
     def get(self, company_id, id):
         job = Job.query.get(id)
@@ -46,5 +52,13 @@ class JobAPI(Resource):
     def delete(self, company_id, id):
         pass
 
-api.add_resource(JobsAPI, '/api/companies/<int:company_id>/jobs', endpoint='jobs')
-api.add_resource(JobAPI, '/api/companies/<int:company_id>/jobs/<int:id>', endpoint='job')
+api.add_resource(
+    JobsAPI,
+    '/api/companies/<int:company_id>/jobs',
+    endpoint='jobs'
+)
+api.add_resource(
+    JobAPI,
+    '/api/companies/<int:company_id>/jobs/<int:id>',
+    endpoint='job'
+)

@@ -2,7 +2,7 @@
 #### imports ####
 #################
 
-from flask import url_for, request
+from flask import request
 from flask.ext.restful import Resource, fields, marshal
 from server import api, db
 from server.models.person import Person
@@ -11,10 +11,15 @@ from server.models.person import Person
 #### config ####
 ################
 
+company_fields = {
+    'id': fields.Integer,
+    'name': fields.String,
+}
+
 person_fields = {
     'id': fields.Integer,
     'name': fields.String,
-    'company_id': fields.Integer
+    'company': fields.Nested(company_fields)
 }
 
 ################
@@ -39,5 +44,13 @@ class PersonAPI(Resource):
         person = Person.query.get(id)
         return marshal(person, person_fields)
 
-api.add_resource(PeopleAPI, '/api/companies/<int:company_id>/people', endpoint='people')
-api.add_resource(PersonAPI, '/api/companies/<int:company_id>/people/<int:id>', endpoint='person')
+api.add_resource(
+    PeopleAPI,
+    '/api/companies/<int:company_id>/people',
+    endpoint='people'
+)
+api.add_resource(
+    PersonAPI,
+    '/api/companies/<int:company_id>/people/<int:id>',
+    endpoint='person'
+)
