@@ -37,7 +37,7 @@ describe("Companies' partials", function(){
         peopleNewPage.addPerson("Testla");
       });
 
-      it("displays people who have been added", function(){
+      it("displays people who have been added on the company view page", function(){
         expect(peopleNewPage.person).toEqual("Testla");
       });
     });

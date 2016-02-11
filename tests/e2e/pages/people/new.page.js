@@ -8,4 +8,4 @@ NewPage.prototype.addPerson = function (name){
   this.submit.click();
 };
 
-
+module.exports = NewPage;
