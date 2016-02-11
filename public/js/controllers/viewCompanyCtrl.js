@@ -6,6 +6,8 @@ jobber.controller('ViewCompanyCtrl', ['companiesResourceFactory', '$routeParams'
     companiesResourceFactory.getCompanyByID(self.id)
       .then(function(response) {
         self.company = response.data;
+        self.people = response.data.people;
+        self.jobs = response.data.jobs;
       });
   })();
 }]);

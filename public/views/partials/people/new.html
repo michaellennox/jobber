@@ -1,6 +1,9 @@
-<main ng-controller="NewPersonCtrl as ctrl">
+<main ng-controller="NewPersonCtrl as ctrl" class="col-md-6 col-md-offset-3">
   <form ng-submit="ctrl.createNewPerson()">
-    <input ng-model="ctrl.name" type="text" placeholder="Person Name" required autofocus>
-    <button>Submit</button>
+    <div class="form-group">
+      <label>Name</label>
+      <input ng-model="ctrl.name" type="text" class="form-control" placeholder="Person Name" required autofocus>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </main>
