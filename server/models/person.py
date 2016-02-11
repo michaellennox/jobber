@@ -1,13 +1,13 @@
 from server import db
 
 
-class Company(db.Model):
+class Person(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String())
-    people = db.relationship("Person", backref="company")
+    company_id = db.Column(db.Integer, db.ForeignKey("company.id"))
 
     def __init__(self, name):
         self.name = name
 
     def __repr__(self):
-        return '<Company {}>'.format(self.id)
+        return "<Person {}>".format(self.id)
