@@ -52,7 +52,7 @@ class CompanyAPI(Resource):
         pass
 
 class CompanyGetJobAPI(Resource):
-    def get(query, location):
+    def get(self, query, location):
         key = os.environ['INDEED_API_KEY']
         xml_file = urllib.request.urlopen('http://api.indeed.com/ads/apisearch?publisher='
           + key + '&q='
@@ -61,14 +61,13 @@ class CompanyGetJobAPI(Resource):
         tree = ET.parse(xml_file)
         root = tree.getroot()
         results = root.findall('results/result')
-        for result in results:
-            print(result.find('jobtitle').text)
-            print(result.find('company').text)
-            result.find('snippet').text
-            print(result.find('formattedLocation').text)
-            result.find('country').text
-            result.find('date').text
-            result.find('url').text
+        return {'jobs': [marshal(result.find('jobtitle').text,
+                                 result.find('company').text,
+                                 result.find('snippet').text,
+                                 result.find('formattedLocation').text,
+                                 result.find('country').text,
+                                 result.find('date').text,
+                                 result.find('url').text) for company in companies]}
 
         #to convert into a string add to end of xml_file: .read().decode('utf-8')
 
