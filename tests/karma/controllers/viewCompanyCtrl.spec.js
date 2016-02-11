@@ -32,7 +32,6 @@ describe('ViewCompanyCtrl', function() {
 
   it('initializes with company info from the resource factory', function() {
     $rootScope.$digest();
-    expect(ctrl.company)
-      .toEqual(response.data);
+    expect(ctrl.company).toEqual(response.data);
   });
 });
