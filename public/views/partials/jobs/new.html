@@ -1,0 +1,6 @@
+<main ng-controller="NewJobCtrl as ctrl">
+  <form ng-submit="ctrl.createNewJob()">
+    <input ng-model="ctrl.title" type="text" placeholder="Job Title" required autofocus>
+    <button>Submit</button>
+  </form>
+</main>
