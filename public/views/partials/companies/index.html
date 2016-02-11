@@ -1,9 +1,8 @@
-<main ng-controller="companiesCtrl as ctrl">
+<main ng-controller="CompaniesCtrl as ctrl">
   <ul ng-repeat="company in ctrl.companies">
     <li>
-      {{ctrl.company}}
+      {{company.name}}
     </li>
-    <a class="addPerson" href="/companies/" + company.name + "/people/new">Add person</a>
   </ul>
   <a class="addLink" href="/companies/new">Add company</a>
 </main>

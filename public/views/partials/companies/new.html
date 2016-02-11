@@ -1,6 +1,6 @@
-<main ng-controller="newCompanyCtrl as ctrl">
-  <form>
-    <input ng-model="ctrl.name" type="text" placeholder="Name of company" required autofocus>
-    <button id="submitCo" ng-submit="ctrl.createNewCompany()">Submit</button>
+<main ng-controller="NewCompanyCtrl as ctrl">
+  <form ng-submit="ctrl.createNewCompany()">
+    <input ng-model="ctrl.name" type="text" placeholder="Company Name" required autofocus>
+    <button>Submit</button>
   </form>
 </main>
