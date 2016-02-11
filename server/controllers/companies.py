@@ -7,6 +7,7 @@ from flask.ext.restful import Resource, fields, marshal
 from server import api, db
 from server.models.company import Company
 from server.models.person import Person
+from server.models.job import Job
 
 ################
 #### config ####

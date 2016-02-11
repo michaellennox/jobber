@@ -29,6 +29,7 @@ describe('peopleResourceFactory', function() {
       $httpBackend.flush();
     });
   });
+
   describe("#getPersonByID()", function(){
     it("Makes a get request to /api/companies/:company_id/people/:id", function(){
       $httpBackend
@@ -44,5 +45,4 @@ describe('peopleResourceFactory', function() {
       $httpBackend.flush();
     });
   });
-
 });
