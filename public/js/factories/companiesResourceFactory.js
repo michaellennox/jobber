@@ -9,8 +9,8 @@ jobber.factory('companiesResourceFactory', ['$http', function($http) {
     return $http.post('/api/companies', {name: name});
   };
 
-  companiesResourceFactory.getCompanyByName = function(name) {
-    return $http.get('/api/companies/' + name);
+  companiesResourceFactory.getCompanyByID = function(id) {
+    return $http.get('/api/companies/' + id);
   };
 
   return companiesResourceFactory;

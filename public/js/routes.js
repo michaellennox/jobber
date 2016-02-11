@@ -7,10 +7,10 @@ jobber.config(["$routeProvider","$locationProvider", function($routeProvider, $l
     .when("/companies/new", {
       templateUrl: partialDirectory + "companies/new.html"
     })
-    .when("/companies/:name", {
+    .when("/companies/:id", {
       templateUrl: partialDirectory + "companies/view.html"
     })
-    .when("/companies/:name/people/new", {
+    .when("/companies/:id/people/new", {
       templateUrl: partialDirectory + "people/new.html"
     })
     .otherwise({

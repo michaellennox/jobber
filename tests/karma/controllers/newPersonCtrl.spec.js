@@ -21,17 +21,17 @@ describe('NewPersonCtrl', function() {
       .and.returnValue($q.when({}));
     ctrl = $controller(
       'NewPersonCtrl',
-      { $routeParams: {name: 'thisfirm'} }
+      { $routeParams: {id: 1} }
     );
     $rootScope = _$rootScope_;
   }));
 
   describe('#createNewPerson()', function() {
-    it('redirects to /#/companies/:name', function() {
+    it('redirects to /#/companies/:id', function() {
       ctrl.name = 'person';
       ctrl.createNewPerson();
       $rootScope.$digest();
-      expect($windowMock.location.href).toEqual('/#/companies/thisfirm');
+      expect($windowMock.location.href).toEqual('/#/companies/1');
     });
   });
 });

@@ -20,7 +20,7 @@ describe('companiesResourceFactory', function() {
         message: 'Company created!'
       });
     $httpBackend
-      .whenGET('/api/companies/makers').respond({
+      .whenGET('/api/companies/1').respond({
         id: 1,
         name: 'makers'
       });
@@ -56,9 +56,9 @@ describe('companiesResourceFactory', function() {
     });
   });
 
-  describe('#getCompanyByName()', function() {
-    it('makes a GET request to /api/companies/:name', function() {
-      factory.getCompanyByName('makers')
+  describe('#getCompanyByID()', function() {
+    it('makes a GET request to /api/companies/:id', function() {
+      factory.getCompanyByID(1)
         .then(function(response) {
           expect(response.data).toEqual({
             id: 1,
