@@ -7,6 +7,8 @@ from flask.ext.restful import Resource, fields, marshal
 from server import api, db
 from server.models.job import Job
 
+from server.controllers.companies import company_fields
+
 ################
 #### config ####
 ################
@@ -14,7 +16,7 @@ from server.models.job import Job
 job_fields = {
     'id': fields.Integer,
     'title': fields.String,
-    'company_id': fields.Integer
+    'company': fields.Nested(company_fields)
 }
 
 ################
