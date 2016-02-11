@@ -31,7 +31,7 @@ describe('NewPersonCtrl', function() {
       ctrl.name = 'person';
       ctrl.createNewPerson();
       $rootScope.$digest();
-      expect($windowMock.location.href).toEqual('/#/companies/1');
+      expect($windowMock.location.href).toEqual('/companies/1');
     });
   });
 });
