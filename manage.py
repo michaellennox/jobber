@@ -12,7 +12,7 @@ manager.add_command("runserver", Server(port=8080))
 
 
 @manager.command
-def drop_db():
+def clean_db():
     """Drops the db tables."""
     db.drop_all()
 
