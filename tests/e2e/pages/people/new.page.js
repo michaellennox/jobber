@@ -5,7 +5,6 @@ var NewPage = function() {
 
 NewPage.prototype.addPerson = function(name) {
   this.nameInputBox.sendKeys(name);
-  console.log(this.nameInputBox.getText());
   this.submit.click();
 };
 
