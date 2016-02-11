@@ -1,0 +1,33 @@
+sudo: required
+dist: trusty
+
+env:
+  - APP_SETTINGS=config.TestingConfig DATABASE_URL=postgresql://localhost/jobber_test
+
+language: python
+python:
+   - "3.5.1"
+
+script:
+ - npm run karma
+
+addons:
+  postgresql: "9.3"
+
+install:
+  - pip install -r requirements.txt
+
+before_script:
+  - psql -c 'create database jobber_test;' -U postgres
+  - python manage.py db upgrade
+  - sudo apt-get update -q
+  - sudo wget -qO- https://deb.nodesource.com/setup_5.x | sudo bash -
+  - sudo apt-get install -y nodejs postfix
+  - nodejs -v
+  - sudo npm install -g grunt-cli
+  - sudo npm install
+  - ./node_modules/bower/bin/bower install
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - npm start &
+  - sleep 5
