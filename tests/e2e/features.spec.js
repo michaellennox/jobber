@@ -16,13 +16,13 @@ describe("Company partials.", function(){
 // VISITS ADD COMPANY PAGE AND ADDS A COMPANY
     companiesIndexPage.clickAdd();
     companiesNewPage.addCompany("testCo");
-// VISITS INDIVIDUAL COMPANY PAGE
+// VISITS INDIVIDUAL COMPANY PAGE.
     companiesIndexPage.viewFirstCompany();
 // EXPECTS COMPANY VIEW PAGE TO SHOW THE CORRECT NAME
     expect(companiesViewPage.companyName.getText()).toEqual("testCo");
 // EXPECTS THERE TO BE NO PEOPLE TO BEGIN WITH
     expect(companiesViewPage.peopleList.count()).toEqual(0);
-// GOES TO ADD PERSON PAGE AND ADDS PERSON
+// GOES TO ADD PERSON PAGE AND ADDS PERSON.
     companiesViewPage.clickAddPersonLink();
     peopleNewPage.addPerson("Testla");
 // EXPECTS PERSON TO BE ADDED AND DISPLAYED
