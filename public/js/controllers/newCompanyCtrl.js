@@ -4,7 +4,7 @@ jobber.controller('NewCompanyCtrl', ['companiesResourceFactory', '$window', func
   self.createNewCompany = function() {
     companiesResourceFactory.postCompanies(self.name)
       .then(function() {
-        $window.location.href = '/#/companies/' + self.name;
+        $window.location.href = '/#/companies/';
       });
   };
 }]);

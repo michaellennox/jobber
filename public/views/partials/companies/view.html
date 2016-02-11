@@ -1,7 +1,7 @@
 <main ng-controller="ViewCompanyCtrl as ctrl">
   <h2 id="companyName">{{ctrl.company.name}}</h2>
   <section class="people">
-    <a ng-href="/companies/{{ctrl.company.name}}/people/new">Add Employee</a>
+    <a ng-href="/companies/{{ctrl.company.id}}/people/new">Add Employee</a>
     <ul ng-repeat="person in ctrl.people">
       <li>
         {{person.name}}
