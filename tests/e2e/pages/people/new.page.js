@@ -3,8 +3,9 @@ var NewPage = function() {
   this.submit = element(by.css("#submitP"));
 };
 
-NewPage.prototype.addPerson = function (name){
+NewPage.prototype.addPerson = function(name) {
   this.nameInputBox.sendKeys(name);
+  console.log(this.nameInputBox.getText());
   this.submit.click();
 };
 

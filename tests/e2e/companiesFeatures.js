@@ -1,4 +1,4 @@
-describe("Companies' partials", function(){
+describe("Company partials.", function(){
   var indexPage = require("./pages/companies/index.page.js"),
       newPage = require("./pages/companies/new.page.js"),
       viewPage = require("./pages/companies/view.page.js"),
@@ -8,38 +8,24 @@ describe("Companies' partials", function(){
       companiesIndexPage = new indexPage,
       peopleNewPage = new personNewPage;
 
-  beforeEach(function(){
+  it("Runs the feature test", function(){
+// VISITS COMPANIES INDEX PAGE  
     companiesIndexPage.get();
-  });
-
-  it("starts with no companies", function(){
-    expect(companiesIndexPage.companiesList.count()).toEqual(0);
-  });
-
-  describe("Adding a company", function() {
-    beforeEach(function() {
-      companiesNewPage.getNew();
-      companiesNewPage.addCompany("testCo");
-    });
-
-    it("adds company to page", function() {
-      companiesViewPage.viewCompany("testCo");
-      expect(companiesViewPage.companyName).toEqual("testCo");
-    });
-
-    it("begins with no people added", function(){
-      expect(companiesViewPage.peopleList.count()).toEqual(0);
-    });
-
-    describe("When Person is Added", function(){
-      beforeEach(function(){
-        companiesViewPage.clickAddPersonLink();
-        peopleNewPage.addPerson("Testla");
-      });
-
-      it("displays people who have been added on the company view page", function(){
-        expect(peopleNewPage.person).toEqual("Testla");
-      });
-    });
+// EXPECTS THERE TO BE NO COMPANIES YET
+    // expect(companiesIndexPage.companiesList.count()).toEqual(0);
+// VISITS ADD COMPANY PAGE AND ADDS A COMPANY
+    companiesIndexPage.clickAdd();
+    companiesNewPage.addCompany("testCo");
+// VISITS INDIVIDUAL COMPANY PAGE
+    companiesIndexPage.viewFirstCompany();
+// EXPECTS COMPANY VIEW PAGE TO SHOW THE CORRECT NAME
+    expect(companiesViewPage.companyName.getText()).toEqual("testCo");
+// EXPECTS THERE TO BE NO PEOPLE TO BEGIN WITH
+    expect(companiesViewPage.peopleList.count()).toEqual(0);
+// GOES TO ADD PERSON PAGE AND ADDS PERSON
+    companiesViewPage.clickAddPersonLink();
+    peopleNewPage.addPerson("Testla");
+// EXPECTS PERSON TO BE ADDED AND DISPLAYED
+     expect(peopleNewPage.person).toEqual("Testla");
   });
 });
