@@ -7,7 +7,7 @@ describe('ViewCompanyCtrl', function() {
   beforeEach(function() {
     companiesResourceFactoryMock = jasmine.createSpyObj(
       'companiesResourceFactory',
-      ['getCompanyByName']
+      ['getCompanyByID']
     );
     module('Jobber', {
       companiesResourceFactory: companiesResourceFactoryMock
@@ -21,11 +21,11 @@ describe('ViewCompanyCtrl', function() {
         name: 'company'
       }
     };
-    companiesResourceFactoryMock.getCompanyByName
+    companiesResourceFactoryMock.getCompanyByID
       .and.returnValue($q.when(response));
     ctrl = $controller(
       'ViewCompanyCtrl',
-      { $routeParams: {name: 'company'} }
+      { $routeParams: {id: 0} }
     );
     $rootScope = _$rootScope_;
   }));
