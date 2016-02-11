@@ -10,5 +10,11 @@ manager = Manager(app)
 manager.add_command('db', MigrateCommand)
 manager.add_command("runserver", Server(port=8080))
 
+
+@manager.command
+def drop_db():
+    """Drops the db tables."""
+    db.drop_all()
+
 if __name__ == '__main__':
     manager.run()
