@@ -6,8 +6,9 @@ from flask import url_for, request
 from flask.ext.restful import Resource, fields, marshal
 from server import api, db
 from server.models.company import Company
-import urllib
-from urllib import request
+# import urllib
+# from urllib import request
+import urllib.request
 import xml.etree.ElementTree as ET
 import os
 
@@ -52,8 +53,10 @@ class CompanyAPI(Resource):
         pass
 
 class CompanyGetJobAPI(Resource):
-    def get(self, query, location):
+    def post(self, id):
         key = os.environ['INDEED_API_KEY']
+        query = request.json.get('query')
+        location = request.json.get('location')
         xml_file = urllib.request.urlopen('http://api.indeed.com/ads/apisearch?publisher='
           + key + '&q='
           + query + '&l=' + location
@@ -67,12 +70,10 @@ class CompanyGetJobAPI(Resource):
                                  result.find('formattedLocation').text,
                                  result.find('country').text,
                                  result.find('date').text,
-                                 result.find('url').text) for company in companies]}
-
-        #to convert into a string add to end of xml_file: .read().decode('utf-8')
+                                 result.find('url').text) for result in results]}
 
 
 
 api.add_resource(CompaniesAPI, '/api/companies', endpoint='companies')
 api.add_resource(CompanyAPI, '/api/companies/<int:id>', endpoint='company')
-api.add_resource(CompanyGetJobAPI, '/api/companies/<int:id>/getjobs', endpoint='company')
+api.add_resource(CompanyGetJobAPI, '/api/companies/<int:id>/getjobs', endpoint='company/getjobs')
