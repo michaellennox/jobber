@@ -28,7 +28,7 @@ class JobsAPI(Resource):
 
     def post(self, company_id):
         job = Job(
-            title=request.json.get('title')
+            title=request.json.get('title'),
             company_id=company_id
         )
         db.session.add(job)

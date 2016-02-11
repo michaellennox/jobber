@@ -8,4 +8,12 @@
       </li>
     </ul>
   </section>
+  <section class="jobs">
+    <a ng-href="/companies/{{ctrl.company.id}}/jobs/new">Add Job</a>
+    <ul ng-repeat="job in ctrl.jobs">
+      <li>
+        {{job.title}}}
+      </li>
+    </ul>
+  </section>
 </main>
