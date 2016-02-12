@@ -38,7 +38,7 @@ class JobsAPI(Resource):
         )
         db.session.add(job)
         db.session.commit()
-        return 'Job created!', 201
+        return 'Job Created!', 201
 
 
 class JobAPI(Resource):

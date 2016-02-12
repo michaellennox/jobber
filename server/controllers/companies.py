@@ -1,15 +1,15 @@
-#################
-#### imports ####
-#################
+# ################
+# ### imports ####
+# ################
 
 from flask import request
 from flask.ext.restful import Resource, fields, marshal
 from server import api, db
 from server.models.company import Company
 
-################
-#### config ####
-################
+# ###############
+# ### config ####
+# ###############
 
 job_fields = {
     'id': fields.Integer,
@@ -28,9 +28,9 @@ company_fields = {
     'people': fields.List(fields.Nested(person_fields))
 }
 
-################
-#### routes ####
-################
+# ###############
+# ### routes ####
+# ###############
 
 
 class CompaniesAPI(Resource):
