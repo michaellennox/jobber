@@ -22,7 +22,10 @@ class TestJobsAPI(APITestCase, JobsAPIMixin):
 
         self.POST_jobs(company.id, title='MegaJob')
 
-        self.
+        job = Job.query.first()
+
+        self.assertEqual(Job.query.count(), 1)
+        self.assertEqual(job.title, 'MegaJob')
 
 
 class TestJobAPI(APITestCase, JobAPIMixin):

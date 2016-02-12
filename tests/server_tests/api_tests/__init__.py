@@ -43,10 +43,10 @@ class CompaniesAPIMixin(object):
         )
         return req
 
-class ComapnyAPIMixin(object):
+
+class CompanyAPIMixin(object):
     def GET_company(self, company_id):
         return self.client.get("/api/companies/" + company_id)
-
 
 
 class JobsAPIMixin(object):
