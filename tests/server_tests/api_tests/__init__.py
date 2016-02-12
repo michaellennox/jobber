@@ -44,7 +44,7 @@ class CompaniesAPIMixins(object):
         return req
 
 
-class JobsAPIMixins(object):
+class JobsAPIMixin(object):
     def POST_jobs(self, company_id, title='Job Title'):
         req = self.client.post(
             '/api/companies/{}/jobs'.format(company_id),
@@ -54,9 +54,27 @@ class JobsAPIMixins(object):
         return req
 
 
-class JobAPIMixins(object):
+class JobAPIMixin(object):
     def GET_job(self, company_id, id):
         req = self.client.get(
             '/api/companies/{}/jobs/{}'.format(company_id, id)
+        )
+        return req
+
+
+class PeopleAPIMixin(object):
+    def POST_people(self, company_id, name='Mat'):
+        req = self.client.post(
+            '/api/companies/{}/people'.format(company_id),
+            content_type='application/json',
+            data=json.dumps(dict(name=name))
+        )
+        return req
+
+
+class PersonAPIMixin(object):
+    def GET_person(self, company_id, id):
+        req = self.client.get(
+            '/api/companies/{}/people/{}'.format(company_id, id)
         )
         return req
