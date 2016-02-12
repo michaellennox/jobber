@@ -2,7 +2,7 @@
 #### imports ####
 #################
 
-from flask import url_for, request
+from flask import request
 from flask.ext.restful import Resource, fields, marshal
 from server import api, db
 from server.models.company import Company
@@ -18,9 +18,21 @@ import json
 #### config ####
 ################
 
+job_fields = {
+    'id': fields.Integer,
+    'title': fields.String
+}
+
+person_fields = {
+    'id': fields.Integer,
+    'name': fields.String,
+}
+
 company_fields = {
     'id': fields.Integer,
-    'name': fields.String
+    'name': fields.String,
+    'jobs': fields.List(fields.Nested(job_fields)),
+    'people': fields.List(fields.Nested(person_fields))
 }
 
 ################
@@ -73,7 +85,20 @@ class CompanyGetJobAPI(Resource):
                             "date": result.find('date').text,
                             "url": result.find('url').text} for result in results]}
 
+api.add_resource(
+    CompaniesAPI,
+    '/api/companies',
+    endpoint='companies'
+)
 
-api.add_resource(CompaniesAPI, '/api/companies', endpoint='companies')
-api.add_resource(CompanyAPI, '/api/companies/<int:id>', endpoint='company')
-api.add_resource(CompanyGetJobAPI, '/api/companies/<int:id>/getjobs', endpoint='company/getjobs')
+api.add_resource(
+    CompanyAPI,
+    '/api/companies/<int:id>',
+    endpoint='company'
+)
+
+api.add_resource(
+    CompanyGetJobAPI,
+    '/api/companies/<int:id>/getjobs',
+    endpoint='company/getjobs'
+)

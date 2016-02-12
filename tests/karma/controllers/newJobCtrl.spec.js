@@ -1,35 +1,35 @@
-describe('NewPersonCtrl', function() {
+describe('NewJobCtrl', function() {
   var ctrl;
   var $rootScope;
-  var peopleResourceFactoryMock;
+  var jobsResourceFactoryMock;
   var $windowMock;
 
   beforeEach(function() {
     $windowMock = { location: { href: jasmine.createSpy() } };
-    peopleResourceFactoryMock = jasmine.createSpyObj(
-      'peopleResourceFactory',
-      ['postPeople']
+    jobsResourceFactoryMock = jasmine.createSpyObj(
+      'jobsResourceFactory',
+      ['postJobs']
     );
     module('Jobber', {
-      peopleResourceFactory: peopleResourceFactoryMock,
+      jobsResourceFactory: jobsResourceFactoryMock,
       $window: $windowMock
     });
   });
 
   beforeEach(inject(function($controller, $q, _$rootScope_) {
-    peopleResourceFactoryMock.postPeople
+    jobsResourceFactoryMock.postJobs
       .and.returnValue($q.when({}));
     ctrl = $controller(
-      'NewPersonCtrl',
+      'NewJobCtrl',
       { $routeParams: {id: 1} }
     );
     $rootScope = _$rootScope_;
   }));
 
-  describe('#createNewPerson()', function() {
+  describe('#createNewJob()', function() {
     it('redirects to /#/companies/:id', function() {
-      ctrl.name = 'person';
-      ctrl.createNewPerson();
+      ctrl.title = 'Ruby Wizard';
+      ctrl.createNewJob();
       $rootScope.$digest();
       expect($windowMock.location.href).toEqual('/companies/1');
     });

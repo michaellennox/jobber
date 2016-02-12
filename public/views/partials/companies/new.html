@@ -1,6 +1,9 @@
-<main ng-controller="NewCompanyCtrl as ctrl">
+<div ng-controller="NewCompanyCtrl as ctrl" class="col-md-6 col-md-offset-3">
   <form ng-submit="ctrl.createNewCompany()">
-    <input ng-model="ctrl.name" type="text" placeholder="Company Name" required autofocus>
-    <button>Submit</button>
+    <div class="form-group">
+      <label>Name</label>
+      <input ng-model="ctrl.name" type="text" class="form-control" placeholder="Company Name" required autofocus>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
   </form>
-</main>
+</div>

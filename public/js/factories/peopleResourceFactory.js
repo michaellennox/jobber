@@ -8,5 +8,9 @@ jobber.factory('peopleResourceFactory', ['$http', function($http) {
     );
   };
 
+  peopleResourceFactory.getPersonByID = function(id, company_id){
+    return $http.get('/api/companies/' + company_id + '/people/' + id);
+  };
+
   return peopleResourceFactory;
 }]);
