@@ -44,7 +44,7 @@ class CompaniesAPI(Resource):
         )
         db.session.add(company)
         db.session.commit()
-        return 'Company created!', 201
+        return 'Company Created!', 201
 
 
 class CompanyAPI(Resource):

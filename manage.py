@@ -16,5 +16,11 @@ def clean_db():
     """Drops the db tables."""
     db.drop_all()
 
+
+@manager.command
+def build_db():
+    """Builds db that an idiot dropped."""
+    db.create_all()
+
 if __name__ == '__main__':
     manager.run()
