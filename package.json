@@ -5,12 +5,14 @@
   "main": " ",
   "scripts": {
     "start": "python3 manage.py runserver",
-    "test": "npm run karma && npm run nose && npm run e2e",
+    "test": "npm run nose && python3 manage.py build_db && npm run update-webd && grunt test && python3 manage.py clean_db && python3 manage.py build_db",
     "webd": "webdriver-manager start",
+    "update-webd": "./node_modules/protractor/bin/webdriver-manager update --standalone --chrome",
     "karma": "karma start tests/karma/karma.conf.js",
     "e2e": "protractor tests/e2e/conf.js",
     "nose": "venv/bin/nosetests -v",
-    "setup": "npm install && bower install && pip3 install -r requirements.txt && python3 manage.py db upgrade"
+    "setup": "npm install && bower install && pip3 install -r requirements.txt && python3 manage.py db upgrade",
+    "postinstall": "bower install"
   },
   "repository": {
     "type": "git",
@@ -23,7 +25,11 @@
   },
   "homepage": "https://github.com/michaellennox/jobber#readme",
   "dependencies": {
-    "bower": "^1.7.7"
+    "bower": "^1.7.7",
+    "grunt": "^0.4.5",
+    "grunt-karma": "^0.12.1",
+    "grunt-protractor-runner": "^3.0.0",
+    "grunt-protractor-webdriver": "^0.2.5"
   },
   "devDependencies": {
     "jasmine-core": "^2.4.1",
