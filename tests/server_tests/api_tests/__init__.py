@@ -1,6 +1,6 @@
-# ################
-# ### imports ####
-# ################
+#################
+#### imports ####
+#################
 
 from flask import json
 from flask.ext.testing import TestCase
@@ -8,9 +8,9 @@ from flask.ext.testing import TestCase
 from server import app, db
 from server.config import TestingConfig
 
-# ########################
-# ### TestCase config ####
-# ########################
+#########################
+#### TestCase config ####
+#########################
 
 
 class APITestCase(TestCase):
@@ -25,9 +25,9 @@ class APITestCase(TestCase):
         db.session.remove()
         db.drop_all()
 
-# #######################
-# ### request mixins ####
-# #######################
+########################
+#### request mixins ####
+########################
 
 
 class CompaniesAPIMixins(object):
