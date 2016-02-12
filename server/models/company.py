@@ -7,8 +7,8 @@ class Company(db.Model):
     people = db.relationship("Person", backref="company")
     jobs = db.relationship("Job", backref="company")
 
-    def __init__(self, name):
-        self.name = name
+    def __init__(self, args):
+        self.name = args['name']
 
     def __repr__(self):
         return '<Company {}>'.format(self.id)
