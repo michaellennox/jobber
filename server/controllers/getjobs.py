@@ -15,6 +15,6 @@ class GetJobsAPI(Resource):
 
 api.add_resource(
     GetJobsAPI,
-    '/api/companies/getjobs',
-    endpoint='company/getjobs'
+    '/api/getjobs',
+    endpoint='getjobs'
 )
