@@ -11,6 +11,7 @@ from server.models.company import Company
 import urllib.request
 import xml.etree.ElementTree as ET
 import os
+import json
 
 
 ################
@@ -64,14 +65,13 @@ class CompanyGetJobAPI(Resource):
         tree = ET.parse(xml_file)
         root = tree.getroot()
         results = root.findall('results/result')
-        return {'jobs': [marshal(result.find('jobtitle').text,
-                                 result.find('company').text,
-                                 result.find('snippet').text,
-                                 result.find('formattedLocation').text,
-                                 result.find('country').text,
-                                 result.find('date').text,
-                                 result.find('url').text) for result in results]}
-
+        return {'jobs': [{"jobtitle": result.find('jobtitle').text,
+                           "company": result.find('company').text,
+                            "snippet": result.find('snippet').text,
+                            "formattedLocation": result.find('formattedLocation').text,
+                            "country": result.find('country').text,
+                            "date": result.find('date').text,
+                            "url": result.find('url').text} for result in results]}
 
 
 api.add_resource(CompaniesAPI, '/api/companies', endpoint='companies')
