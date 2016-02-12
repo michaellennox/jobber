@@ -6,9 +6,9 @@ class Person(db.Model):
     name = db.Column(db.String(50))
     company_id = db.Column(db.Integer, db.ForeignKey("company.id"))
 
-    def __init__(self, name, company_id):
-        self.name = name
-        self.company_id = company_id
+    def __init__(self, args):
+        self.name = args['name']
+        self.company_id = args['company_id']
 
     def __repr__(self):
         return "<Person {}>".format(self.id)

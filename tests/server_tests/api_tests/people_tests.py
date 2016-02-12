@@ -33,7 +33,7 @@ class TestPersonAPI(APITestCase, PersonAPIMixin):
         company = Company(dict(name='ACMECorp'))
         db.session.add(company)
         db.session.commit()
-        person = Person(name='JobHuntr', company_id=company.id)
+        person = Person(dict(name='JobHuntr', company_id=company.id))
         db.session.add(person)
         db.session.commit()
 

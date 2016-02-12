@@ -33,7 +33,7 @@ class TestJobAPI(APITestCase, JobAPIMixin):
         company = Company(dict(name='ACMECorp'))
         db.session.add(company)
         db.session.commit()
-        job = Job(title='JobMe', company_id=company.id)
+        job = Job(dict(title='JobMe', company_id=company.id))
         db.session.add(job)
         db.session.commit()
 

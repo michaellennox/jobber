@@ -2,7 +2,6 @@
 #### imports ####
 #################
 
-from flask import request
 from flask.ext.restful import Resource, fields, marshal, reqparse
 from server import api, db
 from server.models.company import Company
@@ -29,15 +28,16 @@ company_fields = {
     'people': fields.List(fields.Nested(person_fields))
 }
 
-################
-#### routes ####
-################
-
 
 class CompaniesResource(Resource):
     def __init__(self):
         self.reqparse = reqparse.RequestParser()
         self.reqparse.add_argument('name', location='json')
+        super().__init__()
+
+#####################
+#### controllers ####
+#####################
 
 
 class CompaniesAPI(CompaniesResource):

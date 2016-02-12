@@ -2,8 +2,7 @@
 #### imports ####
 #################
 
-from flask import request
-from flask.ext.restful import Resource, fields, marshal
+from flask.ext.restful import Resource, fields, marshal, reqparse
 from server import api, db
 from server.models.job import Job
 
@@ -22,26 +21,32 @@ job_fields = {
     'company': fields.Nested(company_fields)
 }
 
-################
-#### routes ####
-################
+
+class JobsResource(Resource):
+    def __init__(self):
+        self.reqparse = reqparse.RequestParser()
+        self.reqparse.add_argument('title', location='json')
+        super().__init__()
+
+#####################
+#### controllers ####
+#####################
 
 
-class JobsAPI(Resource):
+class JobsAPI(JobsResource):
     def get(self, company_id):
         pass
 
     def post(self, company_id):
-        job = Job(
-            title=request.json.get('title'),
-            company_id=company_id
-        )
+        args = self.reqparse.parse_args()
+        args['company_id'] = company_id
+        job = Job(args)
         db.session.add(job)
         db.session.commit()
         return 'Job Created!', 201
 
 
-class JobAPI(Resource):
+class JobAPI(JobsResource):
     def get(self, company_id, id):
         job = Job.query.get(id)
         return marshal(job, job_fields)
