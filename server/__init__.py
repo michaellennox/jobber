@@ -25,6 +25,7 @@ db = SQLAlchemy(app)
 import server.controllers.companies
 import server.controllers.people
 import server.controllers.jobs
+import server.controllers.getjobs
 
 
 @app.route('/', defaults={'path': ''})
