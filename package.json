@@ -5,6 +5,7 @@
   "main": " ",
   "scripts": {
     "start": "python3 manage.py runserver",
+    "webd": "webdriver-manager start",
     "test": "echo \"Error: no test specified\" && exit 1",
     "karma": "karma start tests/karma/karma.conf.js",
     "e2e": "protractor tests/e2e/conf.js",
