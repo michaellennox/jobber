@@ -51,14 +51,3 @@ class PersonAPI(PeopleResource):
     def get(self, company_id, id):
         person = Person.query.get(id)
         return marshal(person, person_fields)
-
-api.add_resource(
-    PeopleAPI,
-    '/api/companies/<int:company_id>/people',
-    endpoint='people'
-)
-api.add_resource(
-    PersonAPI,
-    '/api/companies/<int:company_id>/people/<int:id>',
-    endpoint='person'
-)

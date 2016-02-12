@@ -3,7 +3,7 @@
 #################
 
 from flask.ext.restful import Resource, fields, marshal, reqparse
-from server import api, db
+from server import db
 from server.models.company import Company
 
 
@@ -63,15 +63,3 @@ class CompanyAPI(CompaniesResource):
 
     def delete(self, id):
         pass
-
-api.add_resource(
-    CompaniesAPI,
-    '/api/companies',
-    endpoint='companies'
-)
-
-api.add_resource(
-    CompanyAPI,
-    '/api/companies/<int:id>',
-    endpoint='company'
-)

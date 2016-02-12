@@ -22,10 +22,7 @@ app.config.from_object('server.' + os.environ['APP_SETTINGS'])
 api = Api(app)
 db = SQLAlchemy(app)
 
-import server.controllers.companies
-import server.controllers.people
-import server.controllers.jobs
-import server.controllers.getjobs
+import server.routes
 
 
 @app.route('/', defaults={'path': ''})
