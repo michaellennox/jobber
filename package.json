@@ -10,7 +10,7 @@
     "update-webd": "./node_modules/protractor/bin/webdriver-manager update --standalone --chrome",
     "karma": "karma start tests/karma/karma.conf.js",
     "e2e": "protractor tests/e2e/conf.js",
-    "nose": "venv/bin/nosetests -v",
+    "nose": "venv/bin/nosetests --rednose -v",
     "setup": "npm install && bower install && pip3 install -r requirements.txt && python3 manage.py db upgrade",
     "postinstall": "bower install"
   },

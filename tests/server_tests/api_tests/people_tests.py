@@ -6,7 +6,7 @@ from . import APITestCase, PeopleAPIMixin, PersonAPIMixin
 
 class TestPeopleAPI(APITestCase, PeopleAPIMixin):
     def test_valid_POST_returns_success_message(self):
-        company = Company(name='ACMECorp')
+        company = Company(dict(name='ACMECorp'))
         db.session.add(company)
         db.session.commit()
 
@@ -16,7 +16,7 @@ class TestPeopleAPI(APITestCase, PeopleAPIMixin):
         self.assertEquals(res.json, str('Person Created!'))
 
     def test_valid_POST_saves_to_database(self):
-        company = Company(name='ACMECorp')
+        company = Company(dict(name='ACMECorp'))
         db.session.add(company)
         db.session.commit()
 
@@ -30,7 +30,7 @@ class TestPeopleAPI(APITestCase, PeopleAPIMixin):
 
 class TestPersonAPI(APITestCase, PersonAPIMixin):
     def test_GET_returns_person_as_json(self):
-        company = Company(name='ACMECorp')
+        company = Company(dict(name='ACMECorp'))
         db.session.add(company)
         db.session.commit()
         person = Person(name='JobHuntr', company_id=company.id)
