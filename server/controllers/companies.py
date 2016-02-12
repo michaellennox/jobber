@@ -6,12 +6,6 @@ from flask import request
 from flask.ext.restful import Resource, fields, marshal
 from server import api, db
 from server.models.company import Company
-# import urllib
-# from urllib import request
-import urllib.request
-import xml.etree.ElementTree as ET
-import os
-import json
 
 
 ################
@@ -65,26 +59,6 @@ class CompanyAPI(Resource):
     def delete(self, id):
         pass
 
-class CompanyGetJobAPI(Resource):
-    def post(self, id):
-        key = os.environ['INDEED_API_KEY']
-        query = request.json.get('query')
-        location = request.json.get('location')
-        xml_file = urllib.request.urlopen('http://api.indeed.com/ads/apisearch?publisher='
-          + key + '&q='
-          + query + '&l=' + location
-          +'&sort=&radius=&st=employer&jt=&start=&limit=&fromage=&filter=&latlong=1&co=gb&chnl=&userip=1.2.3.4&useragent=Mozilla/%2F4.0%28Firefox%29&v=2')
-        tree = ET.parse(xml_file)
-        root = tree.getroot()
-        results = root.findall('results/result')
-        return {'jobs': [{"jobtitle": result.find('jobtitle').text,
-                           "company": result.find('company').text,
-                            "snippet": result.find('snippet').text,
-                            "formattedLocation": result.find('formattedLocation').text,
-                            "country": result.find('country').text,
-                            "date": result.find('date').text,
-                            "url": result.find('url').text} for result in results]}
-
 api.add_resource(
     CompaniesAPI,
     '/api/companies',
@@ -95,10 +69,4 @@ api.add_resource(
     CompanyAPI,
     '/api/companies/<int:id>',
     endpoint='company'
-)
-
-api.add_resource(
-    CompanyGetJobAPI,
-    '/api/companies/<int:id>/getjobs',
-    endpoint='company/getjobs'
 )
