@@ -14,7 +14,7 @@ class UsersResource(Resource):
 
 
 class UsersAPI(UsersResource):
-    def post(self, company_id):
+    def post(self):
         args = self.reqparse.parse_args()
         user_datastore.create_user(
             email=args['email'],
