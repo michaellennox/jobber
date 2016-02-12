@@ -1,14 +1,6 @@
-#################
-#### imports ####
-#################
-
 from flask.ext.restful import Resource, fields, marshal, reqparse
 from server import db
 from server.models.job import Job
-
-################
-#### config ####
-################
 
 company_fields = {
     'id': fields.Integer,
@@ -28,15 +20,8 @@ class JobsResource(Resource):
         self.reqparse.add_argument('title', location='json')
         super().__init__()
 
-#####################
-#### controllers ####
-#####################
-
 
 class JobsAPI(JobsResource):
-    def get(self, company_id):
-        pass
-
     def post(self, company_id):
         args = self.reqparse.parse_args()
         args['company_id'] = company_id
@@ -50,9 +35,3 @@ class JobAPI(JobsResource):
     def get(self, company_id, id):
         job = Job.query.get(id)
         return marshal(job, job_fields)
-
-    def put(self, company_id, id):
-        pass
-
-    def delete(self, company_id, id):
-        pass

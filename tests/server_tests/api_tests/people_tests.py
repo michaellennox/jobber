@@ -1,7 +1,7 @@
 from server import db
 from server.models.company import Company
 from server.models.person import Person
-from . import APITestCase, PeopleAPIMixin, PersonAPIMixin
+from .helpers import APITestCase, PeopleAPIMixin, PersonAPIMixin
 
 
 class TestPeopleAPI(APITestCase, PeopleAPIMixin):

@@ -1,6 +1,6 @@
-from . import APITestCase, CompaniesAPIMixin, CompanyAPIMixin
 from server import db
 from server.models.company import Company
+from .helpers import APITestCase, CompaniesAPIMixin, CompanyAPIMixin
 
 
 class TestCompaniesAPI(APITestCase, CompaniesAPIMixin):

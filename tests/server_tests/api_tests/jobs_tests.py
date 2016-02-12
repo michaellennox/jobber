@@ -1,7 +1,7 @@
 from server import db
 from server.models.company import Company
 from server.models.job import Job
-from . import APITestCase, JobsAPIMixin, JobAPIMixin
+from .helpers import APITestCase, JobsAPIMixin, JobAPIMixin
 
 
 class TestJobsAPI(APITestCase, JobsAPIMixin):

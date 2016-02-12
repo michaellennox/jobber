@@ -1,14 +1,6 @@
-#################
-#### imports ####
-#################
-
 from flask.ext.restful import Resource, fields, marshal, reqparse
-from server import api, db
+from server import db
 from server.models.person import Person
-
-################
-#### config ####
-################
 
 company_fields = {
     'id': fields.Integer,
@@ -27,11 +19,6 @@ class PeopleResource(Resource):
         self.reqparse = reqparse.RequestParser()
         self.reqparse.add_argument('name', location='json')
         super().__init__()
-
-
-#####################
-#### controllers ####
-#####################
 
 
 class PeopleAPI(PeopleResource):
