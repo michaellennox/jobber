@@ -1,7 +1,9 @@
-from . import APITestCase, CompaniesAPIMixins
+from . import APITestCase, CompaniesAPIMixins, CompanyAPIMixin
+from server import db
+from server.models.company import Company
 
 
-class TestCompaniesAPI(APITestCase, CompaniesAPIMixins):
+class TestCompaniesAPI(APITestCase, CompaniesAPIMixin):
     def test_GET_returns_companies_as_json(self):
         res = self.GET_companies()
         self.assert_status(res, 200)
@@ -11,3 +13,19 @@ class TestCompaniesAPI(APITestCase, CompaniesAPIMixins):
         res = self.POST_companies()
         self.assert_status(res, 201)
         self.assertEquals(res.json, str('Company Created!'))
+
+    def test_valid_POST_saves_to_database(self):
+        self.POST_companies()
+        company = Company.query.first()
+        self.assertEqual(Company.query.count(), 1)
+        self.assertEqual(company.name, 'ACMECorp')
+
+
+class TestCompanyAPI(APITestCase, CompanyAPIMixin):
+    def test_valid_GET_returns_company_as_json(self):
+        company = Company(name='ACMECorp')
+        db.session.add(company)
+        db.session.commit()
+        res = self.GET_company('1')
+        self.assertEquals(res.json.get('name'), 'ACMECorp')
+        self.asser_status(res, 200)

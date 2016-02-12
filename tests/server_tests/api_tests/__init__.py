@@ -30,7 +30,7 @@ class APITestCase(TestCase):
 ########################
 
 
-class CompaniesAPIMixins(object):
+class CompaniesAPIMixin(object):
     def GET_companies(self):
         req = self.client.get('/api/companies')
         return req
@@ -42,6 +42,11 @@ class CompaniesAPIMixins(object):
             data=json.dumps(dict(name=name))
         )
         return req
+
+class ComapnyAPIMixin(object):
+    def GET_company(self, company_id):
+        return self.client.get("/api/companies/" + company_id)
+
 
 
 class JobsAPIMixin(object):
