@@ -4,7 +4,7 @@ jobber.controller('ViewJobCtrl', ['jobsResourceFactory', '$routeParams', functio
   self.company_id = $routeParams.company_id;
 
   (self.init = function() {
-    jobsResourceFactory.getJobByID(self.id, self.company_id)
+    jobsResourceFactory.getJobByID(self.company_id, self.id)
       .then(function(response) {
         self.job = response.data;
       });
