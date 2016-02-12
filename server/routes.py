@@ -46,3 +46,9 @@ api.add_resource(
     '/api/getjobs',
     endpoint='getjobs'
 )
+
+api.add_resource(
+    UsersAPI,
+    '/api/users',
+    endpoint='users'
+)
