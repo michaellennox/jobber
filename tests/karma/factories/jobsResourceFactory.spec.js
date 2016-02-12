@@ -16,32 +16,16 @@ describe('jobsResourceFactory', function() {
 
   describe('#postJobs()', function() {
     it('makes a POST request to /api/companies/:company_id/jobs', function() {
-      $httpBackend
-        .whenPOST('/api/companies/1/jobs').respond({
-          message: 'Job Created!'
-        });
-      factory.postJobs('Java Me', 1)
-        .then(function(response) {
-          expect(response.data).toEqual({
-            message: 'Job Created!'
-          });
-        });
+      $httpBackend.expectPOST('/api/companies/1/jobs').respond(201);
+      factory.postJobs(1, 'Java Me');
       $httpBackend.flush();
     });
   });
 
   describe("#getJobByID()", function(){
     it("Makes a get request to /api/companies/:company_id/jobs/:id", function(){
-      $httpBackend
-        .whenGET("/api/companies/3/jobs/5").respond({
-          message: "Job Info is Epic"
-        });
-      factory.getJobByID(5, 3)
-        .then(function(response){
-          expect(response.data).toEqual({
-            message: "Job Info is Epic"
-          });
-        });
+      $httpBackend.expectGET("/api/companies/3/jobs/5").respond(200);
+      factory.getJobByID(3, 5);
       $httpBackend.flush();
     });
   });
