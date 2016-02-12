@@ -6,6 +6,7 @@
   "scripts": {
     "start": "python3 manage.py runserver",
     "test": "npm run nose && python3 manage.py build_db && npm run update-webd && grunt test && python3 manage.py clean_db && python3 manage.py build_db",
+    "test-ci": "nosetests && python3 manage.py build_db && npm run update-webd && grunt test && python3 manage.py clean_db && python3 manage.py build_db",
     "webd": "webdriver-manager start",
     "update-webd": "./node_modules/protractor/bin/webdriver-manager update --standalone --chrome",
     "karma": "karma start tests/karma/karma.conf.js",
