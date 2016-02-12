@@ -6,3 +6,4 @@ venv
 *.swp
 phantomjsdriver.log
 npm-debug.log
+__pychache__
