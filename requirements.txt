@@ -1,7 +1,6 @@
 alembic==0.8.4
 aniso8601==1.1.0
 astroid==1.4.4
-blessings==1.6
 colorama==0.3.6
 Flask==0.10.1
 Flask-Migrate==1.7.0
