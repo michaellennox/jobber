@@ -5,14 +5,14 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     karma: {
       options: {
-        configFile: './test/front_end/karma.conf.js'
+        configFile: './tests/karma/karma.conf.js'
       },
       run: {
       }
     },
     protractor: {
       options: {
-        configFile: './test/e2e/conf.js',
+        configFile: './tests/e2e/conf.js',
         keepAlive: true
       },
       run: {
