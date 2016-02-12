@@ -3,15 +3,17 @@
   <section class="col-md-6">
     <h2>{{ctrl.company.name}}</h2>
   </section>
-  <section class="col-md-6 text-center">
+
+  <section class="col-md-6 text-center people">
     <h2>Employees</h2>
     <ul class="list-group">
       <li ng-repeat="person in ctrl.people" class="list-group-item">
         {{person.name}}
       </li>
     </ul>
-    <a ng-href="/companies/{{ctrl.company.id}}/people/new" class="btn btn-success">Add Employee</a>
+    <a id="addPerson" ng-href="/companies/{{ctrl.company.id}}/people/new" class="btn btn-success">Add Employee</a>
   </section>
+
   <section class="col-md-8 col-md-offset-2 text-center">
     <h2>Jobs</h2>
     <ul class="list-group">
