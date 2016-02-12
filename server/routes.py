@@ -3,6 +3,7 @@ from server.controllers.companies import CompaniesAPI, CompanyAPI
 from server.controllers.jobs import JobsAPI, JobAPI
 from server.controllers.people import PeopleAPI, PersonAPI
 from server.controllers.getjobs import GetJobsAPI
+from server.controllers.users import UsersAPI
 
 api.add_resource(
     CompaniesAPI,

@@ -1,5 +1,5 @@
 from server import db, app
-from flask.ext.security import Security, SQLAlchemyUserDatastore, UserMixin
+from flask.ext.security import Security, SQLAlchemyUserDatastore, UserMixin, RoleMixin
 
 roles_users = db.Table(
     'roles_users',
