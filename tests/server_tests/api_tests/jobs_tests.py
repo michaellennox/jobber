@@ -1,10 +1,10 @@
 from server import db
 from server.models.company import Company
 from server.models.job import Job
-from . import APITestCase, JobsAPIMixins, JobAPIMixins
+from . import APITestCase, JobsAPIMixin, JobAPIMixin
 
 
-class TestJobsAPI(APITestCase, JobsAPIMixins):
+class TestJobsAPI(APITestCase, JobsAPIMixin):
     def test_valid_POST_returns_success_message(self):
         company = Company(name='ACMECorp')
         db.session.add(company)
@@ -15,8 +15,20 @@ class TestJobsAPI(APITestCase, JobsAPIMixins):
         self.assert_status(res, 201)
         self.assertEquals(res.json, str('Job Created!'))
 
+    def test_valid_POST_saves_to_database(self):
+        company = Company(name='ACMECorp')
+        db.session.add(company)
+        db.session.commit()
 
-class TestJobAPI(APITestCase, JobAPIMixins):
+        self.POST_jobs(company.id, title='MegaJob')
+
+        job = Job.query.first()
+
+        self.assertEqual(Job.query.count(), 1)
+        self.assertEqual(job.title, 'MegaJob')
+
+
+class TestJobAPI(APITestCase, JobAPIMixin):
     def test_GET_returns_job_as_json(self):
         company = Company(name='ACMECorp')
         db.session.add(company)

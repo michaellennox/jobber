@@ -6,6 +6,7 @@
   "scripts": {
     "start": "python3 manage.py runserver",
     "test": "npm run karma && npm run nose && npm run e2e",
+    "webd": "webdriver-manager start",
     "karma": "karma start tests/karma/karma.conf.js",
     "e2e": "protractor tests/e2e/conf.js",
     "nose": "venv/bin/nosetests -v",

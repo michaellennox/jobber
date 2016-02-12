@@ -7,6 +7,7 @@ from flask.ext.restful import Resource, fields, marshal
 from server import api, db
 from server.models.company import Company
 
+
 ################
 #### config ####
 ################
@@ -63,6 +64,7 @@ api.add_resource(
     '/api/companies',
     endpoint='companies'
 )
+
 api.add_resource(
     CompanyAPI,
     '/api/companies/<int:id>',
