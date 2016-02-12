@@ -8,7 +8,7 @@ describe('companiesResourceFactory', function() {
     factory = companiesResourceFactory;
     $httpBackend = _$httpBackend_;
   }));
-  
+
   afterEach(function() {
     $httpBackend.verifyNoOutstandingExpectation();
     $httpBackend.verifyNoOutstandingRequest();
@@ -28,6 +28,14 @@ describe('companiesResourceFactory', function() {
       factory.postCompanies('a name');
       $httpBackend.flush();
     });
+  });
+
+  describe("#deleteCompany()", function(){
+    it("makes a DELETE request to api/companies/:company_id", function(){
+      $httpBackend.expectDELETE("/api/companies/666").respond(204);
+      factory.deleteCompany(666);
+      $httpBackend.flush();
+    })
   });
 
   describe('#getCompanyByID()', function() {
