@@ -49,8 +49,5 @@ describe("Company partials.", function(){
 // so she decides to delete it.
     companiesViewPage.clickDeleteCompany();
     expect(browser.getCurrentUrl()).toEqual("http://localhost:8080/comapnies");
-
-
-
   });
 });
