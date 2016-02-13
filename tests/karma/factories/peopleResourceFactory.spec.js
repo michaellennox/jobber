@@ -23,7 +23,7 @@ describe('peopleResourceFactory', function() {
   });
 
   describe("#getPersonByID()", function(){
-    it("Makes a GET request to /api/companies/:company_id/people/:id", function(){
+    it("Makes a get request to /api/companies/:company_id/people/:id", function(){
       $httpBackend.expectGET("/api/companies/1/people/5").respond(200);
       factory.getPersonByID(1, 5);
       $httpBackend.flush();
