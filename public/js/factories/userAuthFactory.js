@@ -31,5 +31,24 @@ jobber.factory('userAuthFactory', ['$q', '$http', function($q, $http) {
     return $http.delete('/api/sessions');
   };
 
+  userAuthFactory.register = function(email, password, first_name, last_name) {
+    var deferred = $q.defer();
+    $http.post('/api/users', {
+      email: email,
+      password: password,
+      first_name: first_name,
+      last_name:last_name
+    }).then(function(res) {
+        deferred.resolve();
+      }, function(res_err) {
+        deferred.reject(res_err.data);
+      });
+    return deferred.promise;
+  };
+
+  userAuthFactory.currentUser = function() {
+    return self._user;
+  };
+
   return userAuthFactory;
 }]);
