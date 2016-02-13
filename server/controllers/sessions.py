@@ -1,7 +1,6 @@
 from flask.ext.restful import Resource, reqparse
 from flask.ext.security import login_user, logout_user
 from flask.ext.security.utils import verify_password
-from server import db
 from server.models.user import User, user_datastore
 
 
