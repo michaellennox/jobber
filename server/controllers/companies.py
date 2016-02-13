@@ -1,16 +1,6 @@
-#################
-#### imports ####
-#################
-
-from flask import request
-from flask.ext.restful import Resource, fields, marshal
-from server import api, db
+from flask.ext.restful import Resource, fields, marshal, reqparse
+from server import db
 from server.models.company import Company
-
-
-################
-#### config ####
-################
 
 job_fields = {
     'id': fields.Integer,
@@ -29,26 +19,28 @@ company_fields = {
     'people': fields.List(fields.Nested(person_fields))
 }
 
-################
-#### routes ####
-################
+
+class CompaniesResource(Resource):
+    def __init__(self):
+        self.reqparse = reqparse.RequestParser()
+        self.reqparse.add_argument('name', location='json')
+        super().__init__()
 
 
-class CompaniesAPI(Resource):
+class CompaniesAPI(CompaniesResource):
     def get(self):
         companies = Company.query.all()
         return {'companies': [marshal(company, company_fields) for company in companies]}
 
     def post(self):
-        company = Company(
-            name=request.json.get('name')
-        )
+        args = self.reqparse.parse_args()
+        company = Company(args)
         db.session.add(company)
         db.session.commit()
         return 'Company Created!', 201
 
 
-class CompanyAPI(Resource):
+class CompanyAPI(CompaniesResource):
     def get(self, id):
         company = Company.query.get(id)
         return marshal(company, company_fields)
@@ -58,15 +50,3 @@ class CompanyAPI(Resource):
 
     def delete(self, id):
         pass
-
-api.add_resource(
-    CompaniesAPI,
-    '/api/companies',
-    endpoint='companies'
-)
-
-api.add_resource(
-    CompanyAPI,
-    '/api/companies/<int:id>',
-    endpoint='company'
-)

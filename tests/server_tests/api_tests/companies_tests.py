@@ -1,6 +1,6 @@
-from . import APITestCase, CompaniesAPIMixin, CompanyAPIMixin
 from server import db
 from server.models.company import Company
+from .helpers import APITestCase, CompaniesAPIMixin, CompanyAPIMixin
 
 
 class TestCompaniesAPI(APITestCase, CompaniesAPIMixin):
@@ -27,7 +27,7 @@ class TestCompaniesAPI(APITestCase, CompaniesAPIMixin):
 
 class TestCompanyAPI(APITestCase, CompanyAPIMixin):
     def test_valid_GET_returns_company_as_json(self):
-        company = Company(name='ACMECorp')
+        company = Company(dict(name='ACMECorp'))
         db.session.add(company)
         db.session.commit()
 
