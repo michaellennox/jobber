@@ -1,6 +1,7 @@
 from server.models.user import User
 from .helpers import APITestCase, UsersAPIMixin
 
+
 class TestUsersAPI(APITestCase, UsersAPIMixin):
     def test_valid_POST_returns_success_message(self):
         res = self.POST_users()
