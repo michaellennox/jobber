@@ -22,6 +22,14 @@ describe('jobsResourceFactory', function() {
     });
   });
 
+  describe("#deleteJobByID()", function(){
+    it("makes a DELETE request to api/companies/:company_id/jobs/:id", function(){
+      $httpBackend.expectDELETE("/api/companies/666/jobs/66").respond(204);
+      factory.deleteJobByID(666, 66);
+      $httpBackend.flush();
+    });
+  });
+
   describe("#getJobByID()", function(){
     it("Makes a GET request to /api/companies/:company_id/jobs/:id", function(){
       $httpBackend.expectGET("/api/companies/3/jobs/5").respond(200);
