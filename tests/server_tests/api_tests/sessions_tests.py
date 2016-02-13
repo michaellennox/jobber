@@ -28,3 +28,9 @@ class TestSessionsAPI(APITestCase, SessionsAPIMixin):
 
         self.assert_status(res, 400)
         self.assertEqual(res.json, str('Invalid username or password'))
+
+    def test_DELETE_returns_success_message(self):
+        res = self.DELETE_sessions()
+
+        self.assert_status(res, 200)
+        self.assertEqual(res.json, str('Successfully logged out'))

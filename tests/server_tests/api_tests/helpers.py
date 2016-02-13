@@ -104,3 +104,7 @@ class SessionsAPIMixin(object):
             ))
         )
         return req
+
+    def DELETE_sessions(self):
+        req = self.client.delete('/api/sessions')
+        return req
