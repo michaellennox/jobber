@@ -1,4 +1,4 @@
-jobber.controller('ViewCompanyCtrl', ['companiesResourceFactory', '$routeParams', function(companiesResourceFactory, $routeParams) {
+jobber.controller('ViewCompanyCtrl', ['companiesResourceFactory', '$routeParams', '$window', function(companiesResourceFactory, $routeParams, $window) {
   var self = this;
   self.id = $routeParams.id;
 
@@ -10,4 +10,12 @@ jobber.controller('ViewCompanyCtrl', ['companiesResourceFactory', '$routeParams'
         self.jobs = response.data.jobs;
       });
   })();
+
+ function deleteCompany() {
+    companiesResourceFactory.deleteCompanyByID(self.id)
+      .then(function(){
+        $window.location.href = '/companies';
+      });
+  };
+
 }]);
