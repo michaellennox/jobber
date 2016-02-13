@@ -11,7 +11,7 @@ jobber.factory('userAuthFactory', ['$q', '$http', function($q, $http) {
     } else {
       return false;
     }
-  }
+  };
 
   userAuthFactory.login = function(email, password) {
     var deferred = $q.defer();
@@ -24,7 +24,12 @@ jobber.factory('userAuthFactory', ['$q', '$http', function($q, $http) {
         deferred.reject(res_err.data);
       });
     return deferred.promise;
-  }
+  };
+
+  userAuthFactory.logout = function() {
+    self._user = null;
+    return $http.delete('/api/sessions');
+  };
 
   return userAuthFactory;
 }]);

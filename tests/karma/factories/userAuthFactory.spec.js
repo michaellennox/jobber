@@ -74,4 +74,14 @@ describe('userAuthFactory', function() {
       });
     });
   });
+
+  describe('#logout()', function() {
+    it('logs a user out', function() {
+      $httpBackend.expectDELETE('/api/sessions').respond(200);
+      factory._user = 'User Is Logged In';
+      factory.logout();
+      $httpBackend.flush();
+      expect(factory.isLoggedIn()).toBe(false);
+    });
+  });
 });
