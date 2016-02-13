@@ -10,4 +10,12 @@ jobber.controller('ViewCompanyCtrl', ['companiesResourceFactory', '$routeParams'
         self.jobs = response.data.jobs;
       });
   })();
+
+ function deleteCompany() {
+    companiesResourceFactory.deleteCompanyByID(self.id)
+      .then(function(){
+        $window.location.href = '/companies';
+      });
+  };
+
 }]);

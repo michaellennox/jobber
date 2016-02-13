@@ -1,8 +1,8 @@
 describe('ViewCompanyCtrl', function() {
-  var response;
-  var ctrl;
-  var $rootScope;
-  var companiesResourceFactoryMock;
+  var response,
+      ctrl,
+      $rootScope,
+      companiesResourceFactoryMock;
 
   beforeEach(function() {
     companiesResourceFactoryMock = jasmine.createSpyObj(

@@ -30,12 +30,12 @@ describe('companiesResourceFactory', function() {
     });
   });
 
-  describe("#deleteCompany()", function(){
+  describe("#deleteCompanyByID()", function(){
     it("makes a DELETE request to api/companies/:company_id", function(){
       $httpBackend.expectDELETE("/api/companies/666").respond(204);
-      factory.deleteCompany(666);
+      factory.deleteCompanyByID(666);
       $httpBackend.flush();
-    })
+    });
   });
 
   describe('#getCompanyByID()', function() {
