@@ -26,4 +26,8 @@ ViewPage.prototype.clickDeleteCompany = function() {
   this.deleteBtn.click();
 };
 
+ViewPage.prototype.clickPersonLink = function() {
+  this.person.element(by.css("a")).click();
+};
+
 module.exports = ViewPage;

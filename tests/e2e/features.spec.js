@@ -4,10 +4,12 @@ describe("Company partials.", function(){
       viewPage = require("./pages/companies/view.page.js"),
       personNewPage = require("./pages/people/new.page.js"),
       jobNewPage = require("./pages/jobs/new.job.js"),
+      personViewPage = require("./pages/people/view.page.js"),
       companiesNewPage = new newPage,
       companiesViewPage = new viewPage,
       companiesIndexPage = new indexPage,
-      peopleNewPage = new personNewPage;
+      peopleNewPage = new personNewPage,
+      peopleViewPage = new personViewPage,
       jobsNewPage = new jobNewPage;
 
   it("Alanas's Story...", function(){
@@ -38,6 +40,16 @@ describe("Company partials.", function(){
     peopleNewPage.addPerson("Testla");
 // And she sees them there!
     expect(companiesViewPage.person.getText()).toEqual("Testla");
+// Alana adds another....
+    companiesViewPage.clickAddPersonLink();
+    peopleNewPage.addPerson("Elon's Musk");
+// ...but decides they aren't the right person to talk to.
+// she visits their profile.
+    companiesViewPage.clickPersonLink();
+// and deletes them.
+    peopleViewPage.deletePerson();
+// and it works.
+    expect(companiesViewPage.peopleList.count()).toEqual(1);
 // There are no jobs at the company yet...
     expect(companiesViewPage.jobList.count()).toEqual(0);
 // so she adds one...

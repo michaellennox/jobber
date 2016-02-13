@@ -14,7 +14,7 @@ jobber.factory('peopleResourceFactory', ['$http', function($http) {
   };
 
   peopleResourceFactory.deletePersonByID = function(company_id, id){
-    return $http.delete("/api/comapnies" + company_id + "/people/" + id);
+    return $http.delete("/api/companies/" + company_id + "/people/" + id);
   }
 
   return peopleResourceFactory;

@@ -25,7 +25,7 @@ describe('peopleResourceFactory', function() {
   describe("#deletePersonByID()", function(){
     it("makes a DELETE request to api/companies/:company_id/people/:id", function(){
       $httpBackend.expectDELETE("/api/companies/666/people/66").respond(204);
-      factory.deletePersonByID(66);
+      factory.deletePersonByID(666, 66);
       $httpBackend.flush();
     });
   });
