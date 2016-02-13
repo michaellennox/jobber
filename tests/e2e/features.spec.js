@@ -26,7 +26,7 @@ describe("Company partials.", function(){
     companiesNewPage.addCompany("testCo");
 // Now she can see the company on the homepage!
     expect(companiesIndexPage.companiesList.count()).toEqual(1);
-    expect(companiesIndexPage.firstItem.getText()).toEqual("testCo")
+    expect(companiesIndexPage.firstItem.getText()).toEqual("testCo");
 // Alana clicks on the company...     
     companiesIndexPage.viewFirstCompany();
 // She sees the company name,
@@ -39,11 +39,18 @@ describe("Company partials.", function(){
 // And she sees them there!
     expect(companiesViewPage.person.getText()).toEqual("Testla");
 // There are no jobs at the company yet...
-    expect(companiesViewPage.jobList.count()).toEqual(0)
+    expect(companiesViewPage.jobList.count()).toEqual(0);
 // so she adds one...
     companiesViewPage.clickAddJobLink();
-    jobsNewPage.addJob("Developer")
+    jobsNewPage.addJob("Developer");
 // And she sees it displayed!
-    expect(companiesViewPage.job.getText()).toEqual("Developer")
+    expect(companiesViewPage.job.getText()).toEqual("Developer");
+// Alana is impressed, but no longer wants to work at testCo,
+// so she decides to delete it.
+    companiesViewPage.clickDeleteCompany();
+    expect(browser.getCurrentUrl()).toEqual("http://localhost:8080/comapnies");
+
+
+
   });
 });
