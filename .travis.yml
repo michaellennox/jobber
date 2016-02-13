@@ -9,7 +9,7 @@ python:
    - "3.5.1"
 
 script:
- - npm test
+ - npm run test-ci
 
 addons:
   postgresql: "9.3"
