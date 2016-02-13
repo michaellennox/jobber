@@ -1,4 +1,4 @@
-from flask.ext.restful import Resource, fields, marshal, reqparse
+from flask.ext.restful import Resource, reqparse
 from flask.ext.security import login_user, logout_user
 from flask.ext.security.utils import verify_password
 from server import db

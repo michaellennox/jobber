@@ -71,3 +71,24 @@ class PersonAPIMixin(object):
             '/api/companies/{}/people/{}'.format(company_id, id)
         )
         return req
+
+
+class UsersAPIMixin(object):
+    def POST_users(
+        self,
+        email='test@example.com',
+        password='example',
+        first_name='Example',
+        last_name='Person'
+    ):
+        req = self.client.post(
+            '/api/users',
+            content_type='application/json',
+            data=json.dumps(dict(
+                email=email,
+                password=password,
+                first_name=first_name,
+                last_name=last_name
+            ))
+        )
+        return req

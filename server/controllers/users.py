@@ -1,5 +1,4 @@
-from flask.ext.restful import Resource, fields, marshal, reqparse
-from flask.ext.security import current_user
+from flask.ext.restful import Resource, reqparse
 from flask.ext.security.utils import encrypt_password
 from server import db
 from server.models.user import user_datastore
@@ -18,7 +17,6 @@ class UsersResource(Resource):
 class UsersAPI(UsersResource):
     def post(self):
         args = self.reqparse.parse_args()
-        print(current_user)
         try:
             user_datastore.create_user(
                 email=args['email'],
