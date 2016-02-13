@@ -23,7 +23,7 @@ describe('jobsResourceFactory', function() {
   });
 
   describe("#getJobByID()", function(){
-    it("Makes a get request to /api/companies/:company_id/jobs/:id", function(){
+    it("Makes a GET request to /api/companies/:company_id/jobs/:id", function(){
       $httpBackend.expectGET("/api/companies/3/jobs/5").respond(200);
       factory.getJobByID(3, 5);
       $httpBackend.flush();

@@ -11,30 +11,39 @@ describe("Company partials.", function(){
       jobsNewPage = new jobNewPage;
 
   it("Runs the feature test", function(){
-// VISITS COMPANIES INDEX PAGE
+// Alana has just graduated from Makers Academy,
+// which means Alana is now a kick ass developer.
+// As a kick ass developer,
+// So that she can get PAID,
+// Alana needs a job. 
+// So she visits Jobbr....
     companiesIndexPage.get();
-// EXPECTS THERE TO BE NO COMPANIES YET
+// Blown away by the beautiful design she decides to join...
+// As expected there are no comapnies yet, because she hasn't added any:
     expect(companiesIndexPage.companiesList.count()).toEqual(0);
-// VISITS ADD COMPANY PAGE AND ADDS A COMPANY
+// Alana decides to add one...
     companiesIndexPage.clickAdd();
     companiesNewPage.addCompany("testCo");
-// VISITS INDIVIDUAL COMPANY PAGE.
+// Now she can see the company on the homepage!
+    expect(companiesIndexPage.companiesList.count()).toEqual(1);
+    expect(companiesIndexPage.firstItem.getText()).toEqual("testCo")
+// Alana clicks on the company...     
     companiesIndexPage.viewFirstCompany();
-// EXPECTS COMPANY VIEW PAGE TO SHOW THE CORRECT NAME
+// She sees the company name,
     expect(companiesViewPage.companyName.getText()).toEqual("testCo");
-// EXPECTS THERE TO BE NO PEOPLE TO BEGIN WITH
+// but there are no people yet.
     expect(companiesViewPage.peopleList.count()).toEqual(0);
-// GOES TO ADD PERSON PAGE AND ADDS PERSON.
+// She adds a person of interest who works at the company
     companiesViewPage.clickAddPersonLink();
     peopleNewPage.addPerson("Testla");
-// EXPECTS PERSON TO BE ADDED AND DISPLAYED
+// And she sees them there!
     expect(companiesViewPage.person.getText()).toEqual("Testla");
-// EXPECTS NO JOBS TO BEGIN WITH
+// There are no jobs at the company yet...
     expect(companiesViewPage.jobList.count()).toEqual(0)
-// VISITS ADD JOBS PAGE AND ADDS A JOBS
+// so she adds one...
     companiesViewPage.clickAddJobLink();
     jobsNewPage.addJob("Developer")
-// EXPECTS JOB TO BE ADDED AND DISPLAYED
+// And she sees it displayed!
     expect(companiesViewPage.job.getText()).toEqual("Developer")
   });
 });

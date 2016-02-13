@@ -1,4 +1,4 @@
-jobber.controller('ViewCompanyCtrl', ['companiesResourceFactory', '$routeParams', function(companiesResourceFactory, $routeParams) {
+jobber.controller('ViewCompanyCtrl', ['companiesResourceFactory', '$routeParams', '$window', function(companiesResourceFactory, $routeParams, $window) {
   var self = this;
   self.id = $routeParams.id;
 
