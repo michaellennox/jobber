@@ -3,38 +3,24 @@ describe("Company partials.", function(){
       newPage = require("./pages/companies/new.page.js"),
       viewPage = require("./pages/companies/view.page.js"),
       personNewPage = require("./pages/people/new.page.js"),
-      jobNewPage = require("./pages/jobs/new.job.js")
+      jobNewPage = require("./pages/jobs/new.job.js"),
       companiesNewPage = new newPage,
       companiesViewPage = new viewPage,
       companiesIndexPage = new indexPage,
       peopleNewPage = new personNewPage;
       jobsNewPage = new jobNewPage;
 
-  it("Runs the feature test", function(){
-// VISITS COMPANIES INDEX PAGE
-    companiesIndexPage.get();
-// EXPECTS THERE TO BE NO COMPANIES YET
+
+  it("Alanas's Story...", function(){
+// Alana has just graduated from Makers Academy,
+// which means Alana is now a kick ass developer.
+// As a kick ass developer,
+// So that she can get PAID,
+// Alana needs a job. 
+// So she visits Jobbr....
+
+    companiesViewPage.clickDeleteCompany();
+    expect(browser.getCurrentUrl()).toEqual("http://localhost:8080/companies");
     expect(companiesIndexPage.companiesList.count()).toEqual(0);
-// VISITS ADD COMPANY PAGE AND ADDS A COMPANY
-    companiesIndexPage.clickAdd();
-    companiesNewPage.addCompany("testCo");
-// VISITS INDIVIDUAL COMPANY PAGE.
-    companiesIndexPage.viewFirstCompany();
-// EXPECTS COMPANY VIEW PAGE TO SHOW THE CORRECT NAME
-    // expect(companiesViewPage.companyName.getText()).toEqual("testCo");
-// EXPECTS THERE TO BE NO PEOPLE TO BEGIN WITH
-    expect(companiesViewPage.peopleList.count()).toEqual(0);
-// GOES TO ADD PERSON PAGE AND ADDS PERSON.
-    companiesViewPage.clickAddPersonLink();
-    peopleNewPage.addPerson("Testla");
-// EXPECTS PERSON TO BE ADDED AND DISPLAYED
-    expect(companiesViewPage.person.getText()).toEqual("Testla");
-// EXPECTS NO JOBS TO BEGIN WITH
-    expect(companiesViewPage.jobList.count()).toEqual(0);
-// VISITS ADD JOBS PAGE AND ADDS A JOBS
-    companiesViewPage.clickAddJobLink();
-    jobsNewPage.addJob("Developer");
-// EXPECTS JOB TO BE ADDED AND DISPLAYED
-    expect(companiesViewPage.job.getText()).toEqual("Developer");
   });
 });
