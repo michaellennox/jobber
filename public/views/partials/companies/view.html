@@ -8,7 +8,7 @@
     <h2>Employees</h2>
     <ul class="list-group">
       <li ng-repeat="person in ctrl.people" class="list-group-item">
-        {{person.name}}
+        <a ng-href="/companies/{{ctrl.company.id}}/people/{{ctrl.person.id}}">{{person.name}}</a>
       </li>
     </ul>
     <a id="addPerson" ng-href="/companies/{{ctrl.company.id}}/people/new" class="btn btn-success">Add Employee</a>

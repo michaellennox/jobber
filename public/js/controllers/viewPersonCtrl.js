@@ -1,4 +1,4 @@
-jobber.controller('ViewPersonCtrl', ['peopleResourceFactory', '$routeParams', function(peopleResourceFactory, $routeParams){
+jobber.controller('ViewPersonCtrl', ['peopleResourceFactory', '$routeParams', '$window', function(peopleResourceFactory, $routeParams, $window){
   var self = this;
   self.id = $routeParams.id;
   self.company_id = $routeParams.company_id;
@@ -9,4 +9,11 @@ jobber.controller('ViewPersonCtrl', ['peopleResourceFactory', '$routeParams', fu
         self.person = response.data;
       });
   })();
+
+  self.deletePerson = function() {
+    peopleResourceFactory.deletePersonByID(self.company_id, self.id)
+      .then(function(){
+        $window.location.href = '/companies/' + self.company_id;
+      });
+  };
 }]);

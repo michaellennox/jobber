@@ -35,3 +35,6 @@ describe('ViewPersonCtrl', function() {
     expect(ctrl.person).toEqual(response.data);
   });
 });
+
+
+// NEED TO ADD TEST FOR DELETING COMPANY
