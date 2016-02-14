@@ -21,4 +21,12 @@ ViewPage.prototype.get = function(company_id) {
   browser.get("http://localhost:8080/companies/"+company_id)
 };
 
+ViewPage.prototype.clickDeleteCompany = function() {
+  this.deleteBtn.click();
+};
+
+ViewPage.prototype.clickPersonLink = function() {
+  this.person.element(by.css("a")).click();
+};
+
 module.exports = ViewPage;

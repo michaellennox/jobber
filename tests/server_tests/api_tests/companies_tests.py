@@ -35,3 +35,8 @@ class TestCompanyAPI(APITestCase, CompanyAPIMixin):
 
         self.assert_status(res, 200)
         self.assertEquals(res.json.get('name'), 'ACMECorp')
+
+    #def test_DELETE_deletes_company_from_db(self):
+
+
+# need to test valid delete method

@@ -1,8 +1,7 @@
-from flask.ext.restful import Resource, fields, marshal, reqparse
+from flask.ext.restful import Resource, reqparse
 from flask.ext.security import login_user, logout_user
 from flask.ext.security.utils import verify_password
-from server import db
-from server.models.user import User, user_datastore
+from server.models.user import User
 
 
 class SessionsResource(Resource):
@@ -19,7 +18,7 @@ class SessionsAPI(SessionsResource):
         user = User.query.filter_by(email=args['email']).first()
         if user and verify_password(args['password'], user.password):
             login_user(user)
-            return 'Logged in successfully', 200
+            return dict(user=user.email), 200
         return 'Invalid username or password', 400
 
     def delete(self):

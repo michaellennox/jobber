@@ -35,3 +35,5 @@ describe('ViewCompanyCtrl', function() {
     expect(ctrl.company).toEqual(response.data);
   });
 });
+
+// NEEDS TO ADD TEST FOR DELETING A COMPANY
