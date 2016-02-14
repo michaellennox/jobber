@@ -74,7 +74,7 @@ module.exports = function(config) {
 
     coverageReporter: {
       type: 'lcov',
-      dir : 'front_end/coverage/'
+      dir : 'tests/karma/coverage/'
     }
 
   });
