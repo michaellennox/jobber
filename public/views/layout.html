@@ -33,9 +33,19 @@
     <script src="public/js/factories/userAuthFactory.js"></script>
   </head>
   <body>
-    <header class="page-header">
-      <h1 class="text-center">Jobbr <small>Yay Jobs!</small></h1>
-    </header>
+    <nav class="navbar navbar-default" ng-controller="LogoutController as ctrl">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">
+            JobbrLogo
+          </a>
+        </div>
+        <div class="nav navbar-nav navbar-right">
+          <p class="navbar-text">Signed in as USERANGULARHERE</p>
+          <button type="button" class="btn btn-default navbar-btn">Sign Out</button>
+        </div>
+      </div>
+    </nav>
     <main ng-view class="container"></main>
   </body>
 </html>
