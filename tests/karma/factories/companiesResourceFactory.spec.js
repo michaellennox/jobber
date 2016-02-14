@@ -1,6 +1,6 @@
 describe('companiesResourceFactory', function() {
-  var factory;
-  var $httpBackend;
+  var factory,
+      $httpBackend;
 
   beforeEach(module('Jobber'));
 
@@ -31,10 +31,11 @@ describe('companiesResourceFactory', function() {
   });
 
   describe("#deleteCompanyByID()", function(){
-  it("makes a DELETE request to api/companies/:company_id", function(){
-    $httpBackend.expectDELETE("/api/companies/666").respond(204);
-    factory.deletePersonByID(666);
-    $httpBackend.flush();
+    it("makes a DELETE request to api/companies/:company_id", function(){
+      $httpBackend.expectDELETE("/api/companies/666").respond(204);
+      factory.deleteCompanyByID(666);
+      $httpBackend.flush();
+    });
   });
 
   describe('#getCompanyByID()', function() {

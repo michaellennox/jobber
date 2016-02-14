@@ -35,8 +35,8 @@ class CompanyAPIMixin(object):
     def GET_company(self, company_id):
         return self.client.get("/api/companies/" + company_id)
 
-    def DELETE_company(self, company_id):
-        return self.client.delete("/api/companies/" + company_id)
+    # def DELETE_company(self, company_id):
+    #     return self.client.delete("/api/companies/" + company_id)
 
 class JobsAPIMixin(object):
     def POST_jobs(self, company_id, title='Job Title'):

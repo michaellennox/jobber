@@ -1,6 +1,6 @@
 describe('jobsResourceFactory', function() {
-  var factory;
-  var $httpBackend;
+  var factory,
+      $httpBackend;
 
   beforeEach(module('Jobber'));
 
