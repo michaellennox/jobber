@@ -33,7 +33,7 @@ TBD
 
 ## Contributions
 
-Feel free to get involved! Our waffleboard is available at ![https://waffle.io/michaellennox/netstix](https://waffle.io/michaellennox/netstix)
+Feel free to get involved! Our waffleboard is available at [https://waffle.io/michaellennox/netstix](https://waffle.io/michaellennox/netstix)
 
 ## Contributors
 
