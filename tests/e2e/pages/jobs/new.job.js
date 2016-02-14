@@ -1,6 +1,6 @@
 var NewJob = function(){
   this.jobInputBox = element(by.model("ctrl.title"));
-  this.submit = element(by.css("#submitJ"))
+  this.submit = element(by.css("#submitJ"));
 }
 
 NewJob.prototype.addJob = function(title){
