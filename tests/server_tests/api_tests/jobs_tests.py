@@ -41,3 +41,12 @@ class TestJobAPI(APITestCase, JobAPIMixin):
 
         self.assert_status(res, 200)
         self.assertEquals(res.json.get('title'), 'JobMe')
+
+    # def test_DELETE_deletes_job_from_db(self):
+    #     job = Job(dict(name="TestCo"))
+    #     db.session.add(job)
+    #     db.session.commit()
+
+    #     res = self.DELETE_job("1")
+
+    #     self.assert_status(res, 204)

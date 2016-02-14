@@ -41,3 +41,12 @@ class TestPersonAPI(APITestCase, PersonAPIMixin):
 
         self.assert_status(res, 200)
         self.assertEquals(res.json.get('name'), 'JobHuntr')
+
+    # def test_DELETE_deletes_Person_from_db(self):
+    #     person = Person(dict(name="Jeff"))
+    #     db.session.add(person)
+    #     db.session.commit()
+
+    #     res = self.DELETE_person("1")
+
+    #     self.assert_status(res, 204)
