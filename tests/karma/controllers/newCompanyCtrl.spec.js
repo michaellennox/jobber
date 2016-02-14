@@ -24,7 +24,7 @@ describe('NewCompanyCtrl', function() {
   }));
 
   describe('#createNewCompany()', function() {
-    it('redirects to /companies/', function() {
+    it('redirects to /#/companies/', function() {
       ctrl.createNewCompany();
       $rootScope.$digest();
       expect($windowMock.location.href).toEqual('/companies');

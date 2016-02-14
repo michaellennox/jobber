@@ -6,7 +6,6 @@ var ViewPage = function() {
   this.person = this.peopleList.get(0);
   this.jobList = element.all(by.repeater("job in ctrl.jobs"));
   this.job = this.jobList.get(0);
-  this.deleteBtn = element(by.css("#delete"));
 };
 
 

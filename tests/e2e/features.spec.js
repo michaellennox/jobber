@@ -12,6 +12,7 @@ describe("Company partials.", function(){
       peopleViewPage = new personViewPage,
       jobsNewPage = new jobNewPage;
 
+
   it("Alanas's Story...", function(){
 // Alana has just graduated from Makers Academy,
 // which means Alana is now a kick ass developer.
@@ -19,7 +20,7 @@ describe("Company partials.", function(){
 // So that she can get PAID,
 // Alana needs a job. 
 // So she visits Jobbr....
-    companiesIndexPage.get();
+   companiesIndexPage.get();
 // Blown away by the beautiful design she decides to join...
 // As expected there are no comapnies yet, because she hasn't added any:
     expect(companiesIndexPage.companiesList.count()).toEqual(0);
@@ -51,12 +52,6 @@ describe("Company partials.", function(){
 // and it works.
     expect(companiesViewPage.peopleList.count()).toEqual(1);
 // There are no jobs at the company yet...
-    expect(companiesViewPage.jobList.count()).toEqual(0);
-// so she adds one...
-    companiesViewPage.clickAddJobLink();
-    jobsNewPage.addJob("Developer");
-// And she sees it displayed!
-    expect(companiesViewPage.job.getText()).toEqual("Developer");
 // Alana is impressed, but no longer wants to work at testCo,
 // so she decides to delete it.
     companiesViewPage.clickDeleteCompany();
