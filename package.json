@@ -27,17 +27,18 @@
   "homepage": "https://github.com/michaellennox/jobber#readme",
   "dependencies": {
     "bower": "^1.7.7",
-    "grunt": "^0.4.5",
-    "grunt-karma": "^0.12.1",
-    "grunt-protractor-runner": "^3.0.0",
-    "grunt-protractor-webdriver": "^0.2.5"
+    "grunt": "^0.4.5"
   },
   "devDependencies": {
+    "grunt-karma": "^0.12.1",
+    "grunt-protractor-runner": "^3.0.0",
+    "grunt-protractor-webdriver": "^0.2.5",
     "jasmine-core": "^2.4.1",
     "jasmine-spec-reporter": "^2.4.0",
     "karma": "^0.13.19",
     "karma-chrome-launcher": "^0.2.2",
     "karma-coverage": "^0.5.3",
+    "karma-coveralls": "^1.1.2",
     "karma-jasmine": "^0.3.7",
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-spec-reporter": "0.0.23",
