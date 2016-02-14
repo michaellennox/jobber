@@ -1,6 +1,5 @@
 from flask import json
 from flask.ext.testing import TestCase
-
 from server import app, db
 from server.config import TestingConfig
 
@@ -72,4 +71,42 @@ class PersonAPIMixin(object):
         req = self.client.get(
             '/api/companies/{}/people/{}'.format(company_id, id)
         )
+        return req
+
+
+class UsersAPIMixin(object):
+    def POST_users(
+        self,
+        email='test@example.com',
+        password='example',
+        first_name='Example',
+        last_name='Person'
+    ):
+        req = self.client.post(
+            '/api/users',
+            content_type='application/json',
+            data=json.dumps(dict(
+                email=email,
+                password=password,
+                first_name=first_name,
+                last_name=last_name
+            ))
+        )
+        return req
+
+
+class SessionsAPIMixin(object):
+    def POST_sessions(self, email='test@example.com', password='example'):
+        req = self.client.post(
+            '/api/sessions',
+            content_type='application/json',
+            data=json.dumps(dict(
+                email=email,
+                password=password
+            ))
+        )
+        return req
+
+    def DELETE_sessions(self):
+        req = self.client.delete('/api/sessions')
         return req

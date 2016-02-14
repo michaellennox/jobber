@@ -1,4 +1,4 @@
-jobber.controller('ViewCompanyCtrl', ['companiesResourceFactory', '$routeParams', '$window', function(companiesResourceFactory, $routeParams, $window) {
+jobber.controller('ViewCompanyCtrl', ['companiesResourceFactory', '$routeParams', function(companiesResourceFactory, $routeParams) {
   var self = this;
   self.id = $routeParams.id;
 
@@ -17,5 +17,4 @@ jobber.controller('ViewCompanyCtrl', ['companiesResourceFactory', '$routeParams'
         $window.location.href = '/companies';
       });
   };
-
 }]);

@@ -21,7 +21,7 @@ describe("Company partials.", function(){
 // So that she can get PAID,
 // Alana needs a job. 
 // So she visits Jobbr....
-    companiesIndexPage.get();
+   companiesIndexPage.get();
 // Blown away by the beautiful design she decides to join...
 // As expected there are no comapnies yet, because she hasn't added any:
     expect(companiesIndexPage.companiesList.count()).toEqual(0);
@@ -60,11 +60,10 @@ describe("Company partials.", function(){
 // And she sees it displayed!
     expect(companiesViewPage.job.getText()).toEqual("Developer");
 // She adds another.
-// And another.
     companiesViewPage.clickAddJobLink();
-    jobsNewPage.addJob("Java developer");
+    jobsNewPage.addJob("Java-developer");
 // then changes her mind.
-    companiesViewPage.clickJobLink("Java developer");
+    companiesViewPage.clickJobLink("Java-developer");
     jobsViewPage.deleteJob();
 // Much better.
     expect(companiesViewPage.jobList.count()).toEqual(1);
