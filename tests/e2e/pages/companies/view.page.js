@@ -6,7 +6,6 @@ var ViewPage = function() {
   this.person = this.peopleList.get(0);
   this.jobList = element.all(by.repeater("job in ctrl.jobs"));
   this.job = this.jobList.get(0);
-  this.deleteBtn = element(by.css("#delete"));
 };
 
 
@@ -20,10 +19,6 @@ ViewPage.prototype.clickAddJobLink = function(){
 
 ViewPage.prototype.get = function(company_id) {
   browser.get("http://localhost:8080/companies/"+company_id)
-};
-
-ViewPage.prototype.clickDeleteCompany = function() {
-  this.deleteBtn.click();
 };
 
 module.exports = ViewPage;
