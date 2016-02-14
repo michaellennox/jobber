@@ -19,9 +19,9 @@ jobber.factory('userAuthFactory', ['$q', '$http', function($q, $http) {
       .then(function(res) {
         self._user = res.data.user;
         deferred.resolve();
-      }, function(res_err) {
+      }, function(resErr) {
         self._user = null;
-        deferred.reject(res_err.data);
+        deferred.reject(resErr.data);
       });
     return deferred.promise;
   };
@@ -31,17 +31,17 @@ jobber.factory('userAuthFactory', ['$q', '$http', function($q, $http) {
     return $http.delete('/api/sessions');
   };
 
-  userAuthFactory.register = function(email, password, first_name, last_name) {
+  userAuthFactory.register = function(email, password, firstName, lastName) {
     var deferred = $q.defer();
     $http.post('/api/users', {
       email: email,
       password: password,
-      first_name: first_name,
-      last_name:last_name
+      first_name: firstName,
+      last_name:lastName
     }).then(function(res) {
         deferred.resolve();
-      }, function(res_err) {
-        deferred.reject(res_err.data);
+      }, function(resErr) {
+        deferred.reject(resErr.data);
       });
     return deferred.promise;
   };
