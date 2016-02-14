@@ -28,6 +28,10 @@ ViewPage.prototype.clickPersonLink = function(person) {
   element(by.css("." + person)).click();
 };
 
+ViewPage.prototype.person = function(name) {
+  return element(by.css("." + name));
+};
+
 ViewPage.prototype.clickJobLink = function(job) {
   element(by.css("." + job)).click();
 };

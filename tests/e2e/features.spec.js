@@ -3,7 +3,7 @@ describe("Company partials.", function(){
       newPage = require("./pages/companies/new.page.js"),
       viewPage = require("./pages/companies/view.page.js"),
       personNewPage = require("./pages/people/new.page.js"),
-      jobNewPage = require("./pages/jobs/new.job.js"),
+      jobNewPage = require("./pages/jobs/new.page.js"),
       personViewPage = require("./pages/people/view.page.js"),
       jobViewPage = require("./pages/jobs/view.page.js"),
       companiesNewPage = new newPage,
@@ -41,7 +41,7 @@ describe("Company partials.", function(){
     companiesViewPage.clickAddPersonLink();
     peopleNewPage.addPerson("Testla");
 // And she sees them there!
-    expect(companiesViewPage.person.getText()).toEqual("Testla");
+    expect(companiesViewPage.person("Testla").getText()).toEqual("Testla");
 // Alana adds another....
     companiesViewPage.clickAddPersonLink();
     peopleNewPage.addPerson("Elons-Musk");
