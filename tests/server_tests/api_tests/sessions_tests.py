@@ -5,7 +5,7 @@ from .helpers import APITestCase, SessionsAPIMixin
 
 
 class TestSessionsAPI(APITestCase, SessionsAPIMixin):
-    def test_valid_POST_returns_success_message(self):
+    def test_valid_POST_returns_success_and_user_object(self):
         user_datastore.create_user(
             email='test@example.com',
             password=encrypt_password('example')
@@ -15,7 +15,7 @@ class TestSessionsAPI(APITestCase, SessionsAPIMixin):
         res = self.POST_sessions()
 
         self.assert_status(res, 200)
-        self.assertEqual(res.json, str('Logged in successfully'))
+        self.assertEqual(res.json, dict(user='test@example.com'))
 
     def test_invalid_POST_returns_error_messsage(self):
         user_datastore.create_user(
