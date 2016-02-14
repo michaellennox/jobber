@@ -1,8 +1,8 @@
 describe('ViewPersonCtrl', function() {
-  var response,
-      ctrl,
-      $rootScope,
-      peopleResourceFactoryMock;
+  var response;
+  var ctrl;
+  var $rootScope;
+  var peopleResourceFactoryMock;
 
   beforeEach(function() {
     peopleResourceFactoryMock = jasmine.createSpyObj(
