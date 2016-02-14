@@ -11,7 +11,7 @@ jobber.controller('ViewCompanyCtrl', ['companiesResourceFactory', '$routeParams'
       });
   })();
 
- self.deleteCompany = function() {
+  self.deleteCompany = function() {
     companiesResourceFactory.deleteCompanyByID(self.id)
       .then(function(){
         $window.location.href = '/companies';

@@ -1,16 +1,18 @@
 describe('ViewPersonCtrl', function() {
-  var response;
-  var ctrl;
-  var $rootScope;
-  var peopleResourceFactoryMock;
+  var response,
+      ctrl,
+      $rootScope,
+      $windowMock,
+      peopleResourceFactoryMock;
 
   beforeEach(function() {
     peopleResourceFactoryMock = jasmine.createSpyObj(
       'peopleResourceFactory',
-      ['getPersonByID']
+      ['getPersonByID', 'deletePersonByID']
     );
     module('Jobber', {
-      peopleResourceFactory: peopleResourceFactoryMock
+      peopleResourceFactory: peopleResourceFactoryMock,
+      $window: $windowMock
     });
   });
 
@@ -21,6 +23,8 @@ describe('ViewPersonCtrl', function() {
         name: 'Jeff'
       }
     };
+    peopleResourceFactoryMock.deletePersonByID
+      .and.returnValue("Deleted");
     peopleResourceFactoryMock.getPersonByID
       .and.returnValue($q.when(response));
     ctrl = $controller(
@@ -34,7 +38,15 @@ describe('ViewPersonCtrl', function() {
     $rootScope.$digest();
     expect(ctrl.person).toEqual(response.data);
   });
+  
+  describe("#deletePerson()", function(){
+    it("redirects to /companies/:company_id", function(){
+      ctrl.deletePerson();
+      $rootScope.$digest();
+      expect($windowMock.location.href).toEqual('/companies/5');
+    });
+  });
 });
 
 
-// NEED TO ADD TEST FOR DELETING COMPANY
+

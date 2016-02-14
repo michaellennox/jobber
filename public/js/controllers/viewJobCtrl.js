@@ -13,7 +13,7 @@ jobber.controller('ViewJobCtrl', ['jobsResourceFactory', '$routeParams', '$windo
   self.deleteJob = function(){
     jobsResourceFactory.deleteJobByID(self.company_id, self.id)
       .then(function(){
-        $window.location.href = "/companies" + self.company_id;
+        $window.location.href = "/companies/" + self.company_id;
       });
   };
 }]);

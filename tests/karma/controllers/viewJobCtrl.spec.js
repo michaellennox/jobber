@@ -1,19 +1,22 @@
 describe('ViewJobCtrl', function() {
-  var response;
-  var ctrl;
-  var $rootScope;
-  var jobsResourceFactoryMock;
+  var response,
+      ctrl,
+      $rootScope,
+      $windowMock,
+      jobsResourceFactoryMock;
 
 
   beforeEach(function() {
     jobsResourceFactoryMock = jasmine.createSpyObj(
       'jobsResourceFactory',
-      ['getJobByID']
+      ['getJobByID', 'deleteJobByID']
     );
     module('Jobber', {
-      jobsResourceFactory: jobsResourceFactoryMock
+      jobsResourceFactory: jobsResourceFactoryMock,
+      $window: $windowMock
     });
   });
+
   beforeEach(inject(function($controller, $q, _$rootScope_) {
     response = {
       data: {
@@ -21,18 +24,28 @@ describe('ViewJobCtrl', function() {
         title: 'plumber'
       }
     };
+
+    jobsResourceFactoryMock.deleteJobByID
+      .and.returnValue("Deleted");
     jobsResourceFactoryMock.getJobByID
       .and.returnValue($q.when(response));
     ctrl = $controller(
       'ViewJobCtrl',
       { $routeParams: {id: 0, company_id: 5} }
     );
-  
     $rootScope = _$rootScope_;
   }));
 
   it('initializes with jobs info from the jobs resource factory', function() {
     $rootScope.$digest();
     expect(ctrl.job).toEqual(response.data);
+  });
+
+  describe("#deleteJob()", function(){
+    it("redirects to /companies/:company_id", function(){
+      ctrl.deleteJob();
+      $rootScope.$digest();
+      expect($windowMock.location.href).toEqual('/companies/5');
+    });
   });
 });
