@@ -18,7 +18,7 @@ class SessionsAPI(SessionsResource):
         user = User.query.filter_by(email=args['email']).first()
         if user and verify_password(args['password'], user.password):
             login_user(user)
-            return 'Logged in successfully', 200
+            return dict(user=user.email), 200
         return 'Invalid username or password', 400
 
     def delete(self):

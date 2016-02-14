@@ -1,4 +1,4 @@
-describe('RegistrationController', function() {
+describe('LoginController', function() {
   var ctrl;
   var $rootScope;
   var $q;

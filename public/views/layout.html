@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <base href="/">
 
-    <title>Recruitment</title>
+    <title>Jobbr</title>
 
     <link rel="stylesheet" href="public/libs/bootstrap/dist/css/bootstrap.min.css">
 
@@ -19,6 +19,7 @@
 
     <script src="public/js/controllers/registrationController.js"></script>
     <script src="public/js/controllers/loginController.js"></script>
+    <script src="public/js/controllers/logoutController.js"></script>
     <script src="public/js/controllers/companiesCtrl.js"></script>
     <script src="public/js/controllers/newCompanyCtrl.js"></script>
     <script src="public/js/controllers/viewCompanyCtrl.js"></script>
@@ -33,16 +34,16 @@
     <script src="public/js/factories/userAuthFactory.js"></script>
   </head>
   <body>
-    <nav class="navbar navbar-default" ng-controller="LogoutController as ctrl">
+    <nav class="navbar navbar-default" ng-controller="LogoutController as authCtrl">
       <div class="container">
         <div class="navbar-header">
           <a class="navbar-brand" href="/">
             JobbrLogo
           </a>
         </div>
-        <div class="nav navbar-nav navbar-right">
-          <p class="navbar-text">Signed in as USERANGULARHERE</p>
-          <button type="button" class="btn btn-default navbar-btn">Sign Out</button>
+        <div class="nav navbar-nav navbar-right" ng-show="authCtrl.currentUser()">
+          <p class="navbar-text">Signed in as {{authCtrl.currentUser()}}</p>
+          <button type="button" class="btn btn-default navbar-btn" ng-click="authCtrl.logout()">Sign Out</button>
         </div>
       </div>
     </nav>
