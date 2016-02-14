@@ -11,6 +11,9 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SECURITY_PASSWORD_HASH = 'bcrypt'
     SECURITY_PASSWORD_SALT = 'saltmeh'
+    SECURITY_LOGIN_URL = '/securitylogin'
+    SECURITY_LOGOUT_URL = '/securitylogout'
+    SECURITY_REGISTER_URL = '/securityregister'
 
 
 class ProductionConfig(Config):

@@ -1,11 +1,9 @@
 jobber.factory('userAuthFactory', ['$q', '$http', function($q, $http) {
-  userAuthFactory = {};
+  var self = {};
 
-  var self = userAuthFactory;
+  self._user = null;
 
-  userAuthFactory._user = null;
-
-  userAuthFactory.isLoggedIn = function() {
+  self.isLoggedIn = function() {
     if(self._user) {
       return true;
     } else {
@@ -13,7 +11,7 @@ jobber.factory('userAuthFactory', ['$q', '$http', function($q, $http) {
     }
   };
 
-  userAuthFactory.login = function(email, password) {
+  self.login = function(email, password) {
     var deferred = $q.defer();
     $http.post('/api/sessions', {email: email, password: password})
       .then(function(res) {
@@ -26,12 +24,12 @@ jobber.factory('userAuthFactory', ['$q', '$http', function($q, $http) {
     return deferred.promise;
   };
 
-  userAuthFactory.logout = function() {
+  self.logout = function() {
     self._user = null;
     return $http.delete('/api/sessions');
   };
 
-  userAuthFactory.register = function(email, password, firstName, lastName) {
+  self.register = function(email, password, firstName, lastName) {
     var deferred = $q.defer();
     $http.post('/api/users', {
       email: email,
@@ -46,9 +44,9 @@ jobber.factory('userAuthFactory', ['$q', '$http', function($q, $http) {
     return deferred.promise;
   };
 
-  userAuthFactory.currentUser = function() {
+  self.currentUser = function() {
     return self._user;
   };
 
-  return userAuthFactory;
+  return self;
 }]);
