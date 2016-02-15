@@ -51,7 +51,7 @@ class TestPersonAPI(APITestCase, PersonAPIMixin):
         db.session.add(person)
         db.session.commit()
 
-        res = self.DELETE_person(company.id, person.id)
+        self.DELETE_person(company.id, person.id)
 
         self.assertEqual(Person.query.count(), 0)
 
