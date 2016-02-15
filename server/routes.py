@@ -5,6 +5,7 @@ from server.controllers.people import PeopleAPI, PersonAPI
 from server.controllers.getjobs import GetJobsAPI
 from server.controllers.users import UsersAPI
 from server.controllers.sessions import SessionsAPI
+from server.controllers.applications import ApplicationsAPI
 
 api.add_resource(
     CompaniesAPI,
@@ -58,4 +59,10 @@ api.add_resource(
     SessionsAPI,
     '/api/sessions',
     endpoint='sessions'
+)
+
+api.add_resource(
+    ApplicationsAPI,
+    '/api/applications',
+    endpoint='applications'
 )

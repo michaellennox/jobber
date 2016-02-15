@@ -19,6 +19,7 @@ module.exports = function(config) {
       'public/libs/angular-route/angular-route.js',
       'public/libs/angular-resource/angular-resource.js',
       'public/libs/angular-mocks/angular-mocks.js',
+      'public/libs/angular-local-storage/dist/angular-local-storage.js',
       'public/js/**/*.js',
       'tests/karma/**/*.spec.js'
     ],

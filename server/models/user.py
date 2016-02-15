@@ -17,6 +17,8 @@ class User(db.Model, UserMixin):
     active = db.Column(db.Boolean())
     confirmed_at = db.Column(db.DateTime())
     roles = db.relationship('Role', secondary=roles_users)
+    applications = db.relationship('Application', backref='user')
+
 
 
 class Role(db.Model, RoleMixin):
