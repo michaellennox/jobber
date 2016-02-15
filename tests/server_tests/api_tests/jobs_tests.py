@@ -42,6 +42,33 @@ class TestJobAPI(APITestCase, JobAPIMixin):
         self.assert_status(res, 200)
         self.assertEquals(res.json.get('title'), 'Dev')
 
+    def test_valid_PUT_returns_updated_job_as_json(self):
+        company = Company(dict(name='ACMECorp'))
+        db.session.add(company)
+        db.session.commit()
+        job = Job(dict(title='JobMe', company_id=company.id))
+        db.session.add(job)
+        db.session.commit()
+
+        res = self.PUT_job(company.id, job.id, title='JobLand')
+
+        self.assert_status(res, 200)
+        self.assertEquals(res.json.get('title'), 'JobLand')
+
+    def test_valid_PUT_updates_database(self):
+        company = Company(dict(name='ACMECorp'))
+        db.session.add(company)
+        db.session.commit()
+        job = Job(dict(title='JobMe', company_id=company.id))
+        db.session.add(job)
+        db.session.commit()
+
+        self.PUT_job(company.id, job.id, title='JobAll')
+
+        job = Job.query.first()
+
+        self.assertEqual(job.title, 'JobAll')
+
     def test_valid_DELETE_deletes_Job_from_db(self):
         company = Company(dict(name='ACEMECorp'))
         db.session.add(company)
@@ -63,7 +90,6 @@ class TestJobAPI(APITestCase, JobAPIMixin):
         job = Job(dict(title='Dev', company_id=company.id))
         db.session.add(job)
         db.session.commit()
-
 
         res = self.DELETE_job(company.id, job.id)
 

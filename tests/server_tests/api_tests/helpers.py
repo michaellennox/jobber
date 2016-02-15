@@ -33,10 +33,22 @@ class CompaniesAPIMixin(object):
 
 class CompanyAPIMixin(object):
     def GET_company(self, company_id):
-        return self.client.get("/api/companies/" + company_id)
+        req = self.client.get(
+            '/api/companies/{}'.format(company_id)
+        )
+        return req
+
+    def PUT_company(self, company_id, name='MehFirm'):
+        req = self.client.put(
+            "/api/companies/{}".format(company_id),
+            content_type='application/json',
+            data=json.dumps(dict(name=name))
+        )
+        return req
 
     def DELETE_company(self, company_id):
         return self.client.delete("/api/companies/" + company_id)
+
 
 class JobsAPIMixin(object):
     def POST_jobs(self, company_id, title='Job Title'):
@@ -47,12 +59,6 @@ class JobsAPIMixin(object):
         )
         return req
 
-    def make_company(self, name="ACMECorp"):
-        company = Company(dict(name=name))
-        db.session.add(company)
-        db.session.commit()
-        return company
-
 
 class JobAPIMixin(object):
     def GET_job(self, company_id, id):
@@ -61,9 +67,19 @@ class JobAPIMixin(object):
         )
         return req
 
+    def PUT_job(self, company_id, id, title='OtherTitle'):
+        req = self.client.put(
+            "/api/companies/{}/jobs/{}".format(company_id, id),
+            content_type='application/json',
+            data=json.dumps(dict(title=title))
+        )
+        return req
+
     def DELETE_job(self, company_id, id):
-        return self.client.delete("/api/companies/{}/jobs/{}".format(company_id, id)
-          )
+        req = self.client.delete(
+            "/api/companies/{}/jobs/{}".format(company_id, id)
+        )
+        return req
 
 
 class PeopleAPIMixin(object):
@@ -83,9 +99,20 @@ class PersonAPIMixin(object):
         )
         return req
 
+    def PUT_person(self, company_id, id, name='ManPerson'):
+        req = self.client.put(
+            "/api/companies/{}/people/{}".format(company_id, id),
+            content_type='application/json',
+            data=json.dumps(dict(name=name))
+        )
+        return req
+
     def DELETE_person(self, company_id, id):
-        return self.client.delete("/api/companies/{}/people/{}".format(company_id, id)
-          )
+        req = self.client.delete(
+            "/api/companies/{}/people/{}".format(company_id, id)
+        )
+        return req
+
 
 class UsersAPIMixin(object):
     def POST_users(
