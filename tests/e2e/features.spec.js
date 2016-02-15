@@ -6,20 +6,20 @@ describe("Company partials.", function(){
       jobNewPage = require("./pages/jobs/new.page.js"),
       personViewPage = require("./pages/people/view.page.js"),
       jobViewPage = require("./pages/jobs/view.page.js"),
-      companiesNewPage = new newPage,
-      companiesViewPage = new viewPage,
-      companiesIndexPage = new indexPage,
-      peopleNewPage = new personNewPage,
-      peopleViewPage = new personViewPage,
-      jobsViewPage = new jobViewPage,
-      jobsNewPage = new jobNewPage;
+      companiesNewPage = new newPage(),
+      companiesViewPage = new viewPage(),
+      companiesIndexPage = new indexPage(),
+      peopleNewPage = new personNewPage(),
+      peopleViewPage = new personViewPage(),
+      jobsViewPage = new jobViewPage(),
+      jobsNewPage = new jobNewPage();
 
   it("Alana's Story...", function(){
 // Alana has just graduated from Makers Academy,
 // which means Alana is now a kick ass developer.
 // As a kick ass developer,
 // So that she can get PAID,
-// Alana needs a job. 
+// Alana needs a job.
 // So she visits Jobbr....
    companiesIndexPage.get();
 // Blown away by the beautiful design she decides to join...
@@ -31,7 +31,7 @@ describe("Company partials.", function(){
 // Now she can see the company on the homepage!
     expect(companiesIndexPage.companiesList.count()).toEqual(1);
     expect(companiesIndexPage.company.getText()).toEqual("testCo");
-// Alana clicks on the company...     
+// Alana clicks on the company...
     companiesIndexPage.viewCompany(0);
 // She sees the company name,
     expect(companiesViewPage.companyName.getText()).toEqual("testCo");
