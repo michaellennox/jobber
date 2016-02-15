@@ -12,7 +12,7 @@ from selenium.common.exceptions import TimeoutException
 class WebScraperAPI(Resource):
     def post(self):
         url = request.json.get('url')
-        driver = webdriver.Firefox()
+        driver = webdriver.PhantomJS()
         driver.wait = WebDriverWait(driver, 5)
         driver.get(url)
         return {'name': driver.find_element_by_id('name').text,
