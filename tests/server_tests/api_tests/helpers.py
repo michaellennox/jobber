@@ -1,7 +1,9 @@
 from flask import json
 from flask.ext.testing import TestCase
+from flask.ext.security.utils import encrypt_password
 from server import app, db
 from server.config import TestingConfig
+from server.models.user import user_datastore
 
 
 class APITestCase(TestCase):
@@ -15,6 +17,23 @@ class APITestCase(TestCase):
     def tearDown(self):
         db.session.remove()
         db.drop_all()
+
+
+class AuthMixin(object):
+    def login_test_user(self):
+        user_datastore.create_user(
+            email='test@example.com',
+            password=encrypt_password('example')
+        )
+        db.session.commit()
+        self.client.post(
+            '/api/sessions',
+            content_type='application/json',
+            data=json.dumps(dict(
+                email='test@example.com',
+                password='example'
+            ))
+        )
 
 
 class CompaniesAPIMixin(object):
@@ -149,4 +168,16 @@ class SessionsAPIMixin(object):
 
     def DELETE_sessions(self):
         req = self.client.delete('/api/sessions')
+        return req
+
+
+class ApplicationsAPIMixin(object):
+    def POST_applications(self, company_id):
+        req = self.client.post(
+            '/api/applications',
+            content_type='application/json',
+            data=json.dumps(dict(
+                company_id=company_id
+            ))
+        )
         return req
