@@ -46,7 +46,11 @@ class CompanyAPI(CompaniesResource):
         return marshal(company, company_fields)
 
     def put(self, id):
-        pass
+        args = self.reqparse.parse_args()
+        company = Company.query.filter_by(id=id)
+        company.update(args)
+        db.session.commit()
+        return marshal(company[0], company_fields)
 
     def delete(self, id):
-         pass
+        pass
