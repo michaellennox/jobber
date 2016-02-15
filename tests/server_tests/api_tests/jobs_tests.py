@@ -32,7 +32,6 @@ class TestJobAPI(APITestCase, JobAPIMixin):
         company = Company(dict(name='ACEMECorp'))
         db.session.add(company)
         db.session.commit()
-
         job = Job(dict(title='Dev', company_id=company.id))
         db.session.add(job)
         db.session.commit()
@@ -64,7 +63,6 @@ class TestJobAPI(APITestCase, JobAPIMixin):
         db.session.commit()
 
         self.PUT_job(company.id, job.id, title='JobAll')
-
         job = Job.query.first()
 
         self.assertEqual(job.title, 'JobAll')
@@ -73,12 +71,11 @@ class TestJobAPI(APITestCase, JobAPIMixin):
         company = Company(dict(name='ACEMECorp'))
         db.session.add(company)
         db.session.commit()
-
         job = Job(dict(title='Dev', company_id=company.id))
         db.session.add(job)
         db.session.commit()
 
-        res = self.DELETE_job(company.id, job.id)
+        self.DELETE_job(company.id, job.id)
 
         self.assertEqual(Job.query.count(), 0)
 
@@ -86,7 +83,6 @@ class TestJobAPI(APITestCase, JobAPIMixin):
         company = Company(dict(name='ACEMECorp'))
         db.session.add(company)
         db.session.commit()
-
         job = Job(dict(title='Dev', company_id=company.id))
         db.session.add(job)
         db.session.commit()
