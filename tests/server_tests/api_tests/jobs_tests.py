@@ -40,7 +40,7 @@ class TestJobAPI(APITestCase, JobAPIMixin):
         res = self.GET_job(company.id, job.id)
 
         self.assert_status(res, 200)
-        self.assertEquals(res.json.get('title'), 'JobMe')
+        self.assertEquals(res.json.get('title'), 'Dev')
 
     def test_valid_PUT_returns_updated_job_as_json(self):
         company = Company(dict(name='ACMECorp'))
@@ -68,7 +68,6 @@ class TestJobAPI(APITestCase, JobAPIMixin):
         job = Job.query.first()
 
         self.assertEqual(job.title, 'JobAll')
-        self.assertEquals(res.json.get('title'), 'Dev')
 
     def test_valid_DELETE_deletes_Job_from_db(self):
         company = Company(dict(name='ACEMECorp'))

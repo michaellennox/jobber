@@ -94,23 +94,3 @@ class TestPersonAPI(APITestCase, PersonAPIMixin):
         person = Person.query.first()
 
         self.assertEqual(person.name, 'JoEB')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> f689c7b0ffc63e0974643e223bf3a18b5c8c1c8f
