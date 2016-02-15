@@ -50,3 +50,7 @@ class TestPersonAPI(APITestCase, PersonAPIMixin):
     #     res = self.DELETE_person("1")
 
     #     self.assert_status(res, 204)
+
+
+
+    

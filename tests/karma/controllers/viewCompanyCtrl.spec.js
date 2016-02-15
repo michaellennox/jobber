@@ -23,8 +23,9 @@ describe('ViewCompanyCtrl', function() {
         name: 'company'
       }
     };
+    deleteResponse = "Deleted";
     companiesResourceFactoryMock.deleteCompanyByID
-      .and.returnValue("Deleted");
+      .and.returnValue($q.when(deleteResponse));
     companiesResourceFactoryMock.getCompanyByID
       .and.returnValue($q.when(response));
     ctrl = $controller(

@@ -44,10 +44,10 @@ describe("Company partials.", function(){
     expect(companiesViewPage.person("Testla").getText()).toEqual("Testla");
 // Alana adds another....
     companiesViewPage.clickAddPersonLink();
-    peopleNewPage.addPerson("Elons-Musk");
+    peopleNewPage.addPerson("Elons Musk");
 // ...but decides they aren't the right person to talk to.
 // she visits their profile.
-    companiesViewPage.clickPersonLink("Elons-Musk");
+    companiesViewPage.clickPersonLink("Elons Musk");
 // and deletes them.
     peopleViewPage.deletePerson();
 //  It's super efective!
@@ -61,9 +61,9 @@ describe("Company partials.", function(){
     expect(companiesViewPage.job.getText()).toEqual("Developer");
 // She adds another.
     companiesViewPage.clickAddJobLink();
-    jobsNewPage.addJob("Java-developer");
+    jobsNewPage.addJob("Java developer");
 // then changes her mind.
-    companiesViewPage.clickJobLink("Java-developer");
+    companiesViewPage.clickJobLink("Java developer");
     jobsViewPage.deleteJob();
 // Much better.
     expect(companiesViewPage.jobList.count()).toEqual(1);

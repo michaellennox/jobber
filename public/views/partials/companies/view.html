@@ -9,7 +9,7 @@
     <h2>Employees</h2>
     <ul class="list-group">
       <li ng-repeat="person in ctrl.people" class="list-group-item">
-        <a ng-class="{{person.name}}" ng-href="/companies/{{ctrl.company.id}}/people/{{ctrl.person.id}}">{{person.name}}</a>
+        <a ng-class="{{person.name}}" ng-href="/companies/{{ctrl.company.id}}/people/{{person.id}}">{{person.name}}</a>
       </li>
     </ul>
     <a id="addPerson" ng-href="/companies/{{ctrl.company.id}}/people/new" class="btn btn-success">Add Employee</a>
@@ -19,7 +19,7 @@
     <h2>Jobs</h2>
     <ul class="list-group">
       <li ng-repeat="job in ctrl.jobs" class="list-group-item">
-        <a ng-class="{{job.title}}" ng-href="/companies/{{ctrl.company.id}}/jobs/{{ctrl.job.id}}">{{job.title}}</a>
+        <a ng-class="{{job.title}}" ng-href="/companies/{{ctrl.company.id}}/jobs/{{job.id}}">{{job.title}}</a>
       </li>
     </ul>
     <a id="addJob" ng-href="/companies/{{ctrl.company.id}}/jobs/new" class="btn btn-success">Add Job</a>

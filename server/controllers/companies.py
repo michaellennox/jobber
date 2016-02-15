@@ -49,4 +49,14 @@ class CompanyAPI(CompaniesResource):
         pass
 
     def delete(self, id):
-         pass
+         company = Company.query.get(id)
+         db.session.delete(company)
+         db.session.commit()
+         return '', 204
+
+
+
+
+
+
+
