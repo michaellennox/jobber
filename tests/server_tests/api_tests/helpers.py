@@ -35,6 +35,8 @@ class CompanyAPIMixin(object):
     def GET_company(self, company_id):
         return self.client.get("/api/companies/" + company_id)
 
+    def DELETE_company(self, company_id):
+        return self.client.delete("/api/companies/" + company_id)
 
 class JobsAPIMixin(object):
     def POST_jobs(self, company_id, title='Job Title'):
@@ -45,6 +47,12 @@ class JobsAPIMixin(object):
         )
         return req
 
+    def make_company(self, name="ACMECorp"):
+        company = Company(dict(name=name))
+        db.session.add(company)
+        db.session.commit()
+        return company
+
 
 class JobAPIMixin(object):
     def GET_job(self, company_id, id):
@@ -52,6 +60,10 @@ class JobAPIMixin(object):
             '/api/companies/{}/jobs/{}'.format(company_id, id)
         )
         return req
+
+    def DELETE_job(self, company_id, id):
+        return self.client.delete("/api/companies/{}/jobs/{}".format(company_id, id)
+          )
 
 
 class PeopleAPIMixin(object):
@@ -71,6 +83,9 @@ class PersonAPIMixin(object):
         )
         return req
 
+    def DELETE_person(self, company_id, id):
+        return self.client.delete("/api/companies/{}/people/{}".format(company_id, id)
+          )
 
 class UsersAPIMixin(object):
     def POST_users(

@@ -26,5 +26,5 @@ class UsersAPI(UsersResource):
             )
             db.session.commit()
         except Exception as e:
-            return str(e), 400
+            return repr(e), 400
         return 'Account Created!', 201
