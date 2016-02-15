@@ -30,9 +30,9 @@ describe("Company partials.", function(){
     companiesNewPage.addCompany("testCo");
 // Now she can see the company on the homepage!
     expect(companiesIndexPage.companiesList.count()).toEqual(1);
-    expect(companiesIndexPage.company().getText()).toEqual("testCo");
+    expect(companiesIndexPage.company.getText()).toEqual("testCo");
 // Alana clicks on the company...     
-    companiesIndexPage.viewCompany("testCo");
+    companiesIndexPage.viewCompany(0);
 // She sees the company name,
     expect(companiesViewPage.companyName.getText()).toEqual("testCo");
 // but there are no people yet.
@@ -41,13 +41,13 @@ describe("Company partials.", function(){
     companiesViewPage.clickAddPersonLink();
     peopleNewPage.addPerson("Testla");
 // And she sees them there!
-    expect(companiesViewPage.person("Testla").getText()).toEqual("Testla");
+    expect(companiesViewPage.person(0).getText()).toEqual("Testla");
 // Alana adds another....
     companiesViewPage.clickAddPersonLink();
     peopleNewPage.addPerson("Elons Musk");
 // ...but decides they aren't the right person to talk to.
 // she visits their profile.
-    companiesViewPage.clickPersonLink("Elons Musk");
+    companiesViewPage.clickPersonLink(1);
 // and deletes them.
     peopleViewPage.deletePerson();
 //  It's super efective!
@@ -58,12 +58,12 @@ describe("Company partials.", function(){
     companiesViewPage.clickAddJobLink();
     jobsNewPage.addJob("Developer");
 // And she sees it displayed!
-    expect(companiesViewPage.job.getText()).toEqual("Developer");
+    expect(companiesViewPage.job(0).getText()).toEqual("Developer");
 // She adds another.
     companiesViewPage.clickAddJobLink();
     jobsNewPage.addJob("Java developer");
 // then changes her mind.
-    companiesViewPage.clickJobLink("Java developer");
+    companiesViewPage.clickJobLink(1);
     jobsViewPage.deleteJob();
 // Much better.
     expect(companiesViewPage.jobList.count()).toEqual(1);
