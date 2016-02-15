@@ -38,3 +38,11 @@ class PersonAPI(PeopleResource):
     def get(self, company_id, id):
         person = Person.query.get(id)
         return marshal(person, person_fields)
+
+    def put(self, company_id, id):
+        args = self.reqparse.parse_args()
+        args['company_id'] = company_id
+        person = Person.query.filter_by(id=id)
+        person.update(args)
+        db.session.commit()
+        return marshal(person[0], person_fields)

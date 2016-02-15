@@ -90,6 +90,14 @@ class PersonAPIMixin(object):
         )
         return req
 
+    def PUT_person(self, company_id, id, name='ManPerson'):
+        req = self.client.put(
+            "/api/companies/{}/people/{}".format(company_id, id),
+            content_type='application/json',
+            data=json.dumps(dict(name=name))
+        )
+        return req
+
 
 class UsersAPIMixin(object):
     def POST_users(
