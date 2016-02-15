@@ -33,14 +33,19 @@ class CompaniesAPIMixin(object):
 
 class CompanyAPIMixin(object):
     def GET_company(self, company_id):
-        return self.client.get('/api/companies/{}'.format(company_id))
+        req = self.client.get(
+            '/api/companies/{}'.format(company_id)
+        )
+        return req
 
     def PUT_company(self, company_id, name='MehFirm'):
-        return self.client.put(
+        req = self.client.put(
             "/api/companies/{}".format(company_id),
             content_type='application/json',
             data=json.dumps(dict(name=name))
         )
+        return req
+
 
 class JobsAPIMixin(object):
     def POST_jobs(self, company_id, title='Job Title'):
@@ -56,6 +61,14 @@ class JobAPIMixin(object):
     def GET_job(self, company_id, id):
         req = self.client.get(
             '/api/companies/{}/jobs/{}'.format(company_id, id)
+        )
+        return req
+
+    def PUT_job(self, company_id, id, title='OtherTitle'):
+        req = self.client.put(
+            "/api/companies/{}/jobs/{}".format(company_id, id),
+            content_type='application/json',
+            data=json.dumps(dict(title=title))
         )
         return req
 
