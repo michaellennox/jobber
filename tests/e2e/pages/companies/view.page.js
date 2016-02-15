@@ -24,16 +24,19 @@ ViewPage.prototype.clickDeleteCompany = function() {
   this.deleteBtn.click();
 };
 
-ViewPage.prototype.clickPersonLink = function(person) {
+ViewPage.prototype.clickPersonLink = function(name) {
+  var person = name.replace(/\s/g, '-');
   element(by.css("." + person)).click();
 };
 
 ViewPage.prototype.person = function(name) {
-  return element(by.css("." + name));
+  var person = name.replace(/\s/g, '-');
+  return element(by.css("." + person));
 };
 
 ViewPage.prototype.clickJobLink = function(job) {
-  element(by.css("." + job)).click();
+  var jobLink = job.replace(/\s/g, '-');
+  element(by.css("." + jobLink)).click();
 };
 
 module.exports = ViewPage;
