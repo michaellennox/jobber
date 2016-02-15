@@ -29,7 +29,7 @@ jobber.config(['$routeProvider', '$locationProvider', function($routeProvider, $
       templateUrl: partialDirectory + 'jobs/view.html'
     })
     .otherwise({
-      redirectTo: '/companies'
+      redirectTo: '/login'
     });
   $locationProvider.html5Mode(true);
 }]);
