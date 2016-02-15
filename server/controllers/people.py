@@ -38,3 +38,9 @@ class PersonAPI(PeopleResource):
     def get(self, company_id, id):
         person = Person.query.get(id)
         return marshal(person, person_fields)
+
+    def delete(Self, company_id, id):
+        person = Person.query.get(id)
+        db.session.delete(person)
+        db.session.commit()
+        return '', 204

@@ -1,6 +1,6 @@
 describe('jobsResourceFactory', function() {
-  var factory;
-  var $httpBackend;
+  var factory,
+      $httpBackend;
 
   beforeEach(module('Jobber'));
 
@@ -18,6 +18,14 @@ describe('jobsResourceFactory', function() {
     it('makes a POST request to /api/companies/:company_id/jobs', function() {
       $httpBackend.expectPOST('/api/companies/1/jobs').respond(201);
       factory.postJobs(1, 'Java Me');
+      $httpBackend.flush();
+    });
+  });
+
+  describe("#deleteJobByID()", function(){
+    it("makes a DELETE request to api/companies/:company_id/jobs/:id", function(){
+      $httpBackend.expectDELETE("/api/companies/666/jobs/66").respond(204);
+      factory.deleteJobByID(666, 66);
       $httpBackend.flush();
     });
   });

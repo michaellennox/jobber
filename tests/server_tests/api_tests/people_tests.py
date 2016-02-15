@@ -41,3 +41,47 @@ class TestPersonAPI(APITestCase, PersonAPIMixin):
 
         self.assert_status(res, 200)
         self.assertEquals(res.json.get('name'), 'JobHuntr')
+
+    def test_valid_DELETE_deletes_Person_from_db(self):
+        company = Company(dict(name='ACEMECorp'))
+        db.session.add(company)
+        db.session.commit()
+
+        person = Person(dict(name='Jeff', company_id=company.id))
+        db.session.add(person)
+        db.session.commit()
+
+        res = self.DELETE_person(company.id, person.id)
+
+        self.assertEqual(Person.query.count(), 0)
+
+    def test_valid_DELETE_returns_success_message(self):
+        company = Company(dict(name='ACEMECorp'))
+        db.session.add(company)
+        db.session.commit()
+
+        person = Person(dict(name='Jeff', company_id=company.id))
+        db.session.add(person)
+        db.session.commit()
+
+        res = self.DELETE_person(company.id, person.id)
+
+        self.assert_status(res, 204)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

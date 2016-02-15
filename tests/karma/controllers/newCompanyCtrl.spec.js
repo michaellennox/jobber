@@ -1,8 +1,9 @@
 describe('NewCompanyCtrl', function() {
-  var ctrl;
-  var $rootScope;
-  var companiesResourceFactoryMock;
-  var $windowMock;
+  var ctrl,
+      $rootScope,
+      $windowMock,
+      companiesResourceFactoryMock;
+
 
   beforeEach(function() {
     $windowMock = { location: { href: jasmine.createSpy() } };
@@ -24,7 +25,7 @@ describe('NewCompanyCtrl', function() {
   }));
 
   describe('#createNewCompany()', function() {
-    it('redirects to /#/companies/', function() {
+    it('redirects to /companies', function() {
       ctrl.createNewCompany();
       $rootScope.$digest();
       expect($windowMock.location.href).toEqual('/companies');

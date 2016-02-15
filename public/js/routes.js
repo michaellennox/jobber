@@ -25,6 +25,9 @@ jobber.config(['$routeProvider', '$locationProvider', function($routeProvider, $
     .when('/companies/:id/jobs/new', {
       templateUrl: partialDirectory + 'jobs/new.html'
     })
+    .when('/companies/:company_id/jobs/:id', {
+      templateUrl: partialDirectory + 'jobs/view.html'
+    })
     .otherwise({
       redirectTo: '/companies'
     });
