@@ -40,7 +40,6 @@ class TestJobAPI(APITestCase, JobAPIMixin):
         res = self.GET_job(company.id, job.id)
 
         self.assert_status(res, 200)
-<<<<<<< HEAD
         self.assertEquals(res.json.get('title'), 'JobMe')
 
     def test_valid_PUT_returns_updated_job_as_json(self):
@@ -69,7 +68,6 @@ class TestJobAPI(APITestCase, JobAPIMixin):
         job = Job.query.first()
 
         self.assertEqual(job.title, 'JobAll')
-=======
         self.assertEquals(res.json.get('title'), 'Dev')
 
     def test_valid_DELETE_deletes_Job_from_db(self):
@@ -94,8 +92,6 @@ class TestJobAPI(APITestCase, JobAPIMixin):
         db.session.add(job)
         db.session.commit()
 
-
         res = self.DELETE_job(company.id, job.id)
 
         self.assert_status(res, 204)
->>>>>>> f689c7b0ffc63e0974643e223bf3a18b5c8c1c8f
