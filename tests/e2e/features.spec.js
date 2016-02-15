@@ -30,9 +30,9 @@ describe("Company partials.", function(){
     companiesNewPage.addCompany("testCo");
 // Now she can see the company on the homepage!
     expect(companiesIndexPage.companiesList.count()).toEqual(1);
-    expect(companiesIndexPage.firstItem.getText()).toEqual("testCo");
+    expect(companiesIndexPage.company().getText()).toEqual("testCo");
 // Alana clicks on the company...     
-    companiesIndexPage.viewFirstCompany();
+    companiesIndexPage.viewCompany("testCo");
 // She sees the company name,
     expect(companiesViewPage.companyName.getText()).toEqual("testCo");
 // but there are no people yet.

@@ -6,6 +6,7 @@ describe('ViewCompanyCtrl', function() {
       companiesResourceFactoryMock;
 
   beforeEach(function() {
+    $windowMock = { location: { href: jasmine.createSpy() } };
     companiesResourceFactoryMock = jasmine.createSpyObj(
       'companiesResourceFactory',
       ['getCompanyByID', 'deleteCompanyByID']

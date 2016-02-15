@@ -6,6 +6,7 @@ describe('ViewPersonCtrl', function() {
       peopleResourceFactoryMock;
 
   beforeEach(function() {
+    $windowMock = { location: { href: jasmine.createSpy() } };
     peopleResourceFactoryMock = jasmine.createSpyObj(
       'peopleResourceFactory',
       ['getPersonByID', 'deletePersonByID']
@@ -23,8 +24,9 @@ describe('ViewPersonCtrl', function() {
         name: 'Jeff'
       }
     };
+    deleteResponse = "Deleted";
     peopleResourceFactoryMock.deletePersonByID
-      .and.returnValue("Deleted");
+      .and.returnValue($q.when(deleteResponse));
     peopleResourceFactoryMock.getPersonByID
       .and.returnValue($q.when(response));
     ctrl = $controller(

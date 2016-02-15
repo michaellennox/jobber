@@ -7,6 +7,7 @@ describe('ViewJobCtrl', function() {
 
 
   beforeEach(function() {
+    $windowMock = { location: { href: jasmine.createSpy() } };
     jobsResourceFactoryMock = jasmine.createSpyObj(
       'jobsResourceFactory',
       ['getJobByID', 'deleteJobByID']
@@ -24,9 +25,9 @@ describe('ViewJobCtrl', function() {
         title: 'plumber'
       }
     };
-
+    deleteResponse = "Deleted";
     jobsResourceFactoryMock.deleteJobByID
-      .and.returnValue("Deleted");
+      .and.returnValue($q.when(deleteResponse));
     jobsResourceFactoryMock.getJobByID
       .and.returnValue($q.when(response));
     ctrl = $controller(
