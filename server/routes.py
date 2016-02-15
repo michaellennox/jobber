@@ -5,6 +5,13 @@ from server.controllers.people import PeopleAPI, PersonAPI
 from server.controllers.getjobs import GetJobsAPI
 from server.controllers.users import UsersAPI
 from server.controllers.sessions import SessionsAPI
+from server.controllers.web_scraper import WebScraperAPI
+
+api.add_resource(
+    WebScraperAPI,
+    '/api/webscraper',
+    endpoint='webscraper'
+)
 
 api.add_resource(
     CompaniesAPI,
