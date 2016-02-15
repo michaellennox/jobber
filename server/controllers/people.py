@@ -22,9 +22,6 @@ class PeopleResource(Resource):
 
 
 class PeopleAPI(PeopleResource):
-    def get(self, company_id):
-        pass
-
     def post(self, company_id):
         args = self.reqparse.parse_args()
         args['company_id'] = company_id
@@ -46,3 +43,9 @@ class PersonAPI(PeopleResource):
         person.update(args)
         db.session.commit()
         return marshal(person[0], person_fields)
+
+    def delete(Self, company_id, id):
+        person = Person.query.get(id)
+        db.session.delete(person)
+        db.session.commit()
+        return '', 204

@@ -43,3 +43,9 @@ class JobAPI(JobsResource):
         job.update(args)
         db.session.commit()
         return marshal(job[0], job_fields)
+
+    def delete(self, company_id, id):
+        job = Job.query.get(id)
+        db.session.delete(job)
+        db.session.commit()
+        return '', 204

@@ -53,4 +53,18 @@ class CompanyAPI(CompaniesResource):
         return marshal(company[0], company_fields)
 
     def delete(self, id):
+<<<<<<< HEAD
         pass
+=======
+         company = Company.query.get(id)
+         db.session.delete(company)
+         db.session.commit()
+         return '', 204
+
+
+
+
+
+
+
+>>>>>>> f689c7b0ffc63e0974643e223bf3a18b5c8c1c8f

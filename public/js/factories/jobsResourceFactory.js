@@ -12,5 +12,9 @@ jobber.factory('jobsResourceFactory', ['$http', function($http) {
     return $http.get('/api/companies/' + company_id + '/jobs/' + id);
   };
 
+  self.deleteJobByID = function(company_id, id){
+    return $http.delete("/api/companies/" + company_id + "/jobs/" + id);
+  };
+
   return self;
 }]);
