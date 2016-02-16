@@ -6,6 +6,7 @@ from server.controllers.people import PeopleAPI, PersonAPI
 from server.controllers.users import UsersAPI
 from server.controllers.sessions import SessionsAPI
 from server.controllers.applications import ApplicationsAPI
+from server.controllers.events import EventsAPI
 
 api.add_resource(CompanyScraperAPI, '/web/companies')
 
@@ -29,4 +30,6 @@ api.add_resource(UsersAPI, '/api/users')
 
 api.add_resource(SessionsAPI, '/api/sessions')
 
-api.add_resource(ApplicationsAPI,'/api/applications')
+api.add_resource(ApplicationsAPI, '/api/applications')
+
+api.add_resource(EventsAPI, '/api/applications/<int:application_id>/events')
