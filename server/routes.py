@@ -6,6 +6,7 @@ from server.controllers.getjobs import GetJobsAPI
 from server.controllers.users import UsersAPI
 from server.controllers.sessions import SessionsAPI
 from server.controllers.applications import ApplicationsAPI
+from server.controllers.events import EventsAPI
 
 api.add_resource(
     CompaniesAPI,
@@ -65,4 +66,10 @@ api.add_resource(
     ApplicationsAPI,
     '/api/applications',
     endpoint='applications'
+)
+
+api.add_resource(
+    EventsAPI,
+    '/api/applications/<int:application_id>/events',
+    endpoint='events'
 )
