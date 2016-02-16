@@ -1,10 +1,8 @@
-jobber.factory('userAuthFactory', ['$q', '$http', function($q, $http) {
+jobber.factory('userAuthFactory', ['$q', '$http', 'localStorageService', function($q, $http, localStorageService) {
   var self = {};
 
-  self._user = null;
-
   self.isLoggedIn = function() {
-    if(self._user) {
+    if(localStorageService.get('user')) {
       return true;
     } else {
       return false;
@@ -15,17 +13,17 @@ jobber.factory('userAuthFactory', ['$q', '$http', function($q, $http) {
     var deferred = $q.defer();
     $http.post('/api/sessions', {email: email, password: password})
       .then(function(res) {
-        self._user = res.data.user;
+        localStorageService.set('user', res.data.user)
         deferred.resolve();
       }, function(resErr) {
-        self._user = null;
+        localStorageService.remove('user')
         deferred.reject(resErr.data);
       });
     return deferred.promise;
   };
 
   self.logout = function() {
-    self._user = null;
+    localStorageService.remove('user')
     return $http.delete('/api/sessions');
   };
 
@@ -45,7 +43,7 @@ jobber.factory('userAuthFactory', ['$q', '$http', function($q, $http) {
   };
 
   self.currentUser = function() {
-    return self._user;
+    return localStorageService.get('user');
   };
 
   return self;

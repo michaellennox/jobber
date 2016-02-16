@@ -2,8 +2,17 @@ describe('userAuthFactory', function() {
   var factory;
   var $httpBackend;
   var $rootScope;
+  var localStorageServiceMock;
 
-  beforeEach(module('Jobber'));
+  beforeEach(function() {
+    localStorageServiceMock = jasmine.createSpyObj(
+      'localStorageService',
+      ['get', 'set', 'remove']
+    );
+    module('Jobber', {
+      localStorageService: localStorageServiceMock
+    })
+  });
 
   beforeEach(inject(function(userAuthFactory, _$httpBackend_, _$rootScope_) {
     factory = userAuthFactory;
@@ -22,7 +31,8 @@ describe('userAuthFactory', function() {
     });
 
     it('returns true when logged in', function() {
-      factory._user = 'user';
+      localStorageServiceMock.get
+        .and.returnValue('user')
       expect(factory.isLoggedIn()).toBe(true);
     });
   });
@@ -38,7 +48,7 @@ describe('userAuthFactory', function() {
         factory.login('example@example.com', 'epicpword');
         $httpBackend.flush();
         $rootScope.$digest();
-        expect(factory.isLoggedIn()).toBe(true);
+        expect(localStorageServiceMock.set).toHaveBeenCalledWith("user", "Epic User");
       });
 
       it('returns resolved promise', function() {
@@ -128,7 +138,8 @@ describe('userAuthFactory', function() {
 
   describe('#currentUser()', function() {
     it('returns the current user', function() {
-      factory._user = 'Epic Example User';
+      localStorageServiceMock.get
+      .and.returnValue('Epic Example User');
       expect(factory.currentUser()).toEqual('Epic Example User');
     });
   });

@@ -1,5 +1,5 @@
 var ViewJob = function(){
-  this.deletBtn = element(by.css("#deletBtn"));
+  this.deletBtn = element(by.css("#deleteBtn"));
 };
 
 ViewJob.prototype.deleteJob = function() {

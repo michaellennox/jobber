@@ -1,12 +1,11 @@
 from . import api
+from server.controllers.external_resources import CompanyScraperAPI, PeopleScraperAPI, GetJobsAPI
 from server.controllers.companies import CompaniesAPI, CompanyAPI
 from server.controllers.jobs import JobsAPI, JobAPI
 from server.controllers.people import PeopleAPI, PersonAPI
-# from server.controllers.getjobs import GetJobsAPI
 from server.controllers.users import UsersAPI
 from server.controllers.sessions import SessionsAPI
-from server.controllers.external_resources import CompanyScraperAPI, PeopleScraperAPI, GetJobsAPI
-# from server.controllers.company_scraper import CompanyScraperAPI
+from server.controllers.applications import ApplicationsAPI
 
 api.add_resource(CompanyScraperAPI, '/web/companies')
 
@@ -29,3 +28,5 @@ api.add_resource(PersonAPI, '/api/companies/<int:company_id>/people/<int:id>')
 api.add_resource(UsersAPI, '/api/users')
 
 api.add_resource(SessionsAPI, '/api/sessions')
+
+api.add_resource(ApplicationsAPI,'/api/applications')
