@@ -1,6 +1,5 @@
 from flask.ext.restful import Resource, reqparse
 from flask.ext.security import login_user, logout_user
-from flask.ext.security.utils import verify_password
 from server.models.user import User
 
 
@@ -15,10 +14,10 @@ class SessionsResource(Resource):
 class SessionsAPI(SessionsResource):
     def post(self):
         args = self.reqparse.parse_args()
-        user = User.query.filter_by(email=args['email']).first()
-        if user and verify_password(args['password'], user.password):
+        user = User.authenticate(args)
+        if user:
             login_user(user)
-            return dict(user=user.email), 200
+            return dict(user=user.name()), 200
         return 'Invalid username or password', 400
 
     def delete(self):

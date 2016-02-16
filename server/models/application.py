@@ -12,6 +12,3 @@ class Application(db.Model):
         self.is_active = True
         self.user_id = args['user_id']
         self.company_id = args['company_id']
-
-    def __repr__(self):
-        return "<Application {}>".format(self.id)
