@@ -6,6 +6,7 @@ from server.controllers.getjobs import GetJobsAPI
 from server.controllers.users import UsersAPI
 from server.controllers.sessions import SessionsAPI
 from server.controllers.applications import ApplicationsAPI
+from server.models.event import Event
 
 api.add_resource(
     CompaniesAPI,
