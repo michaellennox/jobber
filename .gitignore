@@ -8,3 +8,4 @@ phantomjsdriver.log
 npm-debug.log
 __pychache__
 tests/karma/coverage/*
+*.psd

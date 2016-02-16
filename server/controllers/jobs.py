@@ -10,7 +10,12 @@ company_fields = {
 job_fields = {
     'id': fields.Integer,
     'title': fields.String,
-    'company': fields.Nested(company_fields)
+    'company': fields.Nested(company_fields),
+    'salary': fields.Integer,
+    'location': fields.String,
+    'summary': fields.String,
+    'perks': fields.String
+
 }
 
 
@@ -18,6 +23,10 @@ class JobsResource(Resource):
     def __init__(self):
         self.reqparse = reqparse.RequestParser()
         self.reqparse.add_argument('title', location='json')
+        self.reqparse.add_argument('salary', location='json')
+        self.reqparse.add_argument('location', location='json')
+        self.reqparse.add_argument('summary', location='json')
+        self.reqparse.add_argument('perks', location='json')
         super().__init__()
 
 
