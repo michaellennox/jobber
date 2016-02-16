@@ -1,4 +1,4 @@
-from flask.ext.restful import Resource, fields, marshal, reqparse
+from flask.ext.restful import Resource, reqparse
 from server import db
 from server.models.event import Event
 

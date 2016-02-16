@@ -6,10 +6,8 @@ from server.helpers.getjobs_controllers_helpers import get_xml, display_text
 
 import time
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException
+
 
 class CompanyScraperAPI(Resource):
     def post(self):

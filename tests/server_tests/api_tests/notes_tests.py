@@ -18,15 +18,12 @@ class TestNotesApi(APITestCase, NotesAPIMixin):
         db.session.commit()
         application = Application(dict(user_id=user.id, company_id=company.id))
         db.session.add(application)
-        db.seesion.commit()
-        event = Event(dict(title='test', description='this is an events test', nature='email'))
-        db.session.add(event)
-        db.seesion.commit()
+        db.session.commit()
 
-        res = self.POST_notes(event.id)
+        res = self.POST_notes(application.id)
 
-        self.assert_status(res, 200)
-        self.assertEquals(res.json, str('Note added'))
+        self.assert_status(res, 201)
+        self.assertEquals(res.json, str('Note added!'))
 
     def test_valid_POST_saves_to_database(self):
         user = user_datastore.create_user(
@@ -38,14 +35,10 @@ class TestNotesApi(APITestCase, NotesAPIMixin):
         db.session.commit()
         application = Application(dict(user_id=user.id, company_id=company.id))
         db.session.add(application)
-        db.seesion.commit()
-        event = Event(dict(title='test', description='this is an events test', nature='email'))
-        db.session.add(event)
-        db.seesion.commit()
+        db.session.commit()
 
-        self.POST_notes(event.id)
+        self.POST_notes(application.id)
         note = Note.query.get(1)
 
         self.assertEquals(Note.query.count(), 1)
-        self.assertEquals(note.event, event)
-        
+        self.assertEquals(note.application, application)

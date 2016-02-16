@@ -12,3 +12,4 @@ class Note(db.Model):
 
     def __repr__(self):
         return '<Note {}>'.format(self.id)
+        
