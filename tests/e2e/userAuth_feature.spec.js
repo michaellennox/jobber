@@ -1,13 +1,17 @@
 describe("User Sign In Feauture Test", function(){
-  var loginPage = require("./pages/users/login.page.js"),
+  var welcomePage = require("./pages/users/welcome.page.js")
+      loginPage = require("./pages/users/login.page.js"),
       registerPage = require("./pages/users/register.page.js"),
+      userWelcomePage = new welcomePage(),
       userLoginPage = new loginPage(),
       userRegisterPage = new registerPage();
 
   it("Alanas Boyfriends Story...", function(){
+    // dude visits our site
+    userWelcomePage.get();
+    expect(browser.getCurrentUrl()).toEqual('http://localhost:8080/');
     // dude wants to register for our awesome website
-    userRegisterPage.get();
-    expect(browser.getCurrentUrl()).toEqual('http://localhost:8080/register');
+    userWelcomePage.register.click();
     // dude fills out the register form
     userRegisterPage.email.sendKeys("Alana@boyfriend.com");
     userRegisterPage.password.sendKeys("I<3Alana");
