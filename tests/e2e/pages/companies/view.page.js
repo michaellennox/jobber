@@ -1,5 +1,5 @@
 var ViewPage = function() {
-  this.companyName = element(by.binding("ctrl.company.name"));
+  this.companyName = element.all(by.binding("ctrl.company.name")).get(1);
   this.addPersonLink = element(by.css("#addPerson"));
   this.addJobLink = element(by.css("#addJob"));
   this.peopleList = element.all(by.repeater("person in ctrl.people"));
@@ -24,19 +24,20 @@ ViewPage.prototype.clickDeleteCompany = function() {
   this.deleteBtn.click();
 };
 
-ViewPage.prototype.clickPersonLink = function(name) {
-  var person = name.replace(/\s/g, '-');
-  element(by.css("." + person)).click();
+ViewPage.prototype.clickPersonLink = function(index) {
+  this.peopleList.get(index).click();
 };
 
-ViewPage.prototype.person = function(name) {
-  var person = name.replace(/\s/g, '-');
-  return element(by.css("." + person));
+ViewPage.prototype.person = function(index) {
+  return this.peopleList.get(index);
 };
 
-ViewPage.prototype.clickJobLink = function(job) {
-  var jobLink = job.replace(/\s/g, '-');
-  element(by.css("." + jobLink)).click();
+ViewPage.prototype.job = function(index) {
+  return this.jobList.get(index);
+};
+
+ViewPage.prototype.clickJobLink = function(index) {
+  this.jobList.get(index).click();
 };
 
 module.exports = ViewPage;
