@@ -2,15 +2,22 @@ from . import api
 from server.controllers.companies import CompaniesAPI, CompanyAPI
 from server.controllers.jobs import JobsAPI, JobAPI
 from server.controllers.people import PeopleAPI, PersonAPI
-from server.controllers.getjobs import GetJobsAPI
+# from server.controllers.getjobs import GetJobsAPI
 from server.controllers.users import UsersAPI
 from server.controllers.sessions import SessionsAPI
-from server.controllers.web_scraper import WebScraperAPI
+from server.controllers.external_resources import CompanyScraperAPI, PeopleScraperAPI, GetJobsAPI
+# from server.controllers.company_scraper import CompanyScraperAPI
 
 api.add_resource(
-    WebScraperAPI,
-    '/api/webscraper',
-    endpoint='webscraper'
+    CompanyScraperAPI,
+    '/api/companyscraper',
+    endpoint='companyscraper'
+)
+
+api.add_resource(
+    PeopleScraperAPI,
+    '/api/peoplescraper',
+    endpoint='peoplescraper'
 )
 
 api.add_resource(
