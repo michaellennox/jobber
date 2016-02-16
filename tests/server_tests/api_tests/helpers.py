@@ -181,3 +181,19 @@ class ApplicationsAPIMixin(object):
             ))
         )
         return req
+
+
+class EventsAPIMixin(object):
+    def POST_events(self, application_id, title='DoneEpic',
+                    description='doing things epicly',
+                    nature='outgoing'):
+        req = self.client.post(
+            '/api/applications/{}/events'.format(application_id),
+            content_type='application/json',
+            data=json.dumps(dict(
+                title=title,
+                description=description,
+                nature=nature
+            ))
+        )
+        return req
