@@ -40,5 +40,5 @@ class TestEventsAPI(APITestCase, EventsAPIMixin):
         self.POST_events(application.id)
         event = Event.query.get(1)
 
-        self.assertEquals(Event.query.count(), 2)
+        self.assertEquals(Event.query.count(), 1)
         self.assertEquals(event.application, application)
