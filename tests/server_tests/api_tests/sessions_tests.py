@@ -1,6 +1,6 @@
 from flask.ext.security.utils import encrypt_password
 from server import db
-from server.models.user import User, user_datastore
+from server.models.user import user_datastore
 from .helpers import APITestCase, SessionsAPIMixin
 
 

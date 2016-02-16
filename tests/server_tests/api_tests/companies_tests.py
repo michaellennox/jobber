@@ -31,21 +31,42 @@ class TestCompanyAPI(APITestCase, CompanyAPIMixin):
         db.session.add(company)
         db.session.commit()
 
-        res = self.GET_company('1')
+        res = self.GET_company(1)
 
         self.assert_status(res, 200)
         self.assertEquals(res.json.get('name'), 'ACMECorp')
+
+    def test_valid_PUT_returns_updated_company(self):
+        company = Company(dict(name='ACMECorp'))
+        db.session.add(company)
+        db.session.commit()
+
+        res = self.PUT_company(1, name='NotACME')
+
+        self.assert_status(res, 200)
+        self.assertEquals(res.json.get('name'), 'NotACME')
+
+    def test_valid_PUT_updates_database(self):
+        company = Company(dict(name='ACMECorp'))
+        db.session.add(company)
+        db.session.commit()
+
+        self.PUT_company(1, name='Moo')
+
+        company = Company.query.first()
+
+        self.assertEqual(company.name, 'Moo')
 
     def test_valid_DELETE_deletes_company_from_db(self):
         company = Company(dict(name="TestCo"))
         db.session.add(company)
         db.session.commit()
 
-        res = self.DELETE_company('1')
+        self.DELETE_company('1')
 
         self.assertEqual(Company.query.count(), 0)
 
-    def test_Valid_DELETE_returns_success_message(self):
+    def test_valid_DELETE_returns_success_message(self):
         company = Company(dict(name="TestCo"))
         db.session.add(company)
         db.session.commit()
@@ -53,6 +74,3 @@ class TestCompanyAPI(APITestCase, CompanyAPIMixin):
         res = self.DELETE_company('1')
 
         self.assert_status(res, 204)
-
-
-

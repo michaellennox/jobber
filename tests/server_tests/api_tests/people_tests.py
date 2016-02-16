@@ -51,7 +51,7 @@ class TestPersonAPI(APITestCase, PersonAPIMixin):
         db.session.add(person)
         db.session.commit()
 
-        res = self.DELETE_person(company.id, person.id)
+        self.DELETE_person(company.id, person.id)
 
         self.assertEqual(Person.query.count(), 0)
 
@@ -68,20 +68,29 @@ class TestPersonAPI(APITestCase, PersonAPIMixin):
 
         self.assert_status(res, 204)
 
+    def test_valid_PUT_returns_updated_job_as_json(self):
+        company = Company(dict(name='ACMECorp'))
+        db.session.add(company)
+        db.session.commit()
+        person = Person(dict(name='JobHuntr', company_id=company.id))
+        db.session.add(person)
+        db.session.commit()
 
+        res = self.PUT_person(company.id, person.id, name='JoeBlog')
 
+        self.assert_status(res, 200)
+        self.assertEquals(res.json.get('name'), 'JoeBlog')
 
+    def test_valid_PUT_updates_database(self):
+        company = Company(dict(name='ACMECorp'))
+        db.session.add(company)
+        db.session.commit()
+        person = Person(dict(name='JobHuntr', company_id=company.id))
+        db.session.add(person)
+        db.session.commit()
 
+        self.PUT_person(company.id, person.id, name='JoEB')
 
+        person = Person.query.first()
 
-
-
-
-
-
-
-
-
-
-
-
+        self.assertEqual(person.name, 'JoEB')
