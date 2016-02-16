@@ -2,6 +2,7 @@ from flask.ext.restful import Resource, fields, marshal, reqparse
 from flask.ext.security import current_user
 from server import db
 from server.models.application import Application
+from server.models.note import Note
 
 company_fields = {
     'id': fields.Integer,
