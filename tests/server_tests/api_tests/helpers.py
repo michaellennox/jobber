@@ -197,3 +197,7 @@ class EventsAPIMixin(object):
             ))
         )
         return req
+
+class NotesAPIMixin(object):
+    def POST_notes(self, application_id, description='this is an note test'):
+        req = self.client.post('api/applications/')
