@@ -42,7 +42,7 @@
           </a>
         </div>
         <div class="nav navbar-nav navbar-right" ng-show="authCtrl.currentUser()">
-          <p class="navbar-text">Signed in as {{authCtrl.currentUser()}}</p>
+          <p id="user" class="navbar-text">Signed in as {{authCtrl.currentUser()}}</p>
           <button type="button" class="btn btn-default navbar-btn" ng-click="authCtrl.logout()">Sign Out</button>
         </div>
       </div>
