@@ -37,3 +37,5 @@ Werkzeug==0.11.3
 wheel==0.29.0
 wrapt==1.10.6
 WTForms==2.1
+beautifulsoup4==4.4.1
+selenium==2.52.0
