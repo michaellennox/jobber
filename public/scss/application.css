@@ -44,8 +44,18 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0; }
+/* styles */
 
-html {
-  background-color: red; }
+html h1{
+  color: red;
+}
+
+.bg {
+  height: 100vh;
+  background: url(../img/bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
 
 /*# sourceMappingURL=application.css.map */
