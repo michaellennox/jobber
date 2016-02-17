@@ -8,14 +8,16 @@ class TestSessionsAPI(APITestCase, SessionsAPIMixin):
     def test_valid_POST_returns_success_and_user_object(self):
         user_datastore.create_user(
             email='test@example.com',
-            password=encrypt_password('example')
+            password=encrypt_password('example'),
+            first_name='Colossus',
+            last_name='Zadeh'
         )
         db.session.commit()
 
         res = self.POST_sessions()
 
         self.assert_status(res, 200)
-        self.assertEqual(res.json, dict(user='test@example.com'))
+        self.assertEqual(res.json, dict(user='Colossus Zadeh'))
 
     def test_invalid_POST_returns_error_messsage(self):
         user_datastore.create_user(

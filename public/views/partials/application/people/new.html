@@ -1,0 +1,19 @@
+<div ng-controller="NewPersonCtrl as ctrl" class="col-md-6 col-md-offset-3">
+  <form ng-submit="ctrl.createNewPerson()">
+    <div class="form-group">
+      <label>Name</label>
+      <input ng-model="ctrl.name" class="form-control" type="text" placeholder="Person Name" required autofocus>
+      <br>
+      <input ng-model="ctrl.job_title"class="form-control"  type="text"  placeholder="Job Title" required>
+      <br>
+      <input ng-model="ctrl.email" class="form-control" type="email" placeholder="Email">
+      <br>
+      <input ng-model="ctrl.location"class="form-control"  type="text"  placeholder="Location">
+      <br>
+      <input ng-model="ctrl.summary" class="form-control" type="text" placeholder="Summary">
+      <br>
+      <input ng-model="ctrl.website" class="form-control" type="url" placeholder="Website">
+    </div>
+    <button id="submitP" type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

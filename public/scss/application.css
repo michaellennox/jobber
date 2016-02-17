@@ -1,0 +1,193 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  height: 100vh;
+  width: 100vw; }
+
+main {
+  display: inline-block; }
+
+.dashboard {
+  background-color: #E6E4E0;
+  position: fixed;
+  left: 12%;
+  height: 100%;
+  width: 88%; }
+
+.bg {
+  height: 100vh;
+  background: url(../img/landing-page-bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+button {
+  font-family: "Slim Joe";
+  background-color: #4FAB43; }
+
+.navbar--expanded {
+  height: 100%;
+  width: 12%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #293337;
+  font-family: "Geneva", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", "Verdana", "sans-serif";
+  display: inline-block; }
+  .navbar--expanded ul {
+    height: 100%; }
+    .navbar--expanded ul .navbar-nav--lg {
+      height: 20%;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      color: #90B3C3; }
+    .navbar--expanded ul .navbar-nav--md {
+      height: 15%; }
+      .navbar--expanded ul .navbar-nav--md a {
+        display: block;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        color: #90B3C3; }
+      .navbar--expanded ul .navbar-nav--md a:hover {
+        text-decoration: none;
+        background-color: #90B3C3;
+        color: #293337; }
+
+.secondary-navbar--expanded {
+  height: 100%;
+  width: 10%;
+  background-color: #293337;
+  font-family: "Geneva", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", "Verdana", "sans-serif";
+  display: inline-block; }
+  .secondary-navbar--expanded ul {
+    height: 100%; }
+    .secondary-navbar--expanded ul .navbar-nav--hidden {
+      background-color: #E6E4E0; }
+    .secondary-navbar--expanded ul .navbar-nav--lg {
+      height: 20%; }
+    .secondary-navbar--expanded ul .navbar-nav--md {
+      height: 15%; }
+      .secondary-navbar--expanded ul .navbar-nav--md a {
+        display: block;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        color: #90B3C3; }
+      .secondary-navbar--expanded ul .navbar-nav--md a:hover {
+        text-decoration: none;
+        background-color: #90B3C3;
+        color: #293337; }
+
+.list--companies {
+  display: inline-block;
+  position: fixed;
+  left: 20%;
+  top: 0;
+  height: 100%;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .list--companies ul {
+    height: 75%;
+    width: 80%;
+    background-color: #FAF8F4;
+    overflow: scroll; }
+    .list--companies ul li {
+      width: 100%;
+      text-align: center;
+      height: 15%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      font-family: "Geneva", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", "Verdana", "sans-serif";
+      border: 1px solid white; }
+      .list--companies ul li a {
+        text-decoration: none;
+        color: #90B3C3;
+        width: 50%;
+        height: 50%;
+        margin: auto auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column; }
+      .list--companies ul li a:hover {
+        text-decoration: none;
+        background-color: #90B3C3;
+        color: #293337; }
+
+.header--home {
+  display: inline-block;
+  position: fixed;
+  height: 15%;
+  width: 88%;
+  left: 12%;
+  top: 0;
+  background-color: #293337; }
+
+.content--home {
+  display: inline-block;
+  position: fixed;
+  height: 85%;
+  width: 88%;
+  left: 12%;
+  top: 15%; }
+
+/*# sourceMappingURL=application.css.map */

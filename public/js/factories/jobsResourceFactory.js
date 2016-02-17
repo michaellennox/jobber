@@ -1,10 +1,16 @@
 jobber.factory('jobsResourceFactory', ['$http', function($http) {
   var self = {};
 
-  self.postJobs = function(company_id, title) {
+  self.postJobs = function(company_id, title, salary, location, summary, perks) {
     return $http.post(
       '/api/companies/' + company_id + '/jobs',
-      {title: title}
+      {
+        title: title,
+        salary: salary,
+        location: location,
+        summary: summary,
+        perks: perks
+      }
     );
   };
 

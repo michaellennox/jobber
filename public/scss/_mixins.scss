@@ -1,0 +1,6 @@
+@mixin button {
+  font-family: $font-family--buttons;
+  background-color: $black;
+  border: none;
+  outline: none;
+}
