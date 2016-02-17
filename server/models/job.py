@@ -13,6 +13,3 @@ class Job(db.Model):
     def __init__(self, args):
         self.title = args['title']
         self.company_id = args['company_id']
-
-    def __repr__(self):
-        return "<Job {}>".format(self.id)

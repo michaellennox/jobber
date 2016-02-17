@@ -1,5 +1,7 @@
 from server import db, app
 from flask.ext.security import Security, SQLAlchemyUserDatastore, UserMixin, RoleMixin
+from flask.ext.security.utils import verify_password
+
 
 roles_users = db.Table(
     'roles_users',
@@ -19,6 +21,15 @@ class User(db.Model, UserMixin):
     roles = db.relationship('Role', secondary=roles_users)
     applications = db.relationship('Application', backref='user')
 
+    @classmethod
+    def authenticate(cls, args):
+        user = User.query.filter_by(email=args['email']).first()
+        if user and verify_password(args['password'], user.password):
+            return user
+        return False
+
+    def name(self):
+        return '{} {}'.format(self.first_name, self.last_name)
 
 
 class Role(db.Model, RoleMixin):

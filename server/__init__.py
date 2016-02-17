@@ -17,4 +17,4 @@ import server.routes
 def serve_client(path):
     angular = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                            "..", "public", "views")
-    return send_from_directory(angular, 'layout.html')
+    return send_from_directory(angular, 'index.html')

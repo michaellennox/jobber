@@ -1,1 +1,2 @@
-var jobber = angular.module("Jobber", ["ngRoute", "LocalStorageModule", "ngAnimate"]);
+var jobber = angular.module('Jobber', ['ui.router', 'LocalStorageModule', 'ngAnimate']);
+

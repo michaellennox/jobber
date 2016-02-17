@@ -14,6 +14,3 @@ class Person(db.Model):
     def __init__(self, args):
         self.name = args['name']
         self.company_id = args['company_id']
-
-    def __repr__(self):
-        return "<Person {}>".format(self.id)
