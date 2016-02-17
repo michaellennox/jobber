@@ -1,4 +1,3 @@
-
 jobber.factory('peopleResourceFactory', ['$http', function($http) {
   var self = {};
 

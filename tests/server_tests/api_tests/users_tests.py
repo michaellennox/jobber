@@ -10,7 +10,7 @@ class TestUsersAPI(APITestCase, UsersAPIMixin):
         self.assertEquals(res.json, str('Account Created!'))
 
     def test_valid_POST_saves_to_database(self):
-        res = self.POST_users(first_name='Jack')
+        self.POST_users(first_name='Jack')
 
         user = User.query.first()
 

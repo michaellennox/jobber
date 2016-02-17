@@ -1,7 +1,7 @@
 var IndexPage = function(){
   this.addLink = element(by.css("a[href*='/companies/new']"));
   this.companiesList = element.all(by.repeater("company in ctrl.companies"));
-  this.firstItem = this.companiesList.get(0).element(by.css('a'));
+  this.company = element(by.binding("company.name"));
 };
 
 IndexPage.prototype.get = function(){
@@ -12,8 +12,8 @@ IndexPage.prototype.clickAdd = function(){
   this.addLink.click();
 };
 
-IndexPage.prototype.viewFirstCompany = function() {
-  this.firstItem.click();
+IndexPage.prototype.viewCompany = function(number) {
+  this.companiesList.get(number).click();
 };
 
 module.exports = IndexPage;
