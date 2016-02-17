@@ -1,28 +1,24 @@
 <nav class="secondary-navbar--expanded">
   <ul>
-    <li class="navbar-nav--lg navbar-nav--hidden">
-    </li>
-    <li class="navbar-nav--md navbar-nav--hidden">
-    </li>
+    <li class="navbar-nav--lg navbar-nav--hidden"></li>
+    <li class="navbar-nav--md navbar-nav--hidden"></li>
     <li class="navbar-nav--md">
       <a href="/companies/new">
         <p>ADD</p>
       </a>
     </li>
-    <li class="navbar-nav--md navbar-nav--hidden">
-    </li>
-    <li class="navbar-nav--md navbar-nav--hidden">
-    </li>
-    <li class="navbar-nav--lg navbar-nav--hidden">
-    </li>
+    <li class="navbar-nav--md navbar-nav--hidden"></li>
+    <li class="navbar-nav--md navbar-nav--hidden"></li>
+    <li class="navbar-nav--lg navbar-nav--hidden"></li>
   </ul>
 </nav>
 
-<div ng-controller="CompaniesCtrl as ctrl">
+<div class="list--companies" ng-controller="CompaniesCtrl as ctrl">
   <ul>
     <li ng-repeat="company in ctrl.companies">
-      <a ng-href="/companies/{{company.id}}">{{company.name}}</a>
+      <a ng-href="/companies/{{company.id}}">
+        <p>{{company.name}}</p>
+      </a>
     </li>
   </ul>
-  <a href="/companies/new">Add Company</a>
 </div>
