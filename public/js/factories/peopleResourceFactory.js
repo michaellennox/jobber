@@ -8,7 +8,7 @@ jobber.factory('peopleResourceFactory', ['$http', function($http) {
       {
         name: name,
         jobTitle: job_title,
-        website: webstite,
+        website: website,
         email: email,
         location: location,
         summary: summary
