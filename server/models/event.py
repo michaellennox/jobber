@@ -16,6 +16,3 @@ class Event(db.Model):
         self.nature = args['nature']
         self.application_id = args['application_id']
         self.date = args['date'] or datetime.datetime.now()
-
-    def __repr__(self):
-        return '<Event {}>'.format(self.id)
