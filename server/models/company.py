@@ -10,6 +10,3 @@ class Company(db.Model):
 
     def __init__(self, args):
         self.name = args['name']
-
-    def __repr__(self):
-        return '<Company {}>'.format(self.id)
