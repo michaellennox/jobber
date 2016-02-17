@@ -1,6 +1,9 @@
 jobber.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
   var partialDirectory = 'public/views/partials/';
   $routeProvider
+    .when('/', {
+      templateUrl: partialDirectory + 'authentication/welcome.html'
+    })
     .when('/login', {
       templateUrl: partialDirectory + 'authentication/login.html'
     })
