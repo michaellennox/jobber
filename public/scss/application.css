@@ -173,4 +173,21 @@ button {
         background-color: #90B3C3;
         color: #293337; }
 
+.header--home {
+  display: inline-block;
+  position: fixed;
+  height: 15%;
+  width: 88%;
+  left: 12%;
+  top: 0;
+  background-color: #293337; }
+
+.content--home {
+  display: inline-block;
+  position: fixed;
+  height: 85%;
+  width: 88%;
+  left: 12%;
+  top: 15%; }
+
 /*# sourceMappingURL=application.css.map */

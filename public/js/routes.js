@@ -23,6 +23,10 @@ jobber.config(['$stateProvider', '$locationProvider', '$urlRouterProvider' , fun
     .state('application', {
       templateUrl: partialDirectory + 'application/layout.html'
     })
+      .state('application.home', {
+        url: '/dashboard',
+        templateUrl: partialDirectory + 'application/home/view.html'
+      })
       .state('application.companieslist', {
         url: '/companies',
         templateUrl: partialDirectory + 'application/companies/list.html'
