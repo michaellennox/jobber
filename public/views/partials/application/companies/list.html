@@ -1,8 +1,28 @@
-<div ng-controller="CompaniesCtrl as ctrl" class="col-md-8 col-md-offset-2 text-center">
-  <ul class="list-group">
-    <li ng-repeat="company in ctrl.companies" class="list-group-item">
-      <a ng-class="{{company.name}}" ng-href="/companies/{{company.id}}">{{company.name}}</a>
+<nav class="secondary-navbar--expanded">
+  <ul>
+    <li class="navbar-nav--lg navbar-nav--hidden">
+    </li>
+    <li class="navbar-nav--md navbar-nav--hidden">
+    </li>
+    <li class="navbar-nav--md">
+      <a href="/companies/new">
+        <p>ADD</p>
+      </a>
+    </li>
+    <li class="navbar-nav--md navbar-nav--hidden">
+    </li>
+    <li class="navbar-nav--md navbar-nav--hidden">
+    </li>
+    <li class="navbar-nav--lg navbar-nav--hidden">
     </li>
   </ul>
-  <a href="/companies/new" class="addLink btn btn-success">Add Company</a>
+</nav>
+
+<div ng-controller="CompaniesCtrl as ctrl">
+  <ul>
+    <li ng-repeat="company in ctrl.companies">
+      <a ng-href="/companies/{{company.id}}">{{company.name}}</a>
+    </li>
+  </ul>
+  <a href="/companies/new">Add Company</a>
 </div>
