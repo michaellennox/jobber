@@ -44,18 +44,17 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0; }
-/* styles */
-
-html h1{
-  color: red;
-}
 
 .bg {
   height: 100vh;
-  background: url(../img/bg.jpg) no-repeat center center fixed;
+  background: url(../img/landing-page-bg.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; }
+
+button {
+  font-family: "Slim Joe";
+  background-color: #4FAB43; }
 
 /*# sourceMappingURL=application.css.map */

@@ -1,9 +1,14 @@
 
 .bg { 
   height: 100vh;
-  background: url(../img/bg.jpg) no-repeat center center fixed; 
+  background: url(../img/landing-page-bg.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
+
+button {
+  font-family: $font-family--buttons;
+  background-color: $success-green;
+} 
