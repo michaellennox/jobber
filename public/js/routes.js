@@ -47,6 +47,5 @@ jobber.config(['$stateProvider', '$locationProvider', '$urlRouterProvider' , fun
         url: '/companies/:id/jobs/new',
         templateUrl: partialDirectory + '/application/jobs/new.html'
       });
-
   $locationProvider.html5Mode(true);
 }]);

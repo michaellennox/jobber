@@ -17,7 +17,7 @@ describe('peopleResourceFactory', function() {
   describe('#postPeople()', function() {
     it('makes a POST request to /api/companies/:company_id/people', function() {
       $httpBackend.expectPOST('/api/companies/1/people').respond(201);
-      factory.postPeople(1, 'person name');
+      factory.postPeople(1, 'person name', 'job_title', 'website', 'email', 'location', 'summary');
       $httpBackend.flush();
     });
   });
