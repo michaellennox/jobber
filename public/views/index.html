@@ -12,6 +12,7 @@
     <script src="public/libs/angular/angular.min.js"></script>
     <script src="public/libs/angular-resource/angular-resource.min.js"></script>
     <script src="public/libs/angular-route/angular-route.min.js"></script>
+    <script src="public/libs/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="public/libs/angular-local-storage/dist/angular-local-storage.min.js"></script>
 
     <script src="public/js/app.js"></script>
@@ -33,20 +34,6 @@
     <script src="public/js/factories/jobsResourceFactory.js"></script>
     <script src="public/js/factories/userAuthFactory.js"></script>
   </head>
-  <body>
-    <nav class="navbar navbar-default" ng-controller="LogoutController as authCtrl">
-      <div class="container">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="/">
-            JobbrLogo
-          </a>
-        </div>
-        <div class="nav navbar-nav navbar-right" ng-show="authCtrl.currentUser()">
-          <p id="user" class="navbar-text">Signed in as {{authCtrl.currentUser()}}</p>
-          <button type="button" class="btn btn-default navbar-btn" ng-click="authCtrl.logout()">Sign Out</button>
-        </div>
-      </div>
-    </nav>
-    <main ng-view class="container"></main>
+  <body ui-view>
   </body>
 </html>

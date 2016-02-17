@@ -1,38 +1,24 @@
-jobber.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
+jobber.config(['$stateProvider', '$locationProvider', '$urlRouterProvider' , function($stateProvider, $locationProvider, $urlRouterProvider){
   var partialDirectory = 'public/views/partials/';
-  $routeProvider
-    .when('/', {
-      templateUrl: partialDirectory + 'authentication/welcome.html'
+
+  $urlRouterProvider.otherwise("/");
+
+  $stateProvider
+    .state('authentication', {
+      templateUrl: partialDirectory + 'authentication/index.html'
     })
-    .when('/login', {
-      templateUrl: partialDirectory + 'authentication/login.html'
-    })
-    .when('/register', {
-      templateUrl: partialDirectory + 'authentication/register.html'
-    })
-    .when('/companies', {
-      templateUrl: partialDirectory + 'companies/index.html'
-    })
-    .when('/companies/new', {
-      templateUrl: partialDirectory + 'companies/new.html'
-    })
-    .when('/companies/:id', {
-      templateUrl: partialDirectory + 'companies/view.html'
-    })
-    .when('/companies/:id/people/new', {
-      templateUrl: partialDirectory + 'people/new.html'
-    })
-    .when('/companies/:company_id/people/:id', {
-      templateUrl: partialDirectory + 'people/view.html'
-    })
-    .when('/companies/:id/jobs/new', {
-      templateUrl: partialDirectory + 'jobs/new.html'
-    })
-    .when('/companies/:company_id/jobs/:id', {
-      templateUrl: partialDirectory + 'jobs/view.html'
-    })
-    .otherwise({
-      redirectTo: '/companies'
-    });
+      .state('authentication.welcome', {
+        url: '/',
+        templateUrl: partialDirectory + 'authentication/index.welcome.html'
+      })
+      .state('authentication.register', {
+        url: '/register',
+        templateUrl: partialDirectory + 'authentication/index.register.html'
+      })
+      .state('authentication.login', {
+        url: '/login',
+        templateUrl: partialDirectory + 'authentication/index.login.html'
+      });
+
   $locationProvider.html5Mode(true);
 }]);
