@@ -32,7 +32,7 @@ describe('ViewJobCtrl', function() {
       .and.returnValue($q.when(response));
     ctrl = $controller(
       'ViewJobCtrl',
-      { $routeParams: {id: 0, company_id: 5} }
+      { $stateParams: {id: 0, company_id: 5} }
     );
     $rootScope = _$rootScope_;
   }));

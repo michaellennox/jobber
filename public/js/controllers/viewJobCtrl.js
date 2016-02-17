@@ -1,7 +1,7 @@
-jobber.controller('ViewJobCtrl', ['jobsResourceFactory', '$routeParams', '$window', function(jobsResourceFactory, $routeParams, $window){
+jobber.controller('ViewJobCtrl', ['jobsResourceFactory', '$stateParams', '$window', function(jobsResourceFactory, $stateParams, $window){
   var self = this;
-  self.id = $routeParams.id;
-  self.company_id = $routeParams.company_id;
+  self.id = $stateParams.id;
+  self.company_id = $stateParams.company_id;
 
   (self.init = function() {
     jobsResourceFactory.getJobByID(self.company_id, self.id)
