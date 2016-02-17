@@ -1,5 +1,5 @@
 //======================================
-// GLOBAL CONFIG
+// VARIABLES
 //======================================
 //
 
@@ -10,7 +10,7 @@ $font-family--body : 'Geneva', 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unic
 
 // BASE COLORS
 
-$deep-manly-green : #293337;
+$deep-manly-blue : #293337;
 $light-sky-blue : #90B3C3;
 $good-beige : #E6E4E0;
 $success-green : #4FAB43;
@@ -19,6 +19,10 @@ $white : #FAF8F4;
 $black: #1C1C1C;
 $lighter-black: #252525;
 
-//
 
+// COLOR USAGE 
+
+$color-primary : $deep-manly-blue;
+$color-secondary : $light-sky-blue;
+$color-background: $good-beige;
 

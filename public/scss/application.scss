@@ -1,7 +1,8 @@
 // RESET
 @import "_reset.scss";
 // VARIABLES
-@import "_config.scss";
+@import "_variables.scss";
 // MIXINS
-@import "_mixins.scss"
-//
+// STYLESHEETS
+@import "partials/companies/_index.scss";
+
