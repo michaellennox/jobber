@@ -180,7 +180,15 @@ button {
   width: 88%;
   left: 12%;
   top: 0;
-  background-color: #293337; }
+  background-color: #293337;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .header--home h1 {
+    color: #90B3C3;
+    font-family: "Futura Book", "Century Gothic", "Open Sans" "sans-serif";
+    font-size: 2.5em;
+    font-weight: bold; }
 
 .content--home {
   display: inline-block;
@@ -189,5 +197,33 @@ button {
   width: 88%;
   left: 12%;
   top: 15%; }
+  .content--home .content-motivational {
+    text-align: center;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .content--home div {
+    height: 100%;
+    position: relative; }
+    .content--home div .list--home-jobs {
+      left: 5%;
+      background-color: #FAF8F4;
+      height: 40%;
+      width: 40%;
+      position: absolute; }
+    .content--home div .list--home-applications {
+      left: 5%;
+      top: 43%;
+      background-color: #FAF8F4;
+      height: 40%;
+      width: 40%;
+      position: absolute; }
+    .content--home div .story--home {
+      left: 55%;
+      background-color: #FAF8F4;
+      height: 80%;
+      width: 40%;
+      position: absolute; }
 
 /*# sourceMappingURL=application.css.map */
