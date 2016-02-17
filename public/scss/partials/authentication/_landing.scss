@@ -1,4 +1,4 @@
-
+// styles 
 .bg { 
   height: 100vh;
   background: url(../img/landing-page-bg.jpg) no-repeat center center fixed; 
@@ -8,7 +8,75 @@
   background-size: cover;
 }
 
-button {
-  font-family: $font-family--buttons;
-  background-color: $success-green;
-} 
+
+.btn {
+  @include btn;
+  @include border-radius(20px);
+  font-size: 3em;
+  margin: 20px;
+  height: 70px;
+  width: 450px;
+  line-height: 70px;
+  &:hover{
+    background-color: $success-green;
+  }
+}
+
+.btn-submit{
+  @include btn;
+  @include border-radius(10px);
+  height: 50px;
+  width: 250px;
+  font-size: 1.5em;
+  line-height: 45px;
+  margin: 10px;
+  &:hover{
+    background-color: $success-green;
+  }
+}
+
+.btns, .register-form, .login-form {
+  @include position-left;
+}
+
+.register-form {
+  top: 25%;
+}
+
+.login-form {
+  top: 35%
+}
+
+input {
+  @include inputs;
+  @include border-radius(5px);
+}
+
+input:focus, .alert:focus {
+  outline: none;
+}
+
+::-webkit-input-placeholder {
+  opacity: 0.8;
+  color: $black;
+}
+
+footer {
+  @include linx($white, $white, $white, $white);
+  text-align: center;
+  color: $white;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 6px;
+  font-size: 0.8em;
+  font-family: $font-family--heading;
+}
+
+.alert {
+  @include alert ($white, $warning-red);
+  height: 50px;
+  width: 350px;
+}
+
+

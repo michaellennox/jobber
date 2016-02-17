@@ -53,8 +53,107 @@ table {
   -o-background-size: cover;
   background-size: cover; }
 
-button {
+.btn {
   font-family: "Slim Joe";
-  background-color: #4FAB43; }
+  background-color: #1C1C1C;
+  color: #FAF8F4;
+  border: none;
+  outline: none;
+  text-align: center;
+  padding: 5px;
+  border-radius: 20px;
+  font-size: 3em;
+  margin: 20px;
+  height: 70px;
+  width: 450px;
+  line-height: 70px; }
+  .btn:hover {
+    background-color: #4FAB43; }
+
+.btn-submit {
+  font-family: "Slim Joe";
+  background-color: #1C1C1C;
+  color: #FAF8F4;
+  border: none;
+  outline: none;
+  text-align: center;
+  padding: 5px;
+  border-radius: 10px;
+  height: 50px;
+  width: 250px;
+  font-size: 1.5em;
+  line-height: 45px;
+  margin: 10px; }
+  .btn-submit:hover {
+    background-color: #4FAB43; }
+
+.btns, .register-form, .login-form {
+  text-align: center;
+  width: 500px;
+  position: fixed;
+  top: 35%;
+  left: 10%; }
+
+.register-form {
+  top: 25%; }
+
+.login-form {
+  top: 35%; }
+
+input {
+  margin: 20px;
+  height: 40px;
+  width: 300px;
+  border: none;
+  text-align: center;
+  font-family: "Geneva", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", "Verdana", "sans-serif";
+  font-size: 1.2em;
+  background-color: rgba(250, 248, 244, 0.8);
+  color: #1C1C1C;
+  border-radius: 5px; }
+
+input:focus, .alert:focus {
+  outline: none; }
+
+::-webkit-input-placeholder {
+  opacity: 0.8;
+  color: #1C1C1C; }
+
+footer {
+  text-align: center;
+  color: #FAF8F4;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 6px;
+  font-size: 0.8em;
+  font-family: "Futura", "Century Gothic", "Open Sans" "sans-serif"; }
+  footer a {
+    color: #FAF8F4;
+    text-decoration: none; }
+    footer a:visited {
+      color: #FAF8F4; }
+    footer a:hover {
+      color: #FAF8F4;
+      font-size: 1.3em;
+      text-decoration: underline; }
+    footer a:active {
+      color: #FAF8F4; }
+
+.alert {
+  margin: 20px;
+  height: 40px;
+  width: 300px;
+  border: none;
+  text-align: center;
+  font-family: "Geneva", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", "Verdana", "sans-serif";
+  font-size: 1.2em;
+  background-color: rgba(250, 248, 244, 0.8);
+  color: #1C1C1C;
+  border-radius: 5px;
+  background-color: #D9534F;
+  color: #FAF8F4;
+  height: 50px;
+  width: 350px; }
 
 /*# sourceMappingURL=application.css.map */

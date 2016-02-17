@@ -1,6 +1,58 @@
-@mixin button {
-  font-family: $font-family--buttons;
-  background-color: $black;
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+@mixin btn {
+    font-family: $font-family--buttons;
+    background-color: $black;
+    color: $white;
+    border: none;
+    outline: none;
+    text-align: center;
+    padding: 5px;
+}
+
+@mixin alert($color, $bg-color) {
+  @include inputs;
+  @include border-radius(5px);
+  background-color: $bg-color;
+  color: $color;
+}
+
+@mixin position-left {
+  text-align:  center;
+  width: 500px;
+  position: fixed;
+  top: 35%;
+  left: 10%;
+}
+
+@mixin inputs {
+  margin: 20px;
+  height: 40px;
+  width: 300px;
   border: none;
-  outline: none;
+  text-align: center;
+  font-family: $font-family--body;
+  font-size: 1.2em;
+  background-color: rgba($white, 0.8);
+  color: $black;
+}
+
+@mixin linx ($link, $visit, $hover, $active) {
+  a {
+    color: $link;
+    text-decoration: none;
+    &:visited {
+      color: $visit;
+    }
+    &:hover {
+      color: $hover;
+      font-size: 1.3em;
+      text-decoration: underline;   
+    }
+    &:active {
+      color: $active;
+    }
+  }
 }

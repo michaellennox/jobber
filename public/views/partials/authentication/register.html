@@ -3,23 +3,19 @@
     <span class="glyphicon glyphicon-exclamation-sign"></span>
     {{ctrl.error}}
   </section>
-  <form ng-submit="ctrl.register()">
+  <form ng-submit="ctrl.register()" class="register-form">
     <div class="form-group">
-      <label>Email</label>
-      <input ng-model="ctrl.email" type="text" class="form-control" placeholder="Email" required autofocus>
+      <input ng-model="ctrl.email" type="text" placeholder="Email" required autofocus>
     </div>
     <div class="form-group">
-      <label>Password</label>
-      <input ng-model="ctrl.password" type="password" class="form-control" placeholder="password" required>
+      <input ng-model="ctrl.password" type="password" placeholder="Password" required>
     </div>
     <div class="form-group">
-      <label>First Name</label>
-      <input ng-model="ctrl.firstName" type="text" class="form-control" placeholder="First Name" required>
+      <input ng-model="ctrl.firstName" type="text" placeholder="First Name" required>
     </div>
     <div class="form-group">
-      <label>Last Name</label>
-      <input ng-model="ctrl.lastName" type="text" class="form-control" placeholder="Person Name" required>
+      <input ng-model="ctrl.lastName" type="text" placeholder="Last Name" required>
     </div>
-    <button id="register" type="submit" class="btn btn-primary">Submit</button>
+    <button id="register" type="submit" class="btn-submit">Submit</button>
   </form>
 </div>
