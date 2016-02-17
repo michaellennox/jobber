@@ -1,6 +1,6 @@
-jobber.controller('NewJobCtrl', ['jobsResourceFactory', '$window', '$routeParams', function(jobsResourceFactory, $window, $routeParams) {
+jobber.controller('NewJobCtrl', ['jobsResourceFactory', '$window', '$stateParams', function(jobsResourceFactory, $window, $stateParams) {
   var self = this;
-  self.company_id = $routeParams.id;
+  self.company_id = $stateParams.id;
 
   self.createNewJob = function() {
     jobsResourceFactory.postJobs(self.company_id, self.title, self.salary, self.location, self.summary, self.perks)

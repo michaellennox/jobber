@@ -31,7 +31,7 @@ describe('ViewPersonCtrl', function() {
       .and.returnValue($q.when(response));
     ctrl = $controller(
       'ViewPersonCtrl',
-        { $routeParams: {id: 0, company_id: 5}}
+        { $stateParams: {id: 0, company_id: 5}}
       );
     $rootScope = _$rootScope_;
   }));

@@ -5,5 +5,9 @@
 // MIXINS
 
 // STYLESHEETS
+@import "_main";
 @import "partials/authentication/_landing.scss";
-
+@import "partials/navigation/_application-nav.scss";
+@import "partials/navigation/_secondary-nav.scss";
+@import "partials/lists/_companies.scss";
+@import "partials/_home.scss"
