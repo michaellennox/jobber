@@ -109,7 +109,7 @@ main {
   width: 500px;
   position: fixed;
   top: 35%;
-  left: 10%; }
+  left: 15%; }
 
 .register-form {
   top: 25%; }
@@ -144,7 +144,7 @@ footer {
   bottom: 0;
   padding: 6px;
   font-size: 0.8em;
-  font-family: "Futura Book", "Century Gothic", "Open Sans", "sans-serif"; }
+  font-family: "Geneva", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", "Verdana", "sans-serif"; }
   footer a {
     color: #FAF8F4;
     text-decoration: none; }
@@ -156,6 +156,10 @@ footer {
       text-decoration: underline; }
     footer a:active {
       color: #FAF8F4; }
+
+footer img {
+  margin-left: 10px;
+  margin-right: 10px; }
 
 .alert {
   margin: 20px;
@@ -172,6 +176,20 @@ footer {
   color: #FAF8F4;
   height: 50px;
   width: 350px; }
+
+.logo {
+  border-radius: 20px;
+  height: 400px;
+  width: 500px;
+  position: absolute;
+  right: 25%;
+  top: 25%; }
+
+.logo img {
+  position: absolute;
+  left: 20%;
+  width: 528px;
+  height: auto; }
 
 .navbar--expanded {
   height: 100%;

@@ -71,13 +71,35 @@ footer {
   bottom: 0;
   padding: 6px;
   font-size: 0.8em;
-  font-family: $font-family--heading;
+  font-family: $font-family--body;
 }
 
+footer img {
+  margin-left: 10px;
+  margin-right: 10px;
+}
 .alert {
   @include alert ($white, $warning-red);
   height: 50px;
   width: 350px;
 }
+
+.logo {
+  @include border-radius(20px);
+  height: 400px;
+  width: 500px;
+  position: absolute;
+  right: 25%;
+  top: 25%;
+}
+
+.logo img {
+  position: absolute;
+  left:20%;
+  width: 528px;
+  height: auto;
+}
+
+
 
 
