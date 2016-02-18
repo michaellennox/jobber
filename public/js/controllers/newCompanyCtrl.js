@@ -7,4 +7,12 @@ jobber.controller('NewCompanyCtrl', ['companiesResourceFactory', '$window', func
         $window.location.href = '/companies';
       });
   };
+
+  self.scrapeCompanyData = function(){
+    companiesResourceFactory.getCompanyFromLinkedin(self.companyURL)
+      .then(function(response){
+        self.scrapedData = response.data;
+        self.name = response.
+      });
+  };
 }]);
