@@ -1,0 +1,33 @@
+<header class="header--home" ng-controller="CurrentUserCtrl as userCtrl">
+  <h1>HELLO, {{userCtrl.currentUser()}}.</h1>
+</header>
+
+<div class="content--home" ng-controller="ProfileCtrl as ctrl">
+  <section class="content-motivational">
+    <h2>Testing Text</h2>
+  </section>
+  <div>
+    <section class="list--home-jobs">
+      <ul>
+        <li ng-repeat="job in ctrl.jobs">
+          <a ng-href="{{job.url}}">
+            <p>{{job.jobtitle}} - {{job.company}}</p>
+          </a>
+        </li>
+      </ul>
+    </section>
+    <section class="list--home-applications">
+      <ul>
+        <li>
+          <a>
+            <p></p>
+          </a>
+        </li>
+      </ul>
+    </section>
+    <section class="story--home">
+      <h2>THE STORY SO FAR</h2>
+      <div></div>
+    </section>
+  </div>
+</div>

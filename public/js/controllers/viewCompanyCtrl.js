@@ -1,6 +1,6 @@
-jobber.controller('ViewCompanyCtrl', ['companiesResourceFactory', '$routeParams', function(companiesResourceFactory, $routeParams) {
+jobber.controller('ViewCompanyCtrl', ['companiesResourceFactory', '$stateParams', '$window', function(companiesResourceFactory, $stateParams, $window) {
   var self = this;
-  self.id = $routeParams.id;
+  self.id = $stateParams.id;
 
   (self.init = function() {
     companiesResourceFactory.getCompanyByID(self.id)
@@ -11,7 +11,7 @@ jobber.controller('ViewCompanyCtrl', ['companiesResourceFactory', '$routeParams'
       });
   })();
 
- self.deleteCompany = function() {
+  self.deleteCompany = function() {
     companiesResourceFactory.deleteCompanyByID(self.id)
       .then(function(){
         $window.location.href = '/companies';

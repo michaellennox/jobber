@@ -1,0 +1,41 @@
+.secondary-navbar--expanded {
+  height: 100%;
+  width: 10%;
+  background-color: $deep-manly-blue;
+  font-family: $font-family--body;
+  display: inline-block;
+
+  ul {
+    height: 100%;
+
+    .navbar-nav--hidden {
+      background-color: $good-beige;
+    }
+
+    .navbar-nav--lg {
+      height: 20%;
+    }
+
+    .navbar-nav--md {
+      height: 15%;
+
+      a {
+        display: block;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        color: $light-sky-blue;
+      }
+
+      a:hover {
+        text-decoration: none;
+        background-color: $light-sky-blue;
+        color: $deep-manly-blue;
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 describe('jobsResourceFactory', function() {
-  var factory;
-  var $httpBackend;
+  var factory,
+      $httpBackend;
 
   beforeEach(module('Jobber'));
 
@@ -22,10 +22,26 @@ describe('jobsResourceFactory', function() {
     });
   });
 
+  describe("#deleteJobByID()", function(){
+    it("makes a DELETE request to api/companies/:company_id/jobs/:id", function(){
+      $httpBackend.expectDELETE("/api/companies/666/jobs/66").respond(204);
+      factory.deleteJobByID(666, 66);
+      $httpBackend.flush();
+    });
+  });
+
   describe("#getJobByID()", function(){
-    it("Makes a get request to /api/companies/:company_id/jobs/:id", function(){
+    it("Makes a GET request to /api/companies/:company_id/jobs/:id", function() {
       $httpBackend.expectGET("/api/companies/3/jobs/5").respond(200);
       factory.getJobByID(3, 5);
+      $httpBackend.flush();
+    });
+  });
+
+  describe('#getJobsFromWeb()', function() {
+    it('makes a POST request to /web/jobs', function() {
+      $httpBackend.expectPOST("/web/jobs").respond(200);
+      factory.getJobsFromWeb();
       $httpBackend.flush();
     });
   });

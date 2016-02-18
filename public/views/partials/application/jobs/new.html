@@ -1,0 +1,17 @@
+<div ng-controller="NewJobCtrl as ctrl" class="col-md-6 col-md-offset-3">
+  <form ng-submit="ctrl.createNewJob()">
+    <div class="form-group">
+      <label>Title</label>
+      <input ng-model="ctrl.title" type="text" class="form-control" placeholder="Job Title" required autofocus>
+      <br>
+      <input ng-model="ctrl.salary"class="form-control"  type="text"  placeholder="Job Title">
+      <br>
+      <input ng-model="ctrl.location"class="form-control"  type="text"  placeholder="Location">
+      <br>
+      <input ng-model="ctrl.summary" class="form-control" type="text" placeholder="Summary">
+      <br>
+      <input ng-model="ctrl.perks" class="form-control" type="url" placeholder="Perks">
+    </div>
+    <button id="submitJ"type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

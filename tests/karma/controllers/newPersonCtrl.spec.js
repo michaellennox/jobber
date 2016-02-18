@@ -21,7 +21,7 @@ describe('NewPersonCtrl', function() {
       .and.returnValue($q.when({}));
     ctrl = $controller(
       'NewPersonCtrl',
-      { $routeParams: {id: 1} }
+      { $stateParams: {id: 1} }
     );
     $rootScope = _$rootScope_;
   }));

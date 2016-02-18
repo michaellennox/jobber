@@ -1,0 +1,120 @@
+.header--home {
+  display: inline-block;
+  position: fixed;
+  height: 15%;
+  width: 88%;
+  left: 12%;
+  top: 0;
+  background-color: $deep-manly-blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    color: $light-sky-blue;
+    font-family: $font-family--heading;
+    font-size: 2.5em;
+    font-weight: bold;
+  }
+}
+
+.content--home {
+  display: inline-block;
+  position: fixed;
+  height: 85%;
+  width: 88%;
+  left: 12%;
+  top: 15%;
+
+  .content-motivational {
+    text-align: center;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+      font-size: 1.75em;
+      font-family: $font-family--heading;
+      margin-bottom: 20px;
+    }
+  }
+
+  div {
+    height: 100%;
+    position: relative;
+
+    .list--home-jobs {
+      left: 5%;
+      background-color: $white;
+      height: 40%;
+      width: 40%;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      ul {
+        height: 75%;
+        width: 80%;
+        background-color: $white;
+        overflow: scroll;
+
+        li {
+          width: 100%;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          font-family: $font-family--body;
+          margin-bottom: 10px;
+
+          a {
+            text-decoration: none;
+            color: $light-sky-blue;
+            width: 100%;
+            height: 50%;
+            margin: auto auto;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin: 5px, 0, 5px, 0;
+          }
+
+          a:hover {
+            text-decoration: none;
+            background-color: $light-sky-blue;
+            color: $deep-manly-blue;
+          }
+        }
+      }
+    }
+
+    .list--home-applications {
+      left: 5%;
+      top: 43%;
+      background-color: $white;
+      height: 40%;
+      width: 40%;
+      position: absolute;
+    }
+
+    .story--home {
+      left: 52%;
+      height: 80%;
+      width: 40%;
+      position: absolute;
+
+      h2 {
+        font-size: 1.5em;
+        font-family: $font-family--heading;
+        text-align: center;
+        margin-bottom: 15px;
+      }
+
+      div {
+        background-color: $white;
+      }
+    }
+  }
+}

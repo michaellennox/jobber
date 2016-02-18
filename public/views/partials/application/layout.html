@@ -1,0 +1,41 @@
+<nav class="navbar--expanded" ng-controller="CurrentUserCtrl as authCtrl">
+  <ul>
+    <li class="navbar-nav--lg">
+      <p>Jobbr Logo</p>
+    </li>
+    <li class="navbar-nav--md">
+      <a href="/dashboard">
+        <p><i class="fa fa-home"></i></p>
+        <br>
+        <p>HOME</p>
+      </a>
+    </li>
+    <li class="navbar-nav--md">
+      <a href="/companies">
+        <p><i class="fa fa-building"></i></p>
+        <br>
+        <p>COMPANIES</p>
+      </a>
+    </li>
+    <li class="navbar-nav--md">
+      <a href="#">
+        <p><i class="fa fa-paperclip"></i></p>
+        <br>
+        <p>APPLICATIONS</p>
+      </a>
+    </li>
+    <li class="navbar-nav--md">
+      <a href="#">
+        <p><i class="fa fa-star"></i></p>
+        <br>
+        <p>ACHIEVEMENTS</p>
+      </a>
+    </li>
+    <li class="navbar-nav--lg">
+      <p>Signed In As</p>
+      <p>{{authCtrl.currentUser()}}</p>
+    </li>
+  </ul>
+</nav>
+<main class="dashboard" ui-view>
+</main>

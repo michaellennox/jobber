@@ -1,4 +1,4 @@
-<div ng-controller="RegistrationController as ctrl" class="col-md-6 col-md-offset-3">
+<div ng-controller="RegistrationCtrl as ctrl" class="col-md-6 col-md-offset-3">
   <section ng-show="ctrl.error" class="alert alert-danger" role="alert">
     <span class="glyphicon glyphicon-exclamation-sign"></span>
     {{ctrl.error}}
@@ -20,6 +20,6 @@
       <label>Last Name</label>
       <input ng-model="ctrl.lastName" type="text" class="form-control" placeholder="Person Name" required>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button id="register" type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>

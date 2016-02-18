@@ -1,0 +1,16 @@
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+main {
+  display: inline-block;
+}
+
+.dashboard {
+  background-color: $good-beige;
+  position: fixed;
+  left: 12%;
+  height: 100%;
+  width: 88%;
+}
