@@ -1,4 +1,4 @@
-jobber.controller('LoginController', ['userAuthFactory', '$window', function(userAuthFactory, $window) {
+jobber.controller('LoginCtrl', ['userAuthFactory', '$window', function(userAuthFactory, $window) {
   var self = this;
 
   self.login = function() {
