@@ -1,17 +1,17 @@
-<header class="header--home" ng-controller="currentUserCtrl as userCtrl">
+<header class="header--home" ng-controller="CurrentUserCtrl as userCtrl">
   <h1>HELLO, {{userCtrl.currentUser()}}.</h1>
 </header>
 
-<div class="content--home" ng-controller="profileCtrl as ctrl">
+<div class="content--home" ng-controller="ProfileCtrl as ctrl">
   <section class="content-motivational">
     <h2>Testing Text</h2>
   </section>
   <div>
     <section class="list--home-jobs">
       <ul>
-        <li>
+        <li ng-repeat="job in ctrl.jobs">
           <a>
-            <p></p>
+            <p>{{job.company}}</p>
           </a>
         </li>
       </ul>
