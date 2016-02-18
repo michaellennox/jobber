@@ -1,4 +1,4 @@
-describe('LogoutController', function() {
+describe('CurrentUserCtrl', function() {
   var ctrl;
   var userAuthFactoryMock;
 
@@ -13,7 +13,7 @@ describe('LogoutController', function() {
   });
 
   beforeEach(inject(function($controller) {
-    ctrl = $controller('LogoutController');
+    ctrl = $controller('CurrentUserCtrl');
   }));
 
   describe('#currentUser()', function() {

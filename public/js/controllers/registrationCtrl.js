@@ -1,4 +1,4 @@
-jobber.controller('RegistrationController', ['userAuthFactory', '$window', function(userAuthFactory, $window) {
+jobber.controller('RegistrationCtrl', ['userAuthFactory', '$window', function(userAuthFactory, $window) {
   var self = this;
 
   self.register = function() {

@@ -1,17 +1,17 @@
-<header class="header--home">
-  <h1>HELLO, ANGULAR NAME.</h1>
+<header class="header--home" ng-controller="CurrentUserCtrl as userCtrl">
+  <h1>HELLO, {{userCtrl.currentUser()}}.</h1>
 </header>
 
-<div class="content--home">
+<div class="content--home" ng-controller="ProfileCtrl as ctrl">
   <section class="content-motivational">
     <h2>Testing Text</h2>
   </section>
   <div>
     <section class="list--home-jobs">
       <ul>
-        <li>
-          <a>
-            <p>random name</p>
+        <li ng-repeat="job in ctrl.jobs">
+          <a ng-href="{{job.url}}">
+            <p>{{job.jobtitle}} - {{job.company}}</p>
           </a>
         </li>
       </ul>
@@ -20,7 +20,7 @@
       <ul>
         <li>
           <a>
-            <p>random name</p>
+            <p></p>
           </a>
         </li>
       </ul>

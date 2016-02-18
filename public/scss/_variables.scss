@@ -5,7 +5,7 @@
 
 // FONT STACKS
 
-$font-family--heading : 'Futura Book', 'Century Gothic', 'Open Sans', 'sans-serif';
+$font-family--heading : 'Futura Book', 'Futura', 'Century Gothic', 'Open Sans', 'sans-serif';
 $font-family--body : 'Geneva', 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', 'Verdana', 'sans-serif';
 $font-family--buttons : 'Slim Joe';
 
@@ -26,7 +26,7 @@ $warning-red: #D9534F;
 $trans-white-9 : rgba($white, 0.9);
 $trans-black-9 : rgba($black, 0.9);
 
-// COLOR USAGE 
+// COLOR USAGE
 
 $color-primary : $deep-manly-blue;
 $color-secondary : $light-sky-blue;
@@ -36,4 +36,3 @@ $color-background: $good-beige;
 // NESTED SELECTORS
 
 $button-forms-hover: 'button:hover';
-
