@@ -2,7 +2,7 @@ jobber.factory('peopleResourceFactory', ['$http', function($http) {
   var self = {};
 
 
-  self.postPeople = function(name, company_id, job_title, email, location, summary, website) {
+  self.postPeople = function(name, company_id, job_title, location, photo, summary) {
     return $http.post(
       '/api/companies/' + company_id + '/people',
       {
