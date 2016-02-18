@@ -12,7 +12,12 @@ jobber.controller('NewCompanyCtrl', ['companiesResourceFactory', '$window', func
     companiesResourceFactory.getCompanyFromLinkedin(self.companyURL)
       .then(function(response){
         self.scrapedData = response.data;
-        self.name = response.
+        self.name = response.data.name;
+        self.summary = response.data.summary;
+        self.website = response.data.website;
+        self.industry = response.data.industry;
+        self.city = response.data.city;
+        self.postcode = response.data.postcode;
       });
   };
 }]);
