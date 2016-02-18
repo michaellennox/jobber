@@ -24,7 +24,6 @@ class TestApplicationsAPI(APITestCase, AuthMixin, ApplicationsAPIMixin):
             'ACMECorp'
         )
 
-
     def test_valid_POST_returns_success_message(self):
         company = Company(dict(name='ACEMECorp'))
         db.session.add(company)
