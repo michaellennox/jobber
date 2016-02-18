@@ -7,7 +7,7 @@ class Person(db.Model):
     company_id = db.Column(db.Integer, db.ForeignKey("company.id"))
     job_title = db.Column(db.String(100))
     location = db.Column(db.String(100))
-    photo = dbColumn(db.String(100))
+    photo = db.Column(db.String(100))
     summary = db.Column(db.Text)
 
     def __init__(self, args):
