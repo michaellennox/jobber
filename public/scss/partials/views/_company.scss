@@ -31,13 +31,14 @@
 
     h2 {
       text-align: center;
+      height: 8%;
     }
 
     .list-wrapper {
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 75%;
+      height: 85%;
       width: 80%;
       margin: 0 auto;
 
@@ -53,12 +54,12 @@
           justify-content: center;
           flex-direction: column;
           font-family: $font-family--body;
-          margin-bottom: 10px;
+          margin-bottom: 20px;
 
           a {
             text-decoration: none;
             color: $light-sky-blue;
-            width: 100%;
+            width: 60%;
             height: 50%;
             margin: auto auto;
             display: flex;
@@ -93,5 +94,58 @@
     bottom: 5%;
     left: 2.5%;
     background-color: $white;
+
+    h2 {
+      text-align: center;
+      height: 8%;
+    }
+
+    .list-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 85%;
+      width: 80%;
+      margin: 0 auto;
+
+      ul {
+        height: 80%;
+        width: 100%;
+        overflow: scroll;
+
+        li {
+          width: 100%;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          font-family: $font-family--body;
+          margin-bottom: 20px;
+
+          a {
+            text-decoration: none;
+            color: $light-sky-blue;
+            width: 60%;
+            height: 50%;
+            margin: auto auto;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin: 5px, 0, 5px, 0;
+          }
+
+          a:hover {
+            text-decoration: none;
+            background-color: $light-sky-blue;
+            color: $deep-manly-blue;
+          }
+        }
+      }
+    }
   }
+}
+
+.list--wrapper a {
+  @include linx ($black, $deep-manly-blue, $good-beige, $nero)
+
 }

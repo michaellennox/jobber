@@ -1,51 +1,54 @@
-<nav class="secondary-navbar--expanded">
-  <ul>
-    <li class="navbar-nav--lg navbar-nav--hidden"></li>
-    <li class="navbar-nav--md navbar-nav--hidden"></li>
-    <li class="navbar-nav--md">
-      <a href="/companies/new">
-        <p><i class="fa fa-plus"></i></p>
-        <p>company</p>
-      </a>
-    </li>
-    <li class="navbar-nav--md navbar-nav--hidden"></li>
-    <li class="navbar-nav--md navbar-nav--hidden"></li>
-    <li class="navbar-nav--lg navbar-nav--hidden"></li>
-  </ul>
-</nav>
+<div ng-controller="ViewCompanyCtrl as ctrl" class="wrapper--fill">
+  <nav class="secondary-navbar--expanded">
+    <ul>
+      <li class="navbar-nav--lg navbar-nav--hidden"></li>
+      <li class="navbar-nav--md navbar-nav--hidden"></li>
+      <li class="navbar-nav--sm">
+        <a ng-href="/companies/{{ctrl.company.id}}/people/new">
+          <p><i class="fa fa-plus"></i> person</p>
+        </a>
+      </li>
+      <li class="navbar-nav--sm">
+        <a ng-href="/companies/{{ctrl.company.id}}/jobs/new">
+          <p><i class="fa fa-plus"></i> job</p>
+        </a>
+      </li>
+      <li class="navbar-nav--md navbar-nav--hidden"></li>
+      <li class="navbar-nav--md navbar-nav--hidden"></li>
+      <li class="navbar-nav--lg navbar-nav--hidden"></li>
+    </ul>
+  </nav>
 
-<div class="wrapper--company">
-  <div ng-controller="ViewCompanyCtrl as ctrl" class="views--company">
-    <section class="profile">
-      <h2>{{ctrl.company.name}}</h2>
-    </section>
+  <div class="wrapper--company">
+    <div class="views--company">
+      <section class="profile">
+        <h2 class="title">{{ctrl.company.name}}</h2>
+      </section>
 
-    <section class="list--people">
-      <h2>Employees</h2>
-      <div class="list-wrapper">
-        <ul>
-          <li ng-repeat="person in ctrl.people">
-            <a ng-href="/companies/{{ctrl.company.id}}/people/{{person.id}}">{{person.name}}</a>
-          </li>
-        </ul>
-      </div>
-      <a ng-href="/companies/{{ctrl.company.id}}/people/new">Add Employee</a>
-    </section>
+      <section class="list--people">
+        <h2 class="title">Employees</h2>
+        <div class="list-wrapper">
+          <ul>
+            <li ng-repeat="person in ctrl.people">
+              <a ng-href="/companies/{{ctrl.company.id}}/people/{{person.id}}">{{person.name}}</a>
+            </li>
+          </ul>
+        </div>
+      </section>
 
-    <section class="list--application">
-      <h2>APPLICATION</h2>
-    </section>
+      <section class="list--application">
+        <h2 class="title">APPLICATION</h2>
+      </section>
 
-    <section class="list--jobs">
-      <h2>Jobs</h2>
-      <div class="list-wrapper">
-        <ul>
-          <li ng-repeat="job in ctrl.jobs">
-            <a ng-href="/companies/{{ctrl.company.id}}/jobs/{{job.id}}">{{job.title}}</a>
-          </li>
-        </ul>
-      </div>
-      <a ng-href="/companies/{{ctrl.company.id}}/jobs/new">Add Job</a>
-    </section>
+      <section class="list--jobs">
+        <div class="list-wrapper">
+          <ul>
+            <li ng-repeat="job in ctrl.jobs">
+              <a ng-href="/companies/{{ctrl.company.id}}/jobs/{{job.id}}">{{job.title}}</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
   </div>
 </div>
