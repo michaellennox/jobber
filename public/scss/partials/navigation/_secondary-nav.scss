@@ -37,5 +37,27 @@
         color: $deep-manly-blue;
       }
     }
+
+    .navbar-nav--sm {
+      height: 7.5%;
+
+      a {
+        display: block;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        color: $light-sky-blue;
+      }
+
+      a:hover {
+        text-decoration: none;
+        background-color: $light-sky-blue;
+        color: $deep-manly-blue;
+      }
+    }
   }
 }

@@ -1,0 +1,25 @@
+<nav class="secondary-navbar--expanded">
+  <ul>
+    <li class="navbar-nav--lg navbar-nav--hidden"></li>
+    <li class="navbar-nav--md navbar-nav--hidden"></li>
+    <li class="navbar-nav--md navbar-nav--hidden"></li>
+    <li class="navbar-nav--md">
+      <a href="/applications/new">
+        <p><i class="fa fa-plus"></i></p>
+        <p>application</p>
+      </a>
+    </li>
+    <li class="navbar-nav--md navbar-nav--hidden"></li>
+    <li class="navbar-nav--lg navbar-nav--hidden"></li>
+  </ul>
+</nav>
+
+<div class="list--applications" ng-controller="ApplicationsCtrl as ctrl">
+  <ul>
+    <li ng-repeat="application in ctrl.applications">
+      <a ng-href="/applications/{{application.id}}">
+        <p>{{application.company.name}}</p>
+      </a>
+    </li>
+  </ul>
+</div>

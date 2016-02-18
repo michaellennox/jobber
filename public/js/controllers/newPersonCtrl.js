@@ -3,7 +3,7 @@ jobber.controller('NewPersonCtrl', ['peopleResourceFactory', '$window', '$stateP
   self.company_id = $stateParams.id;
 
   self.createNewPerson = function() {
-    peopleResourceFactory.postPeople(self.company_id, self.name, self.job_title, self.website, self.email, self.location, self.summary)
+    peopleResourceFactory.postPeople(self.name, self.company_id, self.location, self.photo, self.summary)
       .then(function() {
         $window.location.href = '/companies/' + self.company_id;
       });

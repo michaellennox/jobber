@@ -14,3 +14,5 @@ tests/karma/coverage/*
 *.sass-cache
 application.css
 application.css.map
+*.svg
+ghostdriver.log

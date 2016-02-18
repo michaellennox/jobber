@@ -1,6 +1,6 @@
 describe('companiesResourceFactory', function() {
-  var factory,
-      $httpBackend;
+  var factory;
+  var $httpBackend;
 
   beforeEach(module('Jobber'));
 
@@ -8,7 +8,7 @@ describe('companiesResourceFactory', function() {
     factory = companiesResourceFactory;
     $httpBackend = _$httpBackend_;
   }));
-  
+
   afterEach(function() {
     $httpBackend.verifyNoOutstandingExpectation();
     $httpBackend.verifyNoOutstandingRequest();
@@ -25,7 +25,7 @@ describe('companiesResourceFactory', function() {
   describe('#postCompanies()', function() {
     it('makes a POST request to /api/companies', function() {
       $httpBackend.expectPOST('/api/companies').respond(201);
-      factory.postCompanies('a name');
+      factory.postCompanies('a name', 'named', 'name.com', 'Names', 'Name St.', '1', 'NamePic');
       $httpBackend.flush();
     });
   });
@@ -34,6 +34,14 @@ describe('companiesResourceFactory', function() {
     it("makes a DELETE request to api/companies/:company_id", function(){
       $httpBackend.expectDELETE("/api/companies/666").respond(204);
       factory.deleteCompanyByID(666);
+      $httpBackend.flush();
+    });
+  });
+
+  describe("#getCompanyFromLinkedin", function(){
+    it("makes a post request to /web/companies", function(){
+      $httpBackend.expectPOST('/web/companies').respond(201);
+      factory.getCompanyFromLinkedin('test');
       $httpBackend.flush();
     });
   });

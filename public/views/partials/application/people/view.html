@@ -1,4 +1,8 @@
 <div ng-controller="ViewPersonCtrl as ctrl">
   <h2>{{ctrl.person.name}}</h2>
+  <p>{{ctrl.person.job_title}}</p>
+  <p>{{ctrl.person.location}}</p>
+  <p>{{ctrl.person.photo}}</p>
+  <p>{{ctrl.person.summary}}</p>
   <button id="deleteBtn" ng-click="ctrl.deletePerson()"></button>
 </div>

@@ -1,0 +1,56 @@
+
+
+.new-form {
+  width: 550px;
+  height: 600px;
+  margin: 0 auto;
+  text-align: center;
+  overflow-y: auto;
+}
+
+.new-page input, textarea {
+  @include border-radius(0px);
+  background-color: $white;
+  color: $black;
+  outline: none;
+  font-family: $font-family--body;
+}
+
+.new-form button { 
+  margin-left: 52px;
+
+;
+}
+.new-page .btn-submit {
+  @include border-radius(0px);
+}
+
+.companyApi {
+  margin-left: 20%;
+}
+
+.companyApi input {
+  width: 500px;
+}
+
+.companyApi button {
+  height: 40px;
+  line-height: 40px;
+}
+
+.new-page ::-webkit-input-placeholder {
+  opacity: 0.3;
+  color: $black;
+}
+
+.new-page input:focus, textarea:focus {
+  box-shadow: 0px 0px 30px rgba($deep-manly-blue, 0.3);
+}
+
+.new-form input, .new-form textarea, .new-form button {
+  display:block;
+}
+
+textarea {
+  max-width: 300px;
+}
