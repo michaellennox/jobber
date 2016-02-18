@@ -10,8 +10,8 @@
     <section class="list--home-jobs">
       <ul>
         <li ng-repeat="job in ctrl.jobs">
-          <a>
-            <p>{{job.company}}</p>
+          <a ng-href="{{job.url}}">
+            <p>{{job.jobtitle}} - {{job.company}}</p>
           </a>
         </li>
       </ul>
