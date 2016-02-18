@@ -1,6 +1,6 @@
 describe('companiesResourceFactory', function() {
-  var factory,
-      $httpBackend;
+  var factory;
+  var $httpBackend;
 
   beforeEach(module('Jobber'));
 
@@ -8,7 +8,7 @@ describe('companiesResourceFactory', function() {
     factory = companiesResourceFactory;
     $httpBackend = _$httpBackend_;
   }));
-  
+
   afterEach(function() {
     $httpBackend.verifyNoOutstandingExpectation();
     $httpBackend.verifyNoOutstandingRequest();
