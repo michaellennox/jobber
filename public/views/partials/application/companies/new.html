@@ -1,21 +1,19 @@
-<div class="new-comp-page" ng-controller="NewCompanyCtrl as ctrl">
+<div class="new-page" ng-controller="NewCompanyCtrl as ctrl">
   <form ng-submit="scrapeCompanyData()" class="companyApi">
-    <input ng-model="ctrl.companyURL" placeholder="Company URL">
+    <input ng-model="ctrl.companyURL" placeholder="Linkedin URL">
     <button type="submit" class="btn-submit">Search</button>
   </form>
-  <form ng-submit="ctrl.createNewCompany()" class="new-company">
-    <label>Name :</label>
-    <input ng-model="ctrl.name" type="text" placeholder="Company Name" required>
-    <label>Summary :</label>
-    <textarea ng-model="ctrl.summary" placeholder="Summary"></textarea>
-    <label>Website :</label>
-    <input ng-model="ctrl.website" type="text" placeholder="Website">
-    <label>Industry :</label>
-    <input ng-model="ctrl.industry" type="text" placeholder="Industry">
-    <label>Address</label>
-    <input ng-model="ctrl.address" type="text" placeholder="Address">
-    <label>Company Size :</label>
-    <input ng-model="ctrl.size" type="text" placeholder="Company Size">
+  <div class="new-form">
+  <form ng-submit="ctrl.createNewCompany()">
+      <input ng-model="ctrl.name" ng-value="ctrl.name" type="text" placeholder="Company Name">
+      <input ng-model="ctrl.website" type="text" ng-value="ctrl.website" placeholder="Website">
+      <input ng-model="ctrl.industry" type="text" ng-value="ctrl.industry"  placeholder="Industry">
+      <input ng-model="ctrl.city" type="text" ng-value="ctrl.city" placeholder="City">
+      <input ng-model="ctrl.postcode" type="text" ng-value="ctrl.postcode" placeholder="Postcode">
+      <input ng-model="ctrl.logo" type="text" ng-value="ctrl.logo" placeholder="Logo URL">
+      <input ng-model="ctrl.size" type="text" ng-value="ctrl.size" placeholder="Company Size">
+      <textarea ng-model="ctrl.summary" ng-value="ctrl.summary" placeholder="Summary"></textarea>
     <button id="submitCo" type="submit" class="btn-submit">Submit</button>
   </form>
+  </div>
 </div>
