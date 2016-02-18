@@ -1,0 +1,37 @@
+.btn-delete{
+  @include btn;
+  @include border-radius(0px);
+  top: 40%;
+  height: 50px;
+  width: 150px;
+  line-height: 45px;
+  font-size: 1.2em;
+    &:hover{
+    background-color: $warning-red;
+    color: $nero;
+  }
+}
+
+.profile {
+  text-align: center;
+  h2 {
+    font-size: 2em;
+    font-family: $font-family--heading;
+    color: $deep-manly-blue;
+  }
+  li {
+    font-size: 1em;
+    font-family: $font-family--body;
+    display: block;
+    padding: 10px;
+    span{
+      font-family: $font-family--heading;
+    }
+  }
+
+  img {
+    height: 200px;
+    width:auto;
+  }
+
+}

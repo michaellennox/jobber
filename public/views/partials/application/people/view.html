@@ -1,9 +1,10 @@
-<div ng-controller="ViewPersonCtrl as ctrl">
+<div class="profile" ng-controller="ViewPersonCtrl as ctrl">
   <h2>{{ctrl.person.name}}</h2>
-  <p>{{ctrl.person.job_title}}</p>
-  <p>{{ctrl.person.email}}</p>
-  <p>{{ctrl.person.location}}</p>
-  <p>{{ctrl.person.summary}}</p>
-  <p>{{ctrl.person.website}}</p>  
-  <button id="deleteBtn" ng-click="ctrl.deletePerson()"></button>
+    <li><span>MUGSHOT: </span><img class="profile-pic"></img></li>
+    <li><span>Job Title: </span>{{ctrl.person.job_title}}</li>
+    <li><span>Email: </span>{{ctrl.person.email}}</li>
+    <li><span>City: </span>{{ctrl.person.location}}</li>
+    <li>{{ctrl.person.summary}}</li>
+    <li><span>Website: </span> {{ctrl.person.website}}</li>
+  <button class="btn-delete" id="deleteBtn" ng-click="ctrl.deletePerson()">Delete</button>
 </div>
