@@ -1,26 +1,28 @@
-label {
-  font-family: $font-family--heading;
-  font-size: 1.5em;
-}
 
-.new-company {
+
+.new-form {
   width: 550px;
-  margin-left: 20%;
-  text-align: right;
+  height: 600px;
+  margin: 0 auto;
+  text-align: center;
+  overflow-y: auto;
 }
 
-.new-comp-page input, textarea {
-    @include border-radius(0px);
+.new-page input, textarea {
+  @include border-radius(0px);
   background-color: $white;
   color: $black;
   outline: none;
   font-family: $font-family--body;
 }
 
+.new-form button { 
+  margin-left: 52px;
 
-.new-comp-page .btn-submit {
+;
+}
+.new-page .btn-submit {
   @include border-radius(0px);
-  margin-right: 20%;
 }
 
 .companyApi {
@@ -36,17 +38,19 @@ label {
   line-height: 40px;
 }
 
-.new-comp-page ::-webkit-input-placeholder {
+.new-page ::-webkit-input-placeholder {
   opacity: 0.3;
   color: $black;
 }
 
-.new-comp-page input:focus, textarea:focus {
-  color: $deep-manly-blue;
-
+.new-page input:focus, textarea:focus {
+  box-shadow: 0px 0px 30px rgba($deep-manly-blue, 0.3);
 }
 
-.new-comp-page textarea {
+.new-form input, .new-form textarea, .new-form button {
+  display:block;
+}
+
+textarea {
   max-width: 300px;
 }
-
