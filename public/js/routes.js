@@ -54,6 +54,11 @@ jobber.config(['$stateProvider', '$locationProvider', '$urlRouterProvider' , fun
       .state('application.jobsview', {
         url: '/companies/:company_id/jobs/:id',
         templateUrl: partialDirectory + '/application/jobs/view.html'
+      })
+      .state('application.applicationslist', {
+        url: '/applications',
+        templateUrl: partialDirectory + '/application/applications/list.html'
       });
+
   $locationProvider.html5Mode(true);
 }]);
