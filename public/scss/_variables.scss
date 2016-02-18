@@ -19,10 +19,20 @@ $nero: #272822;
 $white : #FAF8F4;
 $black: #1C1C1C;
 $lighter-black: #252525;
+$warning-red: #D9534F;
 
+// SEE THROUGH COLORS
+
+$trans-white-9 : rgba($white, 0.9);
+$trans-black-9 : rgba($black, 0.9);
 
 // COLOR USAGE
 
 $color-primary : $deep-manly-blue;
 $color-secondary : $light-sky-blue;
 $color-background: $good-beige;
+
+
+// NESTED SELECTORS
+
+$button-forms-hover: 'button:hover';
