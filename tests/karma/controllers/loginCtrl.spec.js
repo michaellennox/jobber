@@ -1,4 +1,4 @@
-describe('LoginController', function() {
+describe('LoginCtrl', function() {
   var ctrl;
   var $rootScope;
   var $q;
@@ -19,7 +19,7 @@ describe('LoginController', function() {
   });
 
   beforeEach(inject(function($controller, _$q_, _$rootScope_) {
-    ctrl = $controller('LoginController');
+    ctrl = $controller('LoginCtrl');
     $rootScope = _$rootScope_;
     $q = _$q_;
   }));

@@ -1,4 +1,4 @@
-describe('RegistrationController', function() {
+describe('RegistrationCtrl', function() {
   var ctrl;
   var $rootScope;
   var $q;
@@ -19,7 +19,7 @@ describe('RegistrationController', function() {
   });
 
   beforeEach(inject(function($controller, _$q_, _$rootScope_) {
-    ctrl = $controller('RegistrationController');
+    ctrl = $controller('RegistrationCtrl');
     $rootScope = _$rootScope_;
     $q = _$q_;
   }));

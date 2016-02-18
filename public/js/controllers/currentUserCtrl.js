@@ -1,4 +1,4 @@
-jobber.controller('LogoutController', ['userAuthFactory', function(userAuthFactory) {
+jobber.controller('CurrentUserCtrl', ['userAuthFactory', function(userAuthFactory) {
   var self = this;
 
   self.currentUser = function() {

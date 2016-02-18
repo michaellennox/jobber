@@ -1,8 +1,8 @@
-<header class="header--home">
-  <h1>HELLO, ANGULAR NAME.</h1>
+<header class="header--home" ng-controller="currentUserCtrl as userCtrl">
+  <h1>HELLO, {{userCtrl.currentUser()}}.</h1>
 </header>
 
-<div class="content--home">
+<div class="content--home" ng-controller="profileCtrl as ctrl">
   <section class="content-motivational">
     <h2>Testing Text</h2>
   </section>
