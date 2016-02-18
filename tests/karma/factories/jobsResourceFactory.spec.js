@@ -17,7 +17,7 @@ describe('jobsResourceFactory', function() {
   describe('#postJobs()', function() {
     it('makes a POST request to /api/companies/:company_id/jobs', function() {
       $httpBackend.expectPOST('/api/companies/1/jobs').respond(201);
-      factory.postJobs(1, 'Java Me');
+      factory.postJobs(1, 'Java Me', 'We love Java', 'Java.com', 'Code', 'Java St.', '1');
       $httpBackend.flush();
     });
   });

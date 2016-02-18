@@ -5,8 +5,16 @@ jobber.factory('companiesResourceFactory', ['$http', function($http) {
     return $http.get('/api/companies');
   };
 
-  self.postCompanies = function(name) {
-    return $http.post('/api/companies', {name: name});
+  self.postCompanies = function(name, summary, website, industry, address, size) {
+    return $http.post('/api/companies',
+    {
+      name: name,
+      summary: summary,
+      website: website,
+      industry: industry,
+      address: address,
+      size: size
+    });
   };
 
   self.getCompanyByID = function(id) {
