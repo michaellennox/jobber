@@ -1,0 +1,52 @@
+label {
+  font-family: $font-family--heading;
+  font-size: 1.5em;
+}
+
+.new-company {
+  width: 550px;
+  margin-left: 20%;
+  text-align: right;
+}
+
+.new-comp-page input, textarea {
+    @include border-radius(0px);
+  background-color: $white;
+  color: $black;
+  outline: none;
+  font-family: $font-family--body;
+}
+
+
+.new-comp-page .btn-submit {
+  @include border-radius(0px);
+  margin-right: 20%;
+}
+
+.companyApi {
+  margin-left: 20%;
+}
+
+.companyApi input {
+  width: 500px;
+}
+
+.companyApi button {
+  height: 40px;
+  line-height: 40px;
+}
+
+.new-comp-page ::-webkit-input-placeholder {
+  opacity: 0.3;
+  color: $black;
+}
+
+.new-comp-page input:focus, textarea:focus {
+  color: $deep-manly-blue;
+
+}
+
+.new-comp-page textarea {
+  max-width: 300px;
+}
+

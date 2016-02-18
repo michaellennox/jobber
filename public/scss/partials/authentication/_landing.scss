@@ -48,12 +48,12 @@
   top: 35%
 }
 
-input {
+input, textarea {
   @include inputs;
   @include border-radius(5px);
 }
 
-input:focus, .alert:focus {
+input:focus, .alert:focus, textarea:focus {
   outline: none;
 }
 
