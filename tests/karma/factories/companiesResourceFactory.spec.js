@@ -25,7 +25,7 @@ describe('companiesResourceFactory', function() {
   describe('#postCompanies()', function() {
     it('makes a POST request to /api/companies', function() {
       $httpBackend.expectPOST('/api/companies').respond(201);
-      factory.postCompanies('a name');
+      factory.postCompanies('a name', 'named', 'name.com', 'Names', 'Name St.', '1', 'NamePic');
       $httpBackend.flush();
     });
   });
