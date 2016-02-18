@@ -186,7 +186,7 @@ button {
   justify-content: center; }
   .header--home h1 {
     color: #90B3C3;
-    font-family: "Futura Book", "Century Gothic", "Open Sans" "sans-serif";
+    font-family: "Futura Book", "Futura", "Century Gothic", "Open Sans", "sans-serif";
     font-size: 2.5em;
     font-weight: bold; }
 
@@ -203,6 +203,10 @@ button {
     display: flex;
     align-items: center;
     justify-content: center; }
+    .content--home .content-motivational h2 {
+      font-size: 1.75em;
+      font-family: "Futura Book", "Futura", "Century Gothic", "Open Sans", "sans-serif";
+      margin-bottom: 15px; }
   .content--home div {
     height: 100%;
     position: relative; }
@@ -220,10 +224,16 @@ button {
       width: 40%;
       position: absolute; }
     .content--home div .story--home {
-      left: 55%;
-      background-color: #FAF8F4;
+      left: 52%;
       height: 80%;
       width: 40%;
       position: absolute; }
+      .content--home div .story--home h2 {
+        font-size: 1.5em;
+        font-family: "Futura Book", "Futura", "Century Gothic", "Open Sans", "sans-serif";
+        text-align: center;
+        margin-bottom: 15px; }
+      .content--home div .story--home div {
+        background-color: #FAF8F4; }
 
 /*# sourceMappingURL=application.css.map */
