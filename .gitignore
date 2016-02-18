@@ -12,3 +12,5 @@ tests/karma/coverage/*
 *.jpg
 *.png
 *.sass-cache
+application.css
+application.css.map
