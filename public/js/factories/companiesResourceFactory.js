@@ -27,5 +27,9 @@ jobber.factory('companiesResourceFactory', ['$http', function($http) {
     return $http.delete("/api/companies/" + id);
   };
 
+  self.getCompanyFromLinkedin = function(url){
+    return $http.post("/web/companies", {url: url});
+  };
+
   return self;
 }]);

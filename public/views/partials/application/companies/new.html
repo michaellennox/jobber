@@ -1,9 +1,21 @@
-<div ng-controller="NewCompanyCtrl as ctrl" class="col-md-6 col-md-offset-3">
-  <form ng-submit="ctrl.createNewCompany()">
-    <div class="form-group">
-      <label>Name</label>
-      <input ng-model="ctrl.name" type="text" class="form-control" placeholder="Company Name" required autofocus>
-    </div>
-    <button id="submitCo" type="submit" class="btn btn-primary">Submit</button>
+<div class="new-comp-page" ng-controller="NewCompanyCtrl as ctrl">
+  <form ng-submit="scrapeCompanyData()" class="companyApi">
+    <input ng-model="ctrl.companyURL" placeholder="Company URL">
+    <button type="submit" class="btn-submit">Search</button>
+  </form>
+  <form ng-submit="ctrl.createNewCompany()" class="new-company">
+    <label>Name :</label>
+    <input ng-model="ctrl.name" type="text" placeholder="Company Name" required>
+    <label>Summary :</label>
+    <textarea ng-model="ctrl.summary" placeholder="Summary"></textarea>
+    <label>Website :</label>
+    <input ng-model="ctrl.website" type="text" placeholder="Website">
+    <label>Industry :</label>
+    <input ng-model="ctrl.industry" type="text" placeholder="Industry">
+    <label>Address</label>
+    <input ng-model="ctrl.address" type="text" placeholder="Address">
+    <label>Company Size :</label>
+    <input ng-model="ctrl.size" type="text" placeholder="Company Size">
+    <button id="submitCo" type="submit" class="btn-submit">Submit</button>
   </form>
 </div>

@@ -38,6 +38,14 @@ describe('companiesResourceFactory', function() {
     });
   });
 
+  describe("#getCompanyFromLinkedin", function(){
+    it("makes a post request to /web/companies", function(){
+      $httpBackend.expectPOST('/web/companies').respond(201);
+      factory.getCompanyFromLinkedin('test');
+      $httpBackend.flush();
+    });
+  });
+
   describe('#getCompanyByID()', function() {
     it('makes a GET request to /api/companies/:id', function() {
       $httpBackend.expectGET('/api/companies/1').respond(200);
