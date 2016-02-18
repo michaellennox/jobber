@@ -1,0 +1,70 @@
+.header--home {
+  display: inline-block;
+  position: fixed;
+  height: 15%;
+  width: 88%;
+  left: 12%;
+  top: 0;
+  background-color: $deep-manly-blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    color: $light-sky-blue;
+    font-family: $font-family--heading;
+    font-size: 2.5em;
+    font-weight: bold;
+  }
+}
+
+.content--home {
+  display: inline-block;
+  position: fixed;
+  height: 85%;
+  width: 88%;
+  left: 12%;
+  top: 15%;
+
+  .content-motivational {
+    text-align: center;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+
+    }
+  }
+
+  div {
+    height: 100%;
+    position: relative;
+
+    .list--home-jobs {
+      left: 5%;
+      background-color: $white;
+      height: 40%;
+      width: 40%;
+      position: absolute;
+    }
+
+    .list--home-applications {
+      left: 5%;
+      top: 43%;
+      background-color: $white;
+      height: 40%;
+      width: 40%;
+      position: absolute;
+    }
+
+    .story--home {
+      left: 55%;
+      background-color: $white;
+      height: 80%;
+      width: 40%;
+      position: absolute;
+    }
+  }
+}

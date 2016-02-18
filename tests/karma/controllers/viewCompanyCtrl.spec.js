@@ -31,7 +31,7 @@ describe('ViewCompanyCtrl', function() {
       .and.returnValue($q.when(response));
     ctrl = $controller(
       'ViewCompanyCtrl',
-      { $routeParams: {id: 0} }
+      { $stateParams: {id: 0} }
     );
     $rootScope = _$rootScope_;
   }));

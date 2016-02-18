@@ -1,0 +1,46 @@
+.list--companies {
+  display: inline-block;
+  position: fixed;
+  left: 20%;
+  top: 0;
+  height: 100%;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  ul {
+    height: 75%;
+    width: 80%;
+    background-color: $white;
+    overflow: scroll;
+
+    li {
+      width: 100%;
+      text-align: center;
+      height: 15%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      font-family: $font-family--body;
+      border: 1px solid white;
+
+      a {
+        text-decoration: none;
+        color: $light-sky-blue;
+        width: 50%;
+        height: 50%;
+        margin: auto auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      a:hover {
+        text-decoration: none;
+        background-color: $light-sky-blue;
+        color: $deep-manly-blue;
+      }
+    }
+  }
+}

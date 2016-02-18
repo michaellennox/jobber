@@ -45,6 +45,20 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+body {
+  height: 100vh;
+  width: 100vw; }
+
+main {
+  display: inline-block; }
+
+.dashboard {
+  background-color: #E6E4E0;
+  position: fixed;
+  left: 12%;
+  height: 100%;
+  width: 88%; }
+
 .bg {
   height: 100vh;
   background: url(../img/landing-page-bg.jpg) no-repeat center center fixed;
@@ -61,6 +75,7 @@ table {
   outline: none;
   text-align: center;
   padding: 5px;
+  cursor: pointer;
   border-radius: 20px;
   font-size: 3em;
   margin: 20px;
@@ -78,6 +93,7 @@ table {
   outline: none;
   text-align: center;
   padding: 5px;
+  cursor: pointer;
   border-radius: 10px;
   height: 50px;
   width: 250px;
@@ -127,7 +143,7 @@ footer {
   bottom: 0;
   padding: 6px;
   font-size: 0.8em;
-  font-family: "Futura", "Century Gothic", "Open Sans" "sans-serif"; }
+  font-family: "Futura Book", "Century Gothic", "Open Sans", "sans-serif"; }
   footer a {
     color: #FAF8F4;
     text-decoration: none; }
@@ -155,5 +171,160 @@ footer {
   color: #FAF8F4;
   height: 50px;
   width: 350px; }
+
+.navbar--expanded {
+  height: 100%;
+  width: 12%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #293337;
+  font-family: "Geneva", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", "Verdana", "sans-serif";
+  display: inline-block; }
+  .navbar--expanded ul {
+    height: 100%; }
+    .navbar--expanded ul .navbar-nav--lg {
+      height: 20%;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      color: #90B3C3; }
+    .navbar--expanded ul .navbar-nav--md {
+      height: 15%; }
+      .navbar--expanded ul .navbar-nav--md a {
+        display: block;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        color: #90B3C3; }
+      .navbar--expanded ul .navbar-nav--md a:hover {
+        text-decoration: none;
+        background-color: #90B3C3;
+        color: #293337; }
+
+.secondary-navbar--expanded {
+  height: 100%;
+  width: 10%;
+  background-color: #293337;
+  font-family: "Geneva", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", "Verdana", "sans-serif";
+  display: inline-block; }
+  .secondary-navbar--expanded ul {
+    height: 100%; }
+    .secondary-navbar--expanded ul .navbar-nav--hidden {
+      background-color: #E6E4E0; }
+    .secondary-navbar--expanded ul .navbar-nav--lg {
+      height: 20%; }
+    .secondary-navbar--expanded ul .navbar-nav--md {
+      height: 15%; }
+      .secondary-navbar--expanded ul .navbar-nav--md a {
+        display: block;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        color: #90B3C3; }
+      .secondary-navbar--expanded ul .navbar-nav--md a:hover {
+        text-decoration: none;
+        background-color: #90B3C3;
+        color: #293337; }
+
+.list--companies {
+  display: inline-block;
+  position: fixed;
+  left: 20%;
+  top: 0;
+  height: 100%;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .list--companies ul {
+    height: 75%;
+    width: 80%;
+    background-color: #FAF8F4;
+    overflow: scroll; }
+    .list--companies ul li {
+      width: 100%;
+      text-align: center;
+      height: 15%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      font-family: "Geneva", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", "Verdana", "sans-serif";
+      border: 1px solid white; }
+      .list--companies ul li a {
+        text-decoration: none;
+        color: #90B3C3;
+        width: 50%;
+        height: 50%;
+        margin: auto auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column; }
+      .list--companies ul li a:hover {
+        text-decoration: none;
+        background-color: #90B3C3;
+        color: #293337; }
+
+.header--home {
+  display: inline-block;
+  position: fixed;
+  height: 15%;
+  width: 88%;
+  left: 12%;
+  top: 0;
+  background-color: #293337;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .header--home h1 {
+    color: #90B3C3;
+    font-family: "Futura Book", "Century Gothic", "Open Sans", "sans-serif";
+    font-size: 2.5em;
+    font-weight: bold; }
+
+.content--home {
+  display: inline-block;
+  position: fixed;
+  height: 85%;
+  width: 88%;
+  left: 12%;
+  top: 15%; }
+  .content--home .content-motivational {
+    text-align: center;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .content--home div {
+    height: 100%;
+    position: relative; }
+    .content--home div .list--home-jobs {
+      left: 5%;
+      background-color: #FAF8F4;
+      height: 40%;
+      width: 40%;
+      position: absolute; }
+    .content--home div .list--home-applications {
+      left: 5%;
+      top: 43%;
+      background-color: #FAF8F4;
+      height: 40%;
+      width: 40%;
+      position: absolute; }
+    .content--home div .story--home {
+      left: 55%;
+      background-color: #FAF8F4;
+      height: 80%;
+      width: 40%;
+      position: absolute; }
 
 /*# sourceMappingURL=application.css.map */
