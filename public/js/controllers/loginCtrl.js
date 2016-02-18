@@ -4,7 +4,7 @@ jobber.controller('LoginCtrl', ['userAuthFactory', '$window', function(userAuthF
   self.login = function() {
     userAuthFactory.login(self.email, self.password)
       .then(function() {
-        $window.location.href = '/companies';
+        $window.location.href = '/dashboard';
       })
       .catch(function(error) {
         self.error = error;
