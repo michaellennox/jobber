@@ -7,7 +7,8 @@ class Company(db.Model):
     summary = db.Column(db.Text)
     website = db.Column(db.String(80))
     industry = db.Column(db.String(80))
-    address = db.Column(db.String(80))
+    city = db.Column(db.String(50))
+    postcode = db.Column(db.String(10))
     size = db.Column(db.String(50))
     logo = db.Column(db.String(100))
     people = db.relationship('Person', backref='company')
@@ -19,6 +20,7 @@ class Company(db.Model):
         self.summary = args['summary']
         self.website = args['website']
         self.industry = args['industry']
-        self.address = args['address']
+        self.city = args['city']
+        self.postcode = args['postcode']
         self.size = args['size']
         self.logo = args['logo']

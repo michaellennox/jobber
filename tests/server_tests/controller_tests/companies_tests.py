@@ -26,8 +26,20 @@ class TestCompaniesAPI(APITestCase, CompaniesAPIMixin):
 
 
 class TestCompanyAPI(APITestCase, CompanyAPIMixin):
+    def setUp(self):
+        self.company_params = dict(
+            name='ACMECorp',
+            summary='Cartoon Explosives',
+            website='www.ACME.com',
+            industry='Explosives',
+            city='Austin',
+            postcode='8VDS34',
+            size='Big',
+            logo='ACMEpic'
+        )
+
     def test_valid_GET_returns_company_as_json(self):
-        company = Company(dict(name='ACMECorp'))
+        company = Company(self.company_params)
         db.session.add(company)
         db.session.commit()
 
@@ -37,7 +49,7 @@ class TestCompanyAPI(APITestCase, CompanyAPIMixin):
         self.assertEquals(res.json.get('name'), 'ACMECorp')
 
     def test_valid_PUT_returns_updated_company(self):
-        company = Company(dict(name='ACMECorp'))
+        company = Company(self.company_params)
         db.session.add(company)
         db.session.commit()
 
@@ -47,7 +59,7 @@ class TestCompanyAPI(APITestCase, CompanyAPIMixin):
         self.assertEquals(res.json.get('name'), 'NotACME')
 
     def test_valid_PUT_updates_database(self):
-        company = Company(dict(name='ACMECorp'))
+        company = Company(self.company_params)
         db.session.add(company)
         db.session.commit()
 
@@ -58,7 +70,7 @@ class TestCompanyAPI(APITestCase, CompanyAPIMixin):
         self.assertEqual(company.name, 'Moo')
 
     def test_valid_DELETE_deletes_company_from_db(self):
-        company = Company(dict(name="TestCo"))
+        company = Company(self.company_params)
         db.session.add(company)
         db.session.commit()
 
