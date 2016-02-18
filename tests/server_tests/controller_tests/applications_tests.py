@@ -5,6 +5,26 @@ from .helpers import APITestCase, AuthMixin, ApplicationsAPIMixin
 
 
 class TestApplicationsAPI(APITestCase, AuthMixin, ApplicationsAPIMixin):
+    def test_GET_returns_list_of_users_applications(self):
+        company = Company(dict(name='ACMECorp'))
+        db.session.add(company)
+        db.session.commit()
+
+        user = self.login_test_user()
+
+        application = Application(dict(company_id=company.id, user_id=user.id))
+        db.session.add(application)
+        db.session.commit()
+
+        res = self.GET_applications()
+
+        self.assert_status(res, 200)
+        self.assertEqual(
+            res.json['applications'][0]['company']['name'],
+            'ACMECorp'
+        )
+
+
     def test_valid_POST_returns_success_message(self):
         company = Company(dict(name='ACEMECorp'))
         db.session.add(company)
