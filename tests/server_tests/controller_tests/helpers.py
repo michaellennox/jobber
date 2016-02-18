@@ -21,7 +21,7 @@ class APITestCase(TestCase):
 
 class AuthMixin(object):
     def login_test_user(self):
-        user_datastore.create_user(
+        user = user_datastore.create_user(
             email='test@example.com',
             password=encrypt_password('example')
         )
@@ -34,6 +34,7 @@ class AuthMixin(object):
                 password='example'
             ))
         )
+        return user
 
 
 class CompaniesAPIMixin(object):
@@ -172,6 +173,10 @@ class SessionsAPIMixin(object):
 
 
 class ApplicationsAPIMixin(object):
+    def GET_applications(self):
+        req = self.client.get('/api/applications')
+        return req
+
     def POST_applications(self, company_id):
         req = self.client.post(
             '/api/applications',
