@@ -22,10 +22,9 @@ class CompanyScraperAPI(Resource):
                 'logo': driver.find_element_by_class_name('image').get_attribute('src'),
                 'website': driver.find_element_by_class_name('website').find_element_by_css_selector('p').text,
                 'industry': driver.find_element_by_class_name('industry').text,
-                'address': driver.find_element_by_class_name('adr').text,
-                'specialties': driver.find_element_by_class_name('specialties').find_element_by_css_selector('p').text,
-                'company size': driver.find_element_by_class_name('company-size').text,
-                'type': driver.find_element_by_class_name('type').find_element_by_css_selector('p').text
+                'city': driver.find_element_by_class_name('locality').text,
+                'postcode': driver.find_element_by_class_name('postal-code').text,
+                'company_size': driver.find_element_by_class_name('company-size').text
             }
             time.sleep(5)
             driver.quit()

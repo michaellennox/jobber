@@ -30,4 +30,11 @@ describe('applicationsResourceFactory', function() {
     });
   });
 
+  describe('#getApplicationByID()', function() {
+    it('makes a GET request to /api/applications/:id', function() {
+      $httpBackend.expectGET('/api/applications/5').respond(200);
+      factory.getApplications(5);
+      $httpBackend.flush();
+    });
+  });
 });

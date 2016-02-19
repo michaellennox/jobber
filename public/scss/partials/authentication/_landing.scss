@@ -1,15 +1,3 @@
-// styles 
-.bg { 
-  height: 100%;
-  width: 100%;
-  background: url(../img/landing-page-bg.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-
 .btn {
   @include btn;
   @include border-radius(20px);
@@ -22,6 +10,7 @@
     background-color: $success-green;
   }
 }
+
 
 .btn-submit{
   @include btn;
@@ -45,15 +34,15 @@
 }
 
 .login-form {
-  top: 35%
+  top: 29%
 }
 
-input {
+input, textarea {
   @include inputs;
   @include border-radius(5px);
 }
 
-input:focus, .alert:focus {
+input:focus, .alert:focus, textarea:focus {
   outline: none;
 }
 
@@ -75,8 +64,10 @@ footer {
 }
 
 footer img {
-  margin-left: 10px;
-  margin-right: 10px;
+  padding-right: 20px;
+  margin-right: 40px;
+  width:40%;
+  height: auto;
 }
 .alert {
   @include alert ($white, $warning-red);
@@ -89,13 +80,13 @@ footer img {
   height: 400px;
   width: 500px;
   position: absolute;
-  right: 25%;
-  top: 25%;
+  right: 20%;
+  top: 30%;
 }
 
 .logo img {
   position: absolute;
-  left:20%;
+  left:22%;
   width: 528px;
   height: auto;
 }

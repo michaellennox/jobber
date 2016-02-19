@@ -15,6 +15,14 @@ person_fields = {
 company_fields = {
     'id': fields.Integer,
     'name': fields.String,
+    'address': fields.String,
+    'summary': fields.String,
+    'website': fields.String,
+    'industry': fields.String,
+    'city': fields.String,
+    'postcode': fields.String,
+    'size': fields.String,
+    'logo': fields.String,
     'jobs': fields.List(fields.Nested(job_fields)),
     'people': fields.List(fields.Nested(person_fields))
 }
@@ -24,6 +32,13 @@ class CompaniesResource(Resource):
     def __init__(self):
         self.reqparse = reqparse.RequestParser()
         self.reqparse.add_argument('name', location='json')
+        self.reqparse.add_argument('summary', location='json')
+        self.reqparse.add_argument('website', location='json')
+        self.reqparse.add_argument('industry', location='json')
+        self.reqparse.add_argument('city', location='json')
+        self.reqparse.add_argument('postcode', location='json')
+        self.reqparse.add_argument('size', location='json')
+        self.reqparse.add_argument('logo', location='json')
         super().__init__()
 
 
