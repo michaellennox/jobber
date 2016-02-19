@@ -15,12 +15,13 @@
 .profile {
   text-align: center;
   h2 {
-    font-size: 2em;
+    font-size: 3em;
     font-family: $font-family--heading;
     color: $deep-manly-blue;
+    margin-top: 30px;
   }
   li {
-    font-size: 1em;
+    font-size: 1.5em;
     font-family: $font-family--body;
     display: block;
     padding: 10px;
@@ -32,6 +33,10 @@
   img {
     height: 200px;
     width:auto;
+  }
+
+  .container {
+    overflow-y: auto;
   }
 
 }
