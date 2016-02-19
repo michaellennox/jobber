@@ -23,26 +23,26 @@
     <div class="views--company">
       <section class="profile">
         <div class="profile--header">
-          <h2 class="title">{{ctrl.company.name}}<img src="http://vignette1.wikia.nocookie.net/marvelcinematicuniverse/images/9/93/TVM-IM-01_18192_zoom.jpg/revision/latest?cb=20141129034313"></h2>
+          <h2 class="title">{{ctrl.company.name}}<img src="{{ctrl.company.logo}}"></h2>
           <i class="fa fa-map-marker"></i>
-          City Postcode
+          {{ctrl.company.city}} {{ctrl.company.postcode}}
         </div>
         <div class="contact">
-         <h4>WEBSITE:</h4> company@website.com
+         <h4>WEBSITE:</h4> {{ctrl.company.website}}
         </div>
         <br>
         <div class="industry--wrapper">
           <div class="industry">
-           <h4>INDUSTRY:</h4> company Industry
+           <h4>INDUSTRY:</h4> {{ctrl.company.industry}}
           </div>
           <div class="size">
-           <h4>SIZE:</h4> company size
+           <h4>SIZE:</h4> {{ctrl.company.size}}
           </div>
         </div>
         <br>
         <div class="summary">
          <h4>SUMMARY:</h4>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur faucibus laoreet lacus. Aliquam ullamcorper vestibulum dui, non tristique diam tincidunt et. Donec enim arcu, iaculis a aliquet eget, aliquet eget ante. Nam tempor tempor justo, sit amet lobortis justo euismod et. Nam suscipit nulla eu mi bibendum malesuada. Aliquam erat volutpat. Fusce eu lorem turpis. Donec ultrices sollicitudin augue. Pellentesque ultricies fringilla erat. Quisque sollicitudin vitae justo sit amet tempor.
+          {{ctrl.company.summary}}
         </div>
       </section>
 
