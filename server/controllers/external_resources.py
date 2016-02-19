@@ -24,7 +24,7 @@ class CompanyScraperAPI(Resource):
                 'industry': driver.find_element_by_class_name('industry').text,
                 'city': driver.find_element_by_class_name('locality').text,
                 'postcode': driver.find_element_by_class_name('postal-code').text,
-                'company size': driver.find_element_by_class_name('company-size').text
+                'company_size': driver.find_element_by_class_name('company-size').text
             }
             time.sleep(5)
             driver.quit()
