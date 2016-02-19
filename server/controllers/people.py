@@ -12,10 +12,9 @@ person_fields = {
     'name': fields.String,
     'company': fields.Nested(company_fields),
     'job_title': fields.String,
-    'email': fields.String,
     'location': fields.String,
+    'photo': fields.String,
     'summary': fields.String,
-    'website': fields.String
 }
 
 
@@ -24,10 +23,9 @@ class PeopleResource(Resource):
         self.reqparse = reqparse.RequestParser()
         self.reqparse.add_argument('name', location='json')
         self.reqparse.add_argument('job_title', location='json')
-        self.reqparse.add_argument('email', location='json')
         self.reqparse.add_argument('location', location='json')
+        self.reqparse.add_argument('photo', location='json')
         self.reqparse.add_argument('summary', location='json')
-        self.reqparse.add_argument('website', location='json')
         super().__init__()
 
 
