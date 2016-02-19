@@ -7,11 +7,11 @@ jobber.factory('peopleResourceFactory', ['$http', function($http) {
       '/api/companies/' + company_id + '/people',
       {
         name: name,
-        company_id: company_id,
-        jobTitle: job_title,
+        job_title: job_title,
         location: location,
         photo: photo,
-        summary: summary,      }
+        summary: summary,
+      }
     );
   };
 

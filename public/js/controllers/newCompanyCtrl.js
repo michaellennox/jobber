@@ -8,7 +8,7 @@ jobber.controller('NewCompanyCtrl', ['companiesResourceFactory', '$window', func
       });
   };
 
-  self.scrapeCompanyData = function(){
+  self.scrapeCompanyData = function() {
     companiesResourceFactory.getCompanyFromLinkedin(self.companyURL)
       .then(function(response){
         self.scrapedData = response.data;
@@ -18,6 +18,8 @@ jobber.controller('NewCompanyCtrl', ['companiesResourceFactory', '$window', func
         self.industry = response.data.industry;
         self.city = response.data.city;
         self.postcode = response.data.postcode;
+        self.logo = response.data.logo;
+        self.size = response.data.company_size;
       });
   };
 }]);

@@ -1,5 +1,5 @@
 <div class="new-page" ng-controller="NewCompanyCtrl as ctrl">
-  <form ng-submit="scrapeCompanyData()" class="companyApi">
+  <form ng-submit="ctrl.scrapeCompanyData()" class="companyApi">
     <input ng-model="ctrl.companyURL" placeholder="Linkedin URL">
     <button type="submit" class="btn-submit">Search</button>
   </form>
