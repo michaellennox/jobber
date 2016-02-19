@@ -15,10 +15,16 @@
 </nav>
 
 <div class="list--companies" ng-controller="CompaniesCtrl as ctrl">
+  <form class="filters">
+    <div>
+      <input class="searchbar" placeholder="Search">
+    </div>
+  </form>
   <ul>
     <li ng-repeat="company in ctrl.companies">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/100px-Ruby_logo.svg.png">
       <a ng-href="/companies/{{company.id}}">
-        <p>{{company.name}}</p>
+        <p><span class="left">{{company.name}}</span><span class="right"><i class="fa fa-map-marker"></i> {{company.city}} {{company.postcode}}</span></p>
       </a>
     </li>
   </ul>
