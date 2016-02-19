@@ -22,11 +22,34 @@
   <div class="wrapper--company">
     <div class="views--company">
       <section class="profile">
-        <h2 class="title">{{ctrl.company.name}}</h2>
+        <div class="profile--header">
+          <h2 class="title">{{ctrl.company.name}}<img src="http://vignette1.wikia.nocookie.net/marvelcinematicuniverse/images/9/93/TVM-IM-01_18192_zoom.jpg/revision/latest?cb=20141129034313"></h2>
+          <i class="fa fa-map-marker"></i>
+          City Postcode
+        </div>
+        <div class="contact">
+         <h4>WEBSITE:</h4> company@website.com
+        </div>
+        <br>
+        <div class="industry--wrapper">
+          <div class="industry">
+           <h4>INDUSTRY:</h4> company Industry
+          </div>
+          <div class="size">
+           <h4>SIZE:</h4> company size
+          </div>
+        </div>
+        <br>
+        <div class="summary">
+         <h4>SUMMARY:</h4>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur faucibus laoreet lacus. Aliquam ullamcorper vestibulum dui, non tristique diam tincidunt et. Donec enim arcu, iaculis a aliquet eget, aliquet eget ante. Nam tempor tempor justo, sit amet lobortis justo euismod et. Nam suscipit nulla eu mi bibendum malesuada. Aliquam erat volutpat. Fusce eu lorem turpis. Donec ultrices sollicitudin augue. Pellentesque ultricies fringilla erat. Quisque sollicitudin vitae justo sit amet tempor.
+        </div>
       </section>
 
       <section class="list--people">
-        <h2 class="title">Employees</h2>
+        <div class="title--people">
+          <h2 class="title">Employees</h2>
+        </div>
         <div class="list-wrapper">
           <ul>
             <li ng-repeat="person in ctrl.people">
