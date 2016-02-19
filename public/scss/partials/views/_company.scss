@@ -15,36 +15,103 @@
   .profile {
     position: absolute;
     width: 45%;
-    height: 60%;
+    height: 50%;
     top: 5%;
     left: 2.5%;
-    background-color: $white;
+    font-family: $font-family--heading;
+    color: darken($light-sky-blue, 20%);
+    overflow: auto;
+
+    .profile--header {
+      padding: 10px;
+      text-align: left;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      font-family: $font-family--heading;
+      margin-bottom: 15px;
+      color: $deep-manly-blue;
+    }
+
+    img {
+      float: right;
+      height: 18%;
+      width: 18%;
+      margin-top: 5px;
+      margin-right: 5px;
+    }
+
+    h4 {
+      font-size: 1em;
+      text-align: left;
+      color: $deep-manly-blue;
+    }
+
+    .contact {
+      padding: 10px;
+      text-align: left;
+    }
+
+    .industry--wrapper {
+      height: 50px;
+    }
+
+    .industry {
+      padding: 10px;
+      float: left;
+    }
+
+    .size {
+      padding: 10px;
+      float: right;
+    }
+
+    .summary {
+      position: absolute;
+      padding: 10px;
+      text-align: justify;
+      font-family: $font-family--body;
+    }
   }
 
   .list--people {
     position: absolute;
     width: 45%;
-    height: 60%;
+    height: 50%;
     top: 5%;
     right: 2.5%;
-    background-color: $white;
 
-    h2 {
-      text-align: center;
-      height: 8%;
+    .title--people {
+      position: absolute;
+      width: 100%;
+      height: 7%;
+      background-color: $good-beige;
+
+
+      h2 {
+        font-size: 1.5em;
+        font-family: $font-family--heading;
+        text-align: center;
+        margin-bottom: 15px;
+        text-align: center;
+        color: $deep-manly-blue;
+      }
     }
 
     .list-wrapper {
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 85%;
-      width: 80%;
+      height: 100%;
+      width: 100%;
+      top: 7%;
       margin: 0 auto;
+      background-color: $white;
 
       ul {
-        height: 100%;
-        width: 100%;
+        height: 80%;
+        width: 80%;
         overflow: scroll;
 
         li {
@@ -81,8 +148,8 @@
   .list--application {
     position: absolute;
     width: 95%;
-    height: 15%;
-    top: 67.5%;
+    height: 20%;
+    top: 57.5%;
     left: 2.5%;
     background-color: $white;
   }
@@ -90,7 +157,7 @@
   .list--jobs {
     position: absolute;
     width: 95%;
-    height: 10%;
+    height: 16%;
     bottom: 5%;
     left: 2.5%;
     background-color: $white;
