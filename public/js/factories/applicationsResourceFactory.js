@@ -9,5 +9,9 @@ jobber.factory('applicationsResourceFactory', ['$http', function($http) {
     return $http.post('/api/applications', {company_id: company_id});
   };
 
+  self.getApplicationByID = function(id) {
+    return $http.get('/api/applications/' + id);
+  };
+
   return self;
 }]);

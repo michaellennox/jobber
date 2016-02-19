@@ -102,7 +102,7 @@
 
     .story--home {
       left: 52%;
-      height: 80%;
+      height: 70%;
       width: 40%;
       position: absolute;
 
@@ -116,6 +116,19 @@
 
       div {
         background-color: $white;
+        padding: 25px 10px 25px 10px;
+
+        span {
+          color: $light-sky-blue;
+        }
+
+        h2 {
+          margin-bottom: 25px;
+
+          i {
+            font-size: 5em;
+          }
+        }
       }
     }
   }
