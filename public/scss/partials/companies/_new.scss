@@ -1,9 +1,13 @@
 
+body {
+  background-color: $deep-manly-blue;
+}
 
 .new-form {
   width: 550px;
   height: 600px;
-  margin: 0 auto;
+  margin-left: 33%;
+  margin-top: 40px;
   text-align: center;
   overflow-y: auto;
 }

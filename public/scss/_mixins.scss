@@ -24,7 +24,7 @@
   text-align:  center;
   width: 500px;
   position: fixed;
-  top: 35%;
+  top: 25%;
   left: 10%;
 }
 
@@ -36,7 +36,7 @@
   text-align: center;
   font-family: $font-family--body;
   font-size: 1.2em;
-  background-color: rgba($white, 0.8);
+  background-color: $white;
   color: $black;
 }
 

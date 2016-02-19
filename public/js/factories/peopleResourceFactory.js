@@ -9,11 +9,9 @@ jobber.factory('peopleResourceFactory', ['$http', function($http) {
         name: name,
         company_id: company_id,
         jobTitle: job_title,
-        email: email,
         location: location,
-        summary: summary
-        website: website,
-      }
+        photo: photo,
+        summary: summary,      }
     );
   };
 
