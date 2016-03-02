@@ -10,6 +10,15 @@ A 'CRM' style application for discovering new companies who might hire you and k
 
 ![ATS](http://i.imgur.com/Bsd8kTM.png)
 
+## The Problem Statement
+
+I am a job hunter. I want a website that will help me:
+ 
+* **Discover** new companies who might hire me 
+
+* **Keep track** of my job applications
+
+
 ## So What's Here?
 
 Right now, there's just the basics of our platform
@@ -29,7 +38,9 @@ __API/Server__
 * Flask
 * Postgres/SQLAlchemy
 * User Authentication with Flask-Security
+* Web scraping of dynamic JavaScript pages conducted using Selenium 
 * Tested with Flask-Testing (a framework which extends on unittest) and nose
+* Jobs API sourced from [Indeed.com](http://www.indeed.co.uk/jsp/apiinfo.jsp)
 
 __Client__
 
@@ -37,6 +48,11 @@ __Client__
 * HTML5
 * SCSS
 * Tested with Jasmine, Karma and Protractor
+
+__Linking Client with API/Server__
+
+* JSON
+* Initial testing using Postman, automation of testing enabled using nose
 
 ## Installation Instructions
 
