@@ -9,11 +9,41 @@
   align-items: center;
   justify-content: center;
 
+  form {
+    position: fixed;
+    top: 0;
+    left: 20%;
+    width: 80%;
+    height: 10%;
+
+    div {
+      position: relative;
+      height: 100%;
+      width: 100%;
+
+      .searchbar {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 10%;
+        width: 25%;
+      }
+
+      .filters {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 50%;
+        width: 10%;
+      }
+    }
+  }
+
   ul {
     height: 75%;
     width: 80%;
     background-color: $white;
-    overflow: scroll;
+    overflow-y: auto;
 
     li {
       width: 100%;
@@ -24,6 +54,14 @@
       flex-direction: column;
       font-family: $font-family--body;
       border: 1px solid white;
+      position: relative;
+
+      img {
+        position: absolute;
+        height: 20%;
+        left: 5%;
+        top: 40%;
+      }
 
       a {
         text-decoration: none;
@@ -34,6 +72,16 @@
         display: flex;
         justify-content: center;
         flex-direction: column;
+
+        .right {
+          float: right;
+          color: $deep-manly-blue;
+          font-size: 0.9em;
+        }
+
+        .left {
+          float: left;
+        }
       }
 
       a:hover {

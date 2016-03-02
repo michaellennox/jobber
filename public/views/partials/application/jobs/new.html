@@ -1,17 +1,16 @@
-<div ng-controller="NewJobCtrl as ctrl" class="col-md-6 col-md-offset-3">
-  <form ng-submit="ctrl.createNewJob()">
-    <div class="form-group">
-      <label>Title</label>
-      <input ng-model="ctrl.title" type="text" class="form-control" placeholder="Job Title" required autofocus>
-      <br>
-      <input ng-model="ctrl.salary"class="form-control"  type="text"  placeholder="Job Title">
-      <br>
-      <input ng-model="ctrl.location"class="form-control"  type="text"  placeholder="Location">
-      <br>
-      <input ng-model="ctrl.summary" class="form-control" type="text" placeholder="Summary">
-      <br>
-      <input ng-model="ctrl.perks" class="form-control" type="url" placeholder="Perks">
-    </div>
-    <button id="submitJ"type="submit" class="btn btn-primary">Submit</button>
+<div class="new-page" ng-controller="NewJobCtrl as ctrl">
+  <form ng-submit="scrapeCompanyData()" class="companyApi">
+    <input ng-model="ctrl.jobURL" placeholder="Job URL">
+    <button type="submit" class="btn-submit">Search</button>
   </form>
+  <div class="new-form">
+    <form ng-submit="ctrl.createNewJob()">
+        <input ng-model="ctrl.title" type="text" placeholder="Job Title">
+        <input ng-model="ctrl.salary" type="text"  placeholder="Job Title">
+        <input ng-model="ctrl.location" type="text"  placeholder="Location">
+        <input ng-model="ctrl.summary"  type="text" placeholder="Summary">
+        <input ng-model="ctrl.perks"  type="url" placeholder="Perks">
+      <button id="submitJ"type="submit" class="btn-submit">Submit</button>
+    </form>
+  </div>
 </div>

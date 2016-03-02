@@ -1,9 +1,19 @@
-<div ng-controller="NewCompanyCtrl as ctrl" class="col-md-6 col-md-offset-3">
-  <form ng-submit="ctrl.createNewCompany()">
-    <div class="form-group">
-      <label>Name</label>
-      <input ng-model="ctrl.name" type="text" class="form-control" placeholder="Company Name" required autofocus>
-    </div>
-    <button id="submitCo" type="submit" class="btn btn-primary">Submit</button>
+<div class="new-page" ng-controller="NewCompanyCtrl as ctrl">
+  <form ng-submit="ctrl.scrapeCompanyData()" class="companyApi">
+    <input ng-model="ctrl.companyURL" placeholder="Linkedin URL">
+    <button type="submit" class="btn-submit">Search</button>
   </form>
+  <div class="new-form">
+  <form ng-submit="ctrl.createNewCompany()">
+      <input ng-model="ctrl.name" ng-value="ctrl.name" type="text" placeholder="Company Name">
+      <input ng-model="ctrl.website" type="text" ng-value="ctrl.website" placeholder="Website">
+      <input ng-model="ctrl.industry" type="text" ng-value="ctrl.industry"  placeholder="Industry">
+      <input ng-model="ctrl.city" type="text" ng-value="ctrl.city" placeholder="City">
+      <input ng-model="ctrl.postcode" type="text" ng-value="ctrl.postcode" placeholder="Postcode">
+      <input ng-model="ctrl.logo" type="text" ng-value="ctrl.logo" placeholder="Logo URL">
+      <input ng-model="ctrl.size" type="text" ng-value="ctrl.size" placeholder="Company Size">
+      <textarea ng-model="ctrl.summary" ng-value="ctrl.summary" placeholder="Summary"></textarea>
+    <button id="submitCo" type="submit" class="btn-submit">Submit</button>
+  </form>
+  </div>
 </div>

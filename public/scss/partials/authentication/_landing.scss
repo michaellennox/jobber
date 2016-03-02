@@ -1,14 +1,96 @@
-
-.bg { 
-  height: 100vh;
-  background: url(../img/landing-page-bg.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+.btn {
+  @include btn;
+  @include border-radius(20px);
+  font-size: 3em;
+  margin: 20px;
+  height: 70px;
+  width: 450px;
+  line-height: 70px;
+  &:hover{
+    background-color: $success-green;
+  }
 }
 
-button {
-  font-family: $font-family--buttons;
-  background-color: $success-green;
-} 
+
+.btn-submit{
+  @include btn;
+  @include border-radius(10px);
+  height: 50px;
+  width: 250px;
+  font-size: 1.5em;
+  line-height: 45px;
+  margin: 10px;
+  &:hover{
+    background-color: $success-green;
+  }
+}
+
+.btns, .register-form, .login-form {
+  @include position-left;
+}
+
+.register-form {
+  top: 25%;
+}
+
+.login-form {
+  top: 29%
+}
+
+input, textarea {
+  @include inputs;
+  @include border-radius(5px);
+}
+
+input:focus, .alert:focus, textarea:focus {
+  outline: none;
+}
+
+::-webkit-input-placeholder {
+  opacity: 0.8;
+  color: $black;
+}
+
+footer {
+  @include linx($white, $white, $white, $white);
+  text-align: center;
+  color: $white;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 6px;
+  font-size: 0.8em;
+  font-family: $font-family--body;
+}
+
+footer img {
+  padding-right: 20px;
+  margin-right: 40px;
+  width:40%;
+  height: auto;
+}
+.alert {
+  @include alert ($white, $warning-red);
+  height: 50px;
+  width: 350px;
+}
+
+.logo {
+  @include border-radius(20px);
+  height: 400px;
+  width: 500px;
+  position: absolute;
+  right: 20%;
+  top: 30%;
+}
+
+.logo img {
+  position: absolute;
+  left:22%;
+  width: 528px;
+  height: auto;
+}
+
+
+
+

@@ -1,0 +1,58 @@
+<div ng-controller="ViewApplicationCtrl as ctrl" class="wrapper--fill">
+  <nav class="secondary-navbar--expanded">
+    <ul>
+      <li class="navbar-nav--lg navbar-nav--hidden"></li>
+      <li class="navbar-nav--md navbar-nav--hidden"></li>
+      <li class="navbar-nav--md navbar-nav--hidden"></li>
+      <li class="navbar-nav--sm">
+        <a ng-href="/applications/{{ctrl.id}}/events/new">
+          <p><i class="fa fa-plus"></i> note</p>
+        </a>
+      </li>
+      <li class="navbar-nav--sm">
+        <a ng-href="/applications/{{ctrl.id}}/events/new">
+          <p><i class="fa fa-plus"></i> event</p>
+        </a>
+      </li>
+      <li class="navbar-nav--md navbar-nav--hidden"></li>
+      <li class="navbar-nav--lg navbar-nav--hidden"></li>
+    </ul>
+  </nav>
+
+  <div class="wrapper--application">
+    <div class="views--application">
+      <section class="progress">
+        PROGRESS BAR GOES HERE YAY
+      </section>
+
+      <section class="list--events">
+        <h2>What's Gone On?</h2>
+        <div class="list-wrapper">
+          <ul>
+            <li class="left">
+              <h3>Discovered Iron Man's True Identity</h3>
+              <p>Today I discovered that Iron Man is secretly a billionaire called Tony Stark, now it's time for me to start my evil master plan of infiltrating his organisation.</p>
+            </li>
+            <li class="left">
+              <h3>Sent CV to Jackie in HR</h3>
+              <p>I sent in a CV to Jackie in Stark Industries' HR department. I made sure to remove any mentions of my super villainry (my favourite being that time when I hunted down Wolverine's family) and replaced them with goodie-two-shoes actions (such as petting a llama)</p>
+            </li>
+            <li class="right">
+              <h3>Jackie Emailed to Arrange Interview</h3>
+              <p>They emailed me back today, my plan is moving ahead!</p>
+            </li>
+            <li class="center">
+              <h3>First Stage Interview</h3>
+              <p>Met with Jackie and some other randomer in HR, they didn't seem particularly friendly and I think someone recognised me.</p>
+            </li>
+            <li class="right">
+              <h3>Jackie Sent Feedback</h3>
+              <p>Supposedly I'm just too 'weird and creepy' to work at Stark Industries. At least I have gathered enough information to report back to HYDRA.</p>
+              <p>(HAIL HYDRA)</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

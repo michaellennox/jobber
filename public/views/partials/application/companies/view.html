@@ -1,27 +1,77 @@
-<div ng-controller="ViewCompanyCtrl as ctrl">
-  <h1 class="text-center">{{ctrl.company.name}}</h1>
-  <section class="col-md-6">
-    <h2>{{ctrl.company.name}}</h2>
-    <button class="btn btn-success" id="delete" ng-click="ctrl.deleteCompany()">Delete</button>
-  </section>
-
-  <section class="col-md-6 text-center people">
-    <h2>Employees</h2>
-    <ul class="list-group">
-      <li ng-repeat="person in ctrl.people" class="list-group-item">
-        <a ng-class="{{person.name}}" ng-href="/companies/{{ctrl.company.id}}/people/{{person.id}}">{{person.name}}</a>
+<div ng-controller="ViewCompanyCtrl as ctrl" class="wrapper--fill">
+  <nav class="secondary-navbar--expanded">
+    <ul>
+      <li class="navbar-nav--lg navbar-nav--hidden"></li>
+      <li class="navbar-nav--md navbar-nav--hidden"></li>
+      <li class="navbar-nav--sm">
+        <a ng-href="/companies/{{ctrl.company.id}}/people/new">
+          <p><i class="fa fa-plus"></i> person</p>
+        </a>
       </li>
-    </ul>
-    <a id="addPerson" ng-href="/companies/{{ctrl.company.id}}/people/new" class="btn btn-success">Add Employee</a>
-  </section>
-
-  <section class="col-md-8 col-md-offset-2 text-center">
-    <h2>Jobs</h2>
-    <ul class="list-group">
-      <li ng-repeat="job in ctrl.jobs" class="list-group-item">
-        <a ng-class="{{job.title}}" ng-href="/companies/{{ctrl.company.id}}/jobs/{{job.id}}">{{job.title}}</a>
+      <li class="navbar-nav--sm">
+        <a ng-href="/companies/{{ctrl.company.id}}/jobs/new">
+          <p><i class="fa fa-plus"></i> job</p>
+        </a>
       </li>
+      <li class="navbar-nav--md navbar-nav--hidden"></li>
+      <li class="navbar-nav--md navbar-nav--hidden"></li>
+      <li class="navbar-nav--lg navbar-nav--hidden"></li>
     </ul>
-    <a id="addJob" ng-href="/companies/{{ctrl.company.id}}/jobs/new" class="btn btn-success">Add Job</a>
-  </section>
+  </nav>
+
+  <div class="wrapper--company">
+    <div class="views--company">
+      <section class="profile">
+        <div class="profile--header">
+          <h2 class="title">{{ctrl.company.name}}<img src="{{ctrl.company.logo}}"></h2>
+          <i class="fa fa-map-marker"></i>
+          {{ctrl.company.city}} {{ctrl.company.postcode}}
+        </div>
+        <div class="contact">
+         <h4>WEBSITE:</h4> {{ctrl.company.website}}
+        </div>
+        <br>
+        <div class="industry--wrapper">
+          <div class="industry">
+           <h4>INDUSTRY:</h4> {{ctrl.company.industry}}
+          </div>
+          <div class="size">
+           <h4>SIZE:</h4> {{ctrl.company.size}}
+          </div>
+        </div>
+        <br>
+        <div class="summary">
+         <h4>SUMMARY:</h4>
+          {{ctrl.company.summary}}
+        </div>
+      </section>
+
+      <section class="list--people">
+        <div class="title--people">
+          <h2 class="title">Employees</h2>
+        </div>
+        <div class="list-wrapper">
+          <ul>
+            <li ng-repeat="person in ctrl.people">
+              <a ng-href="/companies/{{ctrl.company.id}}/people/{{person.id}}">{{person.name}}</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="list--application">
+        <h2 class="title">APPLICATION</h2>
+      </section>
+
+      <section class="list--jobs">
+        <div class="list-wrapper">
+          <ul>
+            <li ng-repeat="job in ctrl.jobs">
+              <a ng-href="/companies/{{ctrl.company.id}}/jobs/{{job.id}}">{{job.title}}</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </div>
 </div>

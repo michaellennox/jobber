@@ -46,7 +46,7 @@ describe('LoginCtrl', function() {
       userAuthFactoryMock.login.and.returnValue(deferred.promise);
       ctrl.login();
       $rootScope.$digest();
-      expect($windowMock.location.href).toEqual('/companies');
+      expect($windowMock.location.href).toEqual('/dashboard');
     });
 
     it('sets the error message when receiving a rejected promise', function() {
